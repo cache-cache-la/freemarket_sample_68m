@@ -32,7 +32,7 @@
 |status_id|references|foreign_key: true|
 
 ### Association
-- has_many :image
+- has_many :images
 - has_many :comments
 - belongs_to :user
 - belongs_to :category
