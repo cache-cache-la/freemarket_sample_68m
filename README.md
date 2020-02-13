@@ -24,7 +24,6 @@
 |------|----|-------|
 |name|string|null: false|
 |text|text|null: false|
-|shipping_method|string|null: false|
 |stock|int|null: false|
 |price|int|null: false|
 |user_id|references|foreign_key: true|
@@ -74,7 +73,7 @@
 ## statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|state|string|null: false|
+|condition|string|null: false|
 
 ### Association
 - has_many :items
