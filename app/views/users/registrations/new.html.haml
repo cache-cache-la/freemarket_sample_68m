@@ -1,21 +1,46 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "users/shared/links"
+.single-container
+  %h2 会員情報入力
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :nickname
+      %br/
+      = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autocomplete: "email"
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .field
+      = f.label :lastname
+      %br/
+      = f.text_field :lastname, autocomplete: "lastname"
+    .field
+      = f.label :firsttname
+      %br/
+      = f.text_field :firstname, autocomplete: "firstname"
+    .field
+      = f.label :lastname_kana
+      %br/
+      = f.text_field :lastname_kana, autocomplete: "lastname_kana"
+    .field
+      = f.label :firstname_kana
+      %br/
+      = f.text_field :firstname_kana, autocomplete: "firstname_kana"
+    .field
+      = f.label :birthday
+      %br/
+      != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+    .actions
+      = f.submit "Sign up"
+  = render "users/shared/links"
