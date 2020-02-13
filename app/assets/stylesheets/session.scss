@@ -1,15 +1,44 @@
+.header{
+  text-align: center;
+
+  img{
+    height: 150px;
+    margin: 0 auto;
+  }
+}
+
 h2{
   font-size: 40px;
+  text-align: center;
+  background-image: url(https://biz-journal.jp/images/post_19772_1.jpg);
 }
 
 .field{
   font-size: 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#user_email{
+  width: 500px;
+}
+
+#user_password{
+  width: 500px;
 
 }
 
 .actions{
-  
-  &__send{
-    width: 100px;
+  margin-top: 50px;
+  text-align: center;
+
+  &__submit{
+    display: block;
+    width: 500px;
+    height: 60px;
+    background-color: red;
+    cursor: pointer;
+    margin: 0 auto;
+    color: white;
   }
 }

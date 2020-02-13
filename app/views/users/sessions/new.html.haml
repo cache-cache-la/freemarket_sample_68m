@@ -1,4 +1,5 @@
-%h2 Log in
+.header
+  %img(src="https://biz-journal.jp/images/post_19772_1.jpg")
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
     = f.label :email
@@ -8,10 +9,7 @@
     = f.label :password
     %br/
     = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
+  
   .actions
-    = f.submit "Log in",class:"actions_send"
+    = f.submit "Log in",class: "actions__submit", autofocus: true
 = render "users/shared/links"
