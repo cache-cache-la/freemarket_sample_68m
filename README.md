@@ -55,9 +55,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|string|null: false, add_index|
 
 ### Association
 - has_many :items
+- has_ancestry
 
 
 ## brandsテーブル
