@@ -1,15 +1,16 @@
 .header
-  %img(src="https://biz-journal.jp/images/post_19772_1.jpg")
+  %img(src="http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
-    = f.label :email
+    = f.label :メールアドレス
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field
-    = f.label :password
+    = f.label :パスワード
     %br/
     = f.password_field :password, autocomplete: "current-password"
   
   .actions
-    = f.submit "Log in",class: "actions__submit", autofocus: true
-= render "users/shared/links"
+    = f.submit "ログイン",class: "actions__submit", autofocus: true
+.devise-function
+  = render "users/shared/links"
