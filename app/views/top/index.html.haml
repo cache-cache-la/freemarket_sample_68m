@@ -1,0 +1,39 @@
+.header
+  .header__box
+    .header__box__main
+      .main__icon
+      .main__search
+        = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
+          = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
+          = form.submit "検索", class: "search-btn"
+    .header__box__action
+      .action__list
+        .list__category
+          %ul.category__tree
+            カテゴリー
+            %li.tree__item
+              最初はカテゴリごとではなく
+            %li.tree__item
+              全ての商品一覧にする事
+        .list__brand
+          %ul.brand__tree
+            ブランド
+            %li.brand__item
+              最初はカテゴリごとではなく
+            %li.brand__item
+              全ての商品一覧にするんだお
+      .action__user
+        .user__login
+          = link_to "#", class: "login_btn" do
+            ログイン
+        .user__new
+          = link_to "#", class: "new_btn" do
+            新規登録
+
+.board
+  以下、メインだお
+.banner
+  ここにバナーが入るお
+.footer
+  ここがフッターだお。
+  リンクとか沢山入る予定だお
