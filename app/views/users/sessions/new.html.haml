@@ -1,4 +1,4 @@
-= render "users/shared/header"
+= render "users/shared/header-logo"
 .all-body
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-field
@@ -18,4 +18,4 @@
       = f.submit "ログイン",class: "actions__submit", autofocus: true
   .devise-function
     = render "users/shared/links"  
-= render "users/shared/footer"
+= render "users/shared/footer-logo"
