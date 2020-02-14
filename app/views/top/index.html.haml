@@ -210,16 +210,7 @@
                   %p
                     (税込)
   %aside.banner
-    .banner__inner
-      .banner__inner__title
-        だれでもかんたん、人生を変えるフリマアプリ
-      .banner__inner__text
-        今すぐ無料ダウンロード！
-      .banner__inner__icon
-        %a{href: "#"}
-          %img.app{src: "App_Store.png"}
-        %a{href: "#"}
-          %img.google{src: "google-play-badge.png"}
+    = render 'shared/banner'
   .footer
     .footer-contents
       .footer-contents__content
