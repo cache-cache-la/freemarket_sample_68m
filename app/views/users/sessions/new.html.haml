@@ -1,5 +1,4 @@
-.header
-  %img(src="http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
+= render "users/shared/header"
 .all-body
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .form-field
@@ -19,7 +18,4 @@
       = f.submit "ログイン",class: "actions__submit", autofocus: true
   .devise-function
     = render "users/shared/links"  
-.footer
-  %img(src="http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
-  %div
-    ©︎ FURIMA
+= render "users/shared/footer"
