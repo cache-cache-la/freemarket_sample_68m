@@ -1,0 +1,35 @@
+.header__box
+  .header__box__main
+    .main__icon
+      %img{alt: 'title', height: "41", width: "140", src: "logo.png"}
+    .main__search
+      = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
+        = form.submit type: "image", src: "icon-search 1.png", class: "search-btn"
+  .header__box__action
+    %ul.action__list
+      %li.list__category
+        %a{herf: "#", id:"tree-btn",}
+          カテゴリー
+        .first-tree
+          %ul.category__tree
+            %li.tree__item
+              仮）レディースだお
+            %li.tree__item
+              仮）メンズだお
+      %li.list__brand
+        %a{herf: "#", id:"tree-btn",}
+          ブランド
+        .second-tree
+          %ul.brand__tree
+            %li.brand__item
+              ナイキだお
+            %li.brand__item
+              美豚だお
+    %ul.action__user
+      %li.user__login
+        = link_to "#", class: "login_btn" do
+          ログイン
+      %li.user__new
+        = link_to "#", class: "new_btn" do
+          新規会員登録

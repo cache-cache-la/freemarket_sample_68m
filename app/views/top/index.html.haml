@@ -1,41 +1,6 @@
 .body
   .header
-    .header__box
-      .header__box__main
-        .main__icon
-          %img{alt: 'title', height: "41", width: "140", src: "logo.png"}
-        .main__search
-          = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
-            = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
-            = form.submit type: "image", src: "icon-search 1.png", class: "search-btn"
-      .header__box__action
-        %ul.action__list
-          %li.list__category
-            %a{herf: "#", id:"tree-btn",}
-            カテゴリー
-            .first-tree
-              %ul.category__tree
-                %li.tree__item
-                  仮）レディースだお
-                  
-                %li.tree__item
-                  仮）メンズだお
-          %li.list__brand
-            %a{herf: "#", id:"tree-btn",}
-            ブランド
-            .second-tree
-              %ul.brand__tree
-                %li.brand__item
-                  ナイキだお
-                %li.brand__item
-                  美豚だお
-        %ul.action__user
-          %li.user__login
-            = link_to "#", class: "login_btn" do
-              ログイン
-          %li.user__new
-            = link_to "#", class: "new_btn" do
-              新規会員登録
+    = render 'shared/header'
   .board
     .main-visual
       .main-visual__content
@@ -98,9 +63,9 @@
           ほしかったあの商品に出会えるかもしれません。
         .download__inner__btn
           %a{href: "#"}
-            %img.first-btn{src: "App_Store.png"}
+            %img.app{src: "App_Store.png"}
           %a{href: "#"}
-            %img.second-btn{src: "google-play-badge.png"}
+            %img.app{src: "google-play-badge.png"}
     .features
       .features__head
         FURIMAの特徴
@@ -244,10 +209,63 @@
                         0
                   %p
                     (税込)
-  .banner
-    -# ここにバナーが入るお
+  %aside.banner
+    .banner__inner
+      .banner__inner__title
+        だれでもかんたん、人生を変えるフリマアプリ
+      .banner__inner__text
+        今すぐ無料ダウンロード！
+      .banner__inner__icon
+        %a{href: "#"}
+          %img.app{src: "App_Store.png"}
+        %a{href: "#"}
+          %img.google{src: "google-play-badge.png"}
   .footer
-    -# ここがフッターだお。リンクとか沢山入る予定だお
+    .footer-contents
+      .footer-contents__content
+        .footer-contents__content__head
+          FURIMAについて
+        .content-lists
+          .list
+            %a{href: "#"}
+              会社概要（運営会社）
+          .list
+            %a{href: "#"}
+              プライバシーポリシー
+          .list
+            %a{href: "#"}
+              FURIMA利用規約
+          .list
+            %a{href: "#"}
+              ポイントに関する特約
+      .footer-contents__content
+        .footer-contents__content__head
+          FURIMAを見る
+        .content-lists
+          .list
+            %a{href: "#"}
+              カテゴリー一覧
+          .list
+            %a{href: "#"}
+              ブランド一覧
+      .footer-contents__content
+        .footer-contents__content__head
+          ヘルプ＆ガイド
+        .content-lists
+          .list
+            %a{href: "#"}
+              FURIMAガイド
+          .list
+            %a{href: "#"}
+              FURIMAロゴ利用ガイドライン
+          .list
+            %a{href: "#"}
+              お知らせ
+    .footer-logo
+      %a{href: "/"}
+        %img{src: "logo-white.png"}
+    %p
+      © FURIMA
   .sell-btn
     = link_to "#" do
       .push
