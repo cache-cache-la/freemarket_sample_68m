@@ -1,15 +1,23 @@
 .header{
   text-align: center;
-  height: 200px;
 
   img{
-    height: 150px;
-    margin: 0 auto;
+    height: 100px;
+
   }
 }
 
 
-.field{
+.all-body{
+  height: 550px;
+  width: 800px;
+  background-color:lightcyan;
+  margin: 0 auto;
+
+
+
+
+.form-field{
   font-size: 30px;
   text-align: center;
   margin-top: 30px;
@@ -40,11 +48,24 @@
     cursor: pointer;
     margin: 0 auto;
     color: white;
+    margin-bottom: 30px;
   }
 }
 
 .devise-function{
-  margin-left: 470px;
+  margin-left: 150px;
+
+}
+}
+
+.footer{
+  text-align: center;
+
+  img{
+    width: 150px;
+  }
+
+  
 
 }
 

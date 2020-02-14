@@ -1,16 +1,25 @@
 .header
   %img(src="http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  
-  .actions
-    = f.submit "ログイン",class: "actions__submit", autofocus: true
-.devise-function
-  = render "users/shared/links"
+.all-body
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-field
+      = f.label :メールアドレス
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .form-field
+      = f.label :パスワード
+      %br/
+      = f.password_field :password, autocomplete: "current-password"
+
+    .error-message
+      - if resource.errors.any?
+        - resource.errors.full_messages.each do |message|
+          %li= message  
+    .actions
+      = f.submit "ログイン",class: "actions__submit", autofocus: true
+  .devise-function
+    = render "users/shared/links"  
+.footer
+  %img(src="http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg")
+  %div
+    ©︎ FURIMA
