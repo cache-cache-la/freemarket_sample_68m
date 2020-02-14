@@ -45,7 +45,6 @@
               .select-wrap
                 = f.date_select :birthday, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
           .actions
-            = f.submit "Sign up"
-      = render "users/shared/links"
+            = f.submit "新規登録", class: "submit-btn"
   .single-footer
     %h2 ロゴ
