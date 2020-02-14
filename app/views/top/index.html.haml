@@ -1,39 +1,255 @@
-.header
-  .header__box
-    .header__box__main
-      .main__icon
-      .main__search
-        = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
-          = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
-          = form.submit "検索", class: "search-btn"
-    .header__box__action
-      .action__list
-        .list__category
-          %ul.category__tree
+.body
+  .header
+    .header__box
+      .header__box__main
+        .main__icon
+          %img{alt: 'title', height: "41", width: "140", src: "logo.png"}
+        .main__search
+          = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
+            = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
+            = form.submit type: "image", src: "icon-search 1.png", class: "search-btn"
+      .header__box__action
+        %ul.action__list
+          %li.list__category
+            %a{herf: "#", id:"tree-btn",}
             カテゴリー
-            %li.tree__item
-              最初はカテゴリごとではなく
-            %li.tree__item
-              全ての商品一覧にする事
-        .list__brand
-          %ul.brand__tree
+            .first-tree
+              %ul.category__tree
+                %li.tree__item
+                  仮）レディースだお
+                  
+                %li.tree__item
+                  仮）メンズだお
+          %li.list__brand
+            %a{herf: "#", id:"tree-btn",}
             ブランド
-            %li.brand__item
-              最初はカテゴリごとではなく
-            %li.brand__item
-              全ての商品一覧にするんだお
-      .action__user
-        .user__login
-          = link_to "#", class: "login_btn" do
-            ログイン
-        .user__new
-          = link_to "#", class: "new_btn" do
-            新規登録
-
-.board
-  以下、メインだお
-.banner
-  ここにバナーが入るお
-.footer
-  ここがフッターだお。
-  リンクとか沢山入る予定だお
+            .second-tree
+              %ul.brand__tree
+                %li.brand__item
+                  ナイキだお
+                %li.brand__item
+                  美豚だお
+        %ul.action__user
+          %li.user__login
+            = link_to "#", class: "login_btn" do
+              ログイン
+          %li.user__new
+            = link_to "#", class: "new_btn" do
+              新規会員登録
+  .board
+    .main-visual
+      .main-visual__content
+        %h1.content__title
+          人生を変えるフリマアプリ
+        %p.content__text
+          FURIMAは誰でもカンタンに出品・購入できる
+          %br.text
+          フリマアプリです
+        = link_to "#", class:"btn" do
+          .content__btn
+            .app
+              %img{alt: 'intro-img1', src: "App_Store.png"}
+            .google
+              %img{alt: 'intro-img1', src: "google-play-badge.png"}
+      .main-visual__picture
+    .introdaction
+      %h2.introduction__title
+        FURIMAが選ばれる３つの理由
+      %ul.introduction__lists
+        %li.list1
+          .list__image
+            %span.number
+              1
+            %img{alt: 'intro-img1', src: "pict-reason-01.jpg"}
+          .list__text
+            %span 3分
+            ですぐに出品
+          .list__sentence
+            スマホで入力するだけで簡単にできる！
+        %li.list2
+          .list__image
+            %span.number
+              2
+            %img{alt: 'intro-img2', src: "pict-reason-02.jpg"}
+          .list__text
+            %span シンプル
+            で使いやすい
+          .list__sentence
+            めんどくさい入力は必要なく、検索も購入もスムーズ！
+        %li.list3
+          .list__image
+            %span.number
+              3
+            %img{alt: 'intro-img3', src: "pict-reason-03.jpg"}
+          .list__text
+            手数料
+            %span 業界最安
+          .list__sentence
+            最大3%でお得に購入！
+    .download
+      .download__inner
+        .download__inner__title
+          会員数日本一位
+        %p.download__inner__text
+          FURIMAは、フリマアプリで最も人気。
+          %br
+          出品・購入回数も業界最多です！
+          %br
+          ほしかったあの商品に出会えるかもしれません。
+        .download__inner__btn
+          %a{href: "#"}
+            %img.first-btn{src: "App_Store.png"}
+          %a{href: "#"}
+            %img.second-btn{src: "google-play-badge.png"}
+    .features
+      .features__head
+        FURIMAの特徴
+      .features__images
+        %section.image
+          %figure.image__img
+            %img{src: "icon-01.png"}
+          %h3.image__text
+            簡単に売り買いできる
+          %p.image__detail
+            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        %section.image
+          %figure.image__img
+            %img{src: "icon-03.png"}
+          %h3.image__text
+            売上金は即日振込みに対応
+          %p.image__detail
+            午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+        %section.image
+          %figure.image__img
+            %img{src: "icon-04.png"}
+          %h3.image__text
+            様々な支払いに対応
+          %p.image__detail
+            お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+    %span.picup-category
+      .head
+        ピックアップカテゴリー
+      .box
+        .box__head
+          %a{href: "#"}
+            新規投稿商品
+        .box__lists
+          .list
+            %a{href: "#"}
+              %figure.list__img
+                %img{src: "animal1.png"}
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            %a{href: "#"}
+              %figure.list__img
+                %img{src: "animal2.png"}
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            %a{href: "#"}
+              %figure.list__img
+                %img{src: "animal3.png"}
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+    %span.picup-category
+      .head
+        ピックアップカテゴリー
+      .box
+        .box__head
+          %a{href: "#"}
+            新規投稿商品
+        .box__lists
+          .list
+            %a{href: "#"}
+              %figure.list__img
+                %img{src: "animal1.png"}
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            %a{href: "#"}
+              %figure.list__img
+                %img{src: "animal2.png"}
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            %a{href: "#"}
+              %figure.list__img
+                %img{src: "animal3.png"}
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+  .banner
+    -# ここにバナーが入るお
+  .footer
+    -# ここがフッターだお。リンクとか沢山入る予定だお
+  .sell-btn
+    = link_to "#" do
+      .push
+        出品する
+        %img{alt: 'sell-img', src: "icon_camera.png"}
