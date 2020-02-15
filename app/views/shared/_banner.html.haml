@@ -4,7 +4,7 @@
   .banner__inner__text
     今すぐ無料ダウンロード！
   .banner__inner__icon
-    %a{href: "#"}
-      %img.app{src: "App_Store.png"}
-    %a{href: "#"}
-      %img.google{src: "google-play-badge.png"}
+    = link_to "#" do
+      = image_tag "/App_Store.png", class: "app"
+    = link_to "#" do
+      = image_tag "/google-play-badge.png", class: "google"

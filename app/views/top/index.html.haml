@@ -13,9 +13,9 @@
         = link_to "#", class:"btn" do
           .content__btn
             .app
-              %img{alt: 'intro-img1', src: "App_Store.png"}
+              = image_tag "/App_Store.png", alt: 'intro-img1'
             .google
-              %img{alt: 'intro-img1', src: "google-play-badge.png"}
+              = image_tag "/google-play-badge.png", alt: 'intro-img1'
       .main-visual__picture
     .introdaction
       %h2.introduction__title
@@ -25,7 +25,7 @@
           .list__image
             %span.number
               1
-            %img{alt: 'intro-img1', src: "pict-reason-01.jpg"}
+            = image_tag "/pict-reason-01.jpg", alt: 'intro-img1'
           .list__text
             %span 3分
             ですぐに出品
@@ -35,7 +35,7 @@
           .list__image
             %span.number
               2
-            %img{alt: 'intro-img2', src: "pict-reason-02.jpg"}
+            = image_tag "/pict-reason-02.jpg", alt: 'intro-img2'
           .list__text
             %span シンプル
             で使いやすい
@@ -45,7 +45,7 @@
           .list__image
             %span.number
               3
-            %img{alt: 'intro-img3', src: "pict-reason-03.jpg"}
+            = image_tag "/pict-reason-03.jpg", alt: 'intro-img3'
           .list__text
             手数料
             %span 業界最安
@@ -62,31 +62,31 @@
           %br
           ほしかったあの商品に出会えるかもしれません。
         .download__inner__btn
-          %a{href: "#"}
-            %img.app{src: "App_Store.png"}
-          %a{href: "#"}
-            %img.app{src: "google-play-badge.png"}
+          = link_to "#" do
+            = image_tag "/App_Store.png", class: "app"
+          = link_to "#" do
+            = image_tag "/google-play-badge.png", class: "google"
     .features
       .features__head
         FURIMAの特徴
       .features__images
         %section.image
           %figure.image__img
-            %img{src: "icon-01.png"}
+            = image_tag "/icon-01.png"
           %h3.image__text
             簡単に売り買いできる
           %p.image__detail
             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
         %section.image
           %figure.image__img
-            %img{src: "icon-03.png"}
+            = image_tag "/icon-03.png"
           %h3.image__text
             売上金は即日振込みに対応
           %p.image__detail
             午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
         %section.image
           %figure.image__img
-            %img{src: "icon-04.png"}
+            = image_tag "/icon-04.png"
           %h3.image__text
             様々な支払いに対応
           %p.image__detail
@@ -96,13 +96,13 @@
         ピックアップカテゴリー
       .box
         .box__head
-          %a{href: "#"}
+          = link_to "#" do
             新規投稿商品
         .box__lists
           .list
-            %a{href: "#"}
+            = link_to "#" do
               %figure.list__img
-                %img{src: "animal1.png"}
+                = image_tag "/animal1.png"
               .list__body
                 .name
                   product3
@@ -117,9 +117,9 @@
                   %p
                     (税込)
           .list
-            %a{href: "#"}
+            = link_to "#" do
               %figure.list__img
-                %img{src: "animal2.png"}
+                = image_tag "/animal2.png"
               .list__body
                 .name
                   product3
@@ -134,9 +134,9 @@
                   %p
                     (税込)
           .list
-            %a{href: "#"}
+            = link_to "#" do
               %figure.list__img
-                %img{src: "animal3.png"}
+                = image_tag "/animal3.png"
               .list__body
                 .name
                   product3
@@ -155,13 +155,13 @@
         ピックアップカテゴリー
       .box
         .box__head
-          %a{href: "#"}
+          = link_to "#" do
             新規投稿商品
         .box__lists
           .list
-            %a{href: "#"}
+            = link_to "#" do
               %figure.list__img
-                %img{src: "animal1.png"}
+                = image_tag "/animal1.png"
               .list__body
                 .name
                   product3
@@ -176,9 +176,9 @@
                   %p
                     (税込)
           .list
-            %a{href: "#"}
+            = link_to "#" do
               %figure.list__img
-                %img{src: "animal2.png"}
+                = image_tag "/animal2.png"
               .list__body
                 .name
                   product3
@@ -193,9 +193,9 @@
                   %p
                     (税込)
           .list
-            %a{href: "#"}
+            = link_to "#" do
               %figure.list__img
-                %img{src: "animal3.png"}
+                = image_tag "/animal3.png"
               .list__body
                 .name
                   product3
