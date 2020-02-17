@@ -5,7 +5,7 @@
     .main__search
       = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
         = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
-        = form.submit type: "image", src: "icon-search 1.png", class: "search-btn"
+        = form.submit src: "/icon-search 1.png", type: "image", class: "search-btn"
   .header__box__action
     %ul.action__list
       %li.list__category
