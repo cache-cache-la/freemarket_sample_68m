@@ -138,6 +138,28 @@
         text-align: center;
       }
 
+      &__detail{
+       margin-bottom: 30px;
+       font-size: 20px;
+      }
+
+      &__table{
+        display: block;
+        font-size: 20px;
+        width: 800px;
+        margin: 0 auto;
+
+        th{
+          width: 200px;
+          text-align: center;
+        }
+
+        td{
+          width: 600px;
+          padding-left: 10px;
+        }
+      }
+
     }
 
   }
