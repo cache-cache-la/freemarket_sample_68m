@@ -1,0 +1,8 @@
+-# = render "header"
+.my-contents
+  = render "my-side"
+  .my-logout
+    .my-logout__btn
+      = link_to "ログアウト", destroy_user_session_path, method: 'delete', class: "logout-btn"
+-# = render "banner"
+-# = render "footer"
