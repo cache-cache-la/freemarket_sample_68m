@@ -62,13 +62,16 @@
   }
 }
 
+// ヘッダー下部分
+
 .breadCrumbs{
-  font-size: 12px;
+  font-size: 16px;
   display: flex;
   width: 100%;
-  margin-left: 300px;
+  margin-left: 200px;
   height: 50px;
   width: 1000px;
+  line-height: 50px;
 
   &__big-category{
   }
@@ -86,34 +89,36 @@
   }
 }
 
+//メイン部分
+
 .main{
   height: 100%;
-  width: 900px;
-  background-color: yellow;
+  width: 100%;
+  background-color: lightcyan;
   margin: 0 auto;
   padding-top: 50px;
   
   &__top-content{
     width: 800px;
     height: 1600px;
-    background-color: pink;
     margin: 0 auto;
+    background-color: white;
 
     &__itemBox{
       height:1200px ;
       width: 800px;
-      background-color: plum;
 
       &__name{
         text-align: center;
-        font-size: 20px;
+        font-size: 30px;
         font-weight: bold;
       }
+
+      //イメージ部分↓
 
       &__body{
         height:400px ;
         width: 800px;
-        background-color: red;
         
         &__image{
           display: block;
@@ -131,6 +136,8 @@
         width: 800px;
       }
 
+      //イメージ部分↑
+
       &__price{
         text-align: center;
         font-weight: bold;
@@ -145,6 +152,8 @@
        margin-bottom: 30px;
        font-size: 20px;
       }
+
+      //テーブル部分↓
 
       &__table{
         display: block;
@@ -163,6 +172,7 @@
           padding-left: 10px;
         }
       }
+      //テーブル部分↑
 
       &__optionalArea{
         display: flex;
@@ -173,7 +183,7 @@
           border:1px solid;
           border-radius: 5rem;
           padding: 10px;
-          // color: #3CCACE;
+          color: #3CCACE;
           
 
         }
@@ -197,15 +207,10 @@
       &__caution{
         width: 800px;
         height: 60px;
-        background-color: white;
         padding-left: 10px;
         margin-top: 10px;
         
       }
-
-  
-  
-  
      
     }
     &__links{
@@ -222,14 +227,13 @@
        font-size: 30px;
        color: #3CCACE;
        margin-top: 30px;
+       text-decoration: none;
      }
 
   }
-
-  
-
-  
 }
+
+//入力フォームと送信ボタンのclassが効かなかったので、id設定しました。
 
 #_comment{
   width: 800px;
