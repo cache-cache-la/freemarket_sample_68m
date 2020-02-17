@@ -44,6 +44,7 @@ group :development, :test do
   # 追加
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails'
 
   # 追加
   gem 'capistrano'

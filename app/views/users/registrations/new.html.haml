@@ -11,7 +11,7 @@
             = f.label :"ニックネーム"
             %span.form-require-n 必須
             %br/
-            = f.text_field :nickname, autocomplete: "nickname", class: "input-default-n", placeholder: "例）フリマ太郎"
+            = f.text_field :nickname, autocomplete: "nickname", class: "input-default-n", placeholder: "例）フリマ太郎(10文字まで)"
           .field
             = f.label :"メールアドレス"
             %span.form-require 必須
@@ -24,7 +24,7 @@
                 (#{@minimum_password_length} characters minimum)
             %span.form-require 必須
             %br/
-            = f.password_field :password, autocomplete: "new-password", class: "input-default", placeholder: "6文字以上の半角英数字"
+            = f.password_field :encrypted_password, autocomplete: "new-password", class: "input-default", placeholder: "6文字以上の半角英数字"
           .field
             = f.label :"お名前(全角)"
             %span.form-require 必須
