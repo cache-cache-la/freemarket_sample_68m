@@ -63,11 +63,12 @@
             %th 発送日の目安
             %td 1~2日で発送
       .main__top-content__itemBox__optionalArea
-        %i.fa.fa-star>
-        fa-star
+        = icon('fas', 'cog', class:"side-bar__user-name__user-box__menu__icon2")
 
-
-    .commentBox
+    .main__top-content__commentBox
+      = form_for "#" do |f|
+        = f.text_field :comment
+        = f.submit "コメントする",id:"send"
   .links
   .relatedItems
 
