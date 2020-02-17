@@ -40,9 +40,8 @@ background-color: #fff;
   .card-form{
   max-width: 343px;
   margin: 0 auto;
+  padding: 40px 0 0 0;
 // 番号入力
-    &__num{
-    }
     &__input-num{
     @include num-code;
     }
@@ -101,7 +100,7 @@ background-color: #fff;
   }
 }
 
-label{
+.card-nav{
   font-size: 16px;
   font-weight: 600;
 }
@@ -110,10 +109,5 @@ label{
   background-color: #57CACE;
   color: white;
   padding: 2px 4px;
-}
-
-form{
-  padding: 40px 40px 64px;
-  border-top: 1px solid #f5f5f5;
 }
 

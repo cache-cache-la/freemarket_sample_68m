@@ -1,6 +1,6 @@
 .my-logout{
   background-color: white;
-  height: 100px;
+  height: 180px;
   width: 700px;
   padding: 60px 0;
   &__btn{
@@ -11,6 +11,7 @@
     margin: 0 auto;
     .logout-btn{
       color: white;
+      text-decoration: none;
       }
   }
 }

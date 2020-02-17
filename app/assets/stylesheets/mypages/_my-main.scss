@@ -17,8 +17,6 @@
       right: 0;
       transform: translate(0, -50%);
       color: #333;
-      .my-main__user__icon{
-      }
       .my-main__user__name{
         font-weight: bold;
       }
@@ -29,8 +27,6 @@
         &__rep{
           margin-right: 5px;
         }
-        &__num{
-        }
       }
     }
   
@@ -38,6 +34,13 @@
   display: flex;
   text-align: center;
   line-height: 72px;
+    .switch-nav{
+    height: 72px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 50%;
+    background-color: white;
+    }
   }
   &__menu{
     a{
@@ -60,21 +63,19 @@
     line-height: 72px;
     text-align: center;
     margin-top: 2px red;
-    &__now{
-    }
-    &__past{
-    }
-  }
-  &__menu{
-
   }
   }
 }
 
-.switch-nav{
-  height: 72px;
-  font-size: 16px;
-  font-weight: bold;
-  width: 50%;
-  background-color: white;
+.lists-items{
+  li{
+    border-top: 1px solid #eeeeee;
+    background-color: white;
+    padding: 16px;
+    a{
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+  }
 }

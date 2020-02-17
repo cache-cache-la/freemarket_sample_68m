@@ -6,7 +6,7 @@
       クレジットカード情報入力
     = form_with(url: "#", local: true, method: :post, class: "card-form") do |form|
       .card-form__num
-        %label
+        %label.card-nav
           カード番号
         %span.must
           必須
@@ -14,7 +14,7 @@
       .card-form__image
       =image_tag "card.png"
       .card-form__dead
-        %label
+        %label.card-nav
           有効期限
         %span.must
           必須
@@ -28,7 +28,7 @@
             %span.day
             年
       .card-form__code
-        %label
+        %label.card-nav
           セキュリティーコード
         %span.must
           必須

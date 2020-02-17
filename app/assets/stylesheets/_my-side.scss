@@ -1,16 +1,11 @@
 .my-side{
   width: 280px;
   margin-right: 40px;
-  &__lists{
-  }
-  
   &__mid{
+    margin-top: 40px;
     &__nav{
     font-size: 160px;
     }
-    &__items{
-    }
-    margin-top: 40px;
   }
   
   &__btm{
@@ -19,19 +14,17 @@
       font-weight: bolder;
       margin-top: 40px;
     }
-    &__config{
-    }
   }
 }
-
-li{
-  border-bottom: 1px solid #eeeeee;
-  background-color: white;
-  padding: 16px;
-}
-
-a{
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
+.lists-items{
+  li{
+    border-top: 1px solid #eeeeee;
+    background-color: white;
+    padding: 16px;
+    a{
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+  }
 }
