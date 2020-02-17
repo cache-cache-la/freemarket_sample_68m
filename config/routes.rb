@@ -4,4 +4,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root "top#index"
+  get 'logout/index'
+  resources :user, only:[:index, :edit, :destroy]
 end
