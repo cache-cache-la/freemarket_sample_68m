@@ -63,7 +63,7 @@
 }
 
 .breadCrumbs{
-  font-size: 20px;
+  font-size: 12px;
   display: flex;
   width: 100%;
   margin-left: 300px;
@@ -87,15 +87,15 @@
 }
 
 .main{
-  height: 2000px;
-  width: 1000px;
+  height: 100%;
+  width: 100%;
   background-color: yellow;
   margin: 0 auto;
   padding-top: 50px;
   
   &__top-content{
     width: 800px;
-    height: 1900px;
+    height: 1600px;
     background-color: pink;
     margin: 0 auto;
 
@@ -107,6 +107,7 @@
       &__name{
         text-align: center;
         font-size: 20px;
+        font-weight: bold;
       }
 
       &__body{
@@ -132,6 +133,8 @@
 
       &__price{
         text-align: center;
+        font-weight: bold;
+        font-size: 40px;
       }
 
       &__description{
@@ -161,22 +164,68 @@
         }
       }
 
+      &__optionalArea{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+
+        &__favorite{
+          border:1px solid;
+          border-radius: 5rem;
+          padding: 10px;
+          // color: #3CCACE;
+          
+
+        }
+
+        &__report{
+          border:1px solid;
+          border-radius: 0.5rem;
+          padding: 10px;
+
+
+        }
+      }
+
+    }
+    &__commentBox{
+      margin-top: 20px;
+      width: 800px;
+      height: 200px;
+
+
+      &__caution{
+        width: 800px;
+        height: 60px;
+        background-color: white;
+        padding-left: 10px;
+        margin-top: 10px;
+        
+      }
+
+  
+  
+  
+     
     }
 
   }
 
-  &__commentBox{
-    
+  &__links{
+   display: flex;
+   justify-content: space-between;
 
-
-   
+   li{
+     list-style: none;
+   }
   }
+
+  
 }
 
 #_comment{
   width: 800px;
   height: 100px;
-  
 }
 
 #send{
@@ -187,7 +236,9 @@
   font-size: 20px;
   border-radius: 10em;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-bottom: solid 4px gray;
 }
 
 

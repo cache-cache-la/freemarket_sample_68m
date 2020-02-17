@@ -63,14 +63,25 @@
             %th 発送日の目安
             %td 1~2日で発送
       .main__top-content__itemBox__optionalArea
-        = icon('fas', 'cog', class:"side-bar__user-name__user-box__menu__icon2")
-
+        .main__top-content__itemBox__optionalArea__favorite
+          ★ お気に入り 0
+        .main__top-content__itemBox__optionalArea__report
+          🏴不適切な商品の通報
     .main__top-content__commentBox
       = form_for "#" do |f|
         = f.text_field :comment
+        .main__top-content__commentBox__caution
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
-  .links
+      
+  .main__links
+    %li <前の商品
+    %br
+    %li 次の商品>
   .relatedItems
+    メンズをもっと見る
 
 
 
