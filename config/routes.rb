@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+  resource :items, only: [:show]
   root "top#index"
   get 'logout/index'
   resources :user, only:[:index, :edit, :destroy]
