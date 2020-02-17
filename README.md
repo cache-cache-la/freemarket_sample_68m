@@ -3,7 +3,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false, unique: true, default: ""|
 |password|string|null: false, default: ""|
 |lastname|string|null: false|
@@ -106,14 +106,12 @@
 - belongs_to :user
 
 
-## billing_informationテーブル
+## creditCardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|int|null: false|
-|deadline_month|int|null: false|
-|deadline_year|int|null: false|
-|security_code|int|null: false|
-|user_id|references|foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|costomer_id|integer|null: false|
+|card_id|integer|null: false|
 
 ### Association
 - belongs_to :user
