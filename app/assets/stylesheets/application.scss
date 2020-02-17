@@ -1,9 +1,10 @@
 @import "reset";
+@import "top";
+@import "font-awesome-sprockets";
+@import "./font-awesome";
+@import "sessions.scss";
 @import "mypages/my-contents";
 @import "./my-side";
 @import "mypages/my-main";
 @import "mypages/my-logout";
 @import "mypages/my-card";
-
-
-
