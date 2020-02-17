@@ -76,12 +76,13 @@
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
       
-  .main__links
-    %li <前の商品
-    %br
-    %li 次の商品>
-  .relatedItems
-    メンズをもっと見る
+    .main__top-content__links
+      %li 
+        = link_to "<前の商品","#"
+      %li 
+        = link_to "次の商品>","#"
+    .main__top-content__relatedItems
+      = link_to "メンズをもっと見る","#"
 
 
 

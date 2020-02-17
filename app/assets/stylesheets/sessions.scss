@@ -88,7 +88,7 @@
 
 .main{
   height: 100%;
-  width: 100%;
+  width: 900px;
   background-color: yellow;
   margin: 0 auto;
   padding-top: 50px;
@@ -208,17 +208,25 @@
   
      
     }
+    &__links{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+   
+      li{
+        list-style: none;
+      }
+     }
+
+     &__relatedItems{
+       font-size: 30px;
+       color: #3CCACE;
+       margin-top: 30px;
+     }
 
   }
 
-  &__links{
-   display: flex;
-   justify-content: space-between;
-
-   li{
-     list-style: none;
-   }
-  }
+  
 
   
 }
