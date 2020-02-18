@@ -33,7 +33,6 @@ categories=[
                                       {level2:"その他",level2_children:["美容"]}
                                      ]
   },
-  
   {level1:"ベビー・キッズ",level1_children:[
                                       {level2:"ベビー服(女の子用) ~95cm",level2_children:["トップス","アウター","パンツ","スカート","ワンピース","ベビードレス","おくるみ","下着/肌着","パジャマ","ロンパース","その他"]},
                                       {level2:"ベビー服(男の子用) ~95cm",level2_children:["トップス","アウター","パンツ","おくるみ","下着/肌着","パジャマ","ロンパース","その他"]},
@@ -194,17 +193,3 @@ categories.each.with_index(1) do |category,i|
         end
     end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
