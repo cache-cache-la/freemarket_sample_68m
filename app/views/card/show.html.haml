@@ -1,5 +1,4 @@
--# あとでコメントアウトのファイルを呼び出します。
--# = render "header"
+= render "shared/header"
 .my-contents
   = render "mypages/my-side"
   .add-card
@@ -19,5 +18,9 @@
       .add-card__contents__way
         = link_to "#", class: "pay-way" do
           支払い方法について
--# = render "banner"
--# = render "footer"
+%aside.banner
+  = render "shared/banner"
+.footer
+  = render "shared/footer"
+.sell-btn
+  = render "shared/sell-btn"
