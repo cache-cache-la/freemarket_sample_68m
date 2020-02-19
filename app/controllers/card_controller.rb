@@ -1,4 +1,5 @@
 class CardController < ApplicationController
+
   def index
   end
 
@@ -7,4 +8,3 @@ class CardController < ApplicationController
 
   def show
   end
-end
