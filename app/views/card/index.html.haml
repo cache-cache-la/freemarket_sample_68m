@@ -1,0 +1,17 @@
+-# あとでコメントアウトのファイルを呼び出します
+-# = render "header"
+.my-contents
+  = render "mypages/my-side"
+  .add-card
+    .add-card__head
+      支払い方法
+    .add-card__contents
+      .add-card__contents__form
+        = form_with(url: "#", local: true, method: :post, class: "add-card-form") do |form|
+          .add-form__btn
+            = form.submit "クレジットカードを登録する", class: "add-btn"
+      .add-card__contents__way
+        = link_to "#", class: "pay-way" do
+          支払い方法について
+-# = render "banner"
+-# = render "footer"
