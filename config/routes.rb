@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get "mypages/index"
   get "mypages/logout"
   devise_for :users, controllers: {
+    registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
   resource :items, only: [:show]

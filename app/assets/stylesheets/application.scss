@@ -3,7 +3,11 @@
 @import "top";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "sessions.scss";
+@import "header";
+@import "banner";
+@import "footer";
+@import "registrations";
+@import "sessions";
 @import "mypages/my-contents";
 @import "my-side";
 @import "mypages/my-main";
@@ -11,8 +15,5 @@
 @import "card/show";
 @import "card/new";
 @import "card/index";
-@import "header";
-@import "banner";
-@import "footer";
 @import "purchase";
 @import "sell-btn";
