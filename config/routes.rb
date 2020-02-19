@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'mypages/index'
   get "mypages/logout"
-  get "mypages/card"
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -9,4 +8,5 @@ Rails.application.routes.draw do
   root "top#index"
   get 'logout/index'
   resources :user, only:[:index, :edit, :destroy]
+  resources :card, only:[:index, :new, :show]
 end
