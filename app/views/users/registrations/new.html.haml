@@ -1,6 +1,6 @@
 .single-container
   .single-header
-    %h1 ロゴ
+    = render "users/shared/header-logo"
   .single-main
     .single-main__box
       %h2.single-main__title 会員情報入力
@@ -47,4 +47,4 @@
           .actions
             = f.submit "新規登録", class: "submit-btn"
   .single-footer
-    %h2 ロゴ
+    = render "users/shared/footer-logo"
