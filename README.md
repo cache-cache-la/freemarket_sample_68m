@@ -53,8 +53,8 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|ancestry|string|null: false, add_index|
+|name|string||
+|ancestry|string||
 
 ### Association
 - has_many :items

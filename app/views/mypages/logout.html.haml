@@ -1,9 +1,12 @@
--# あとでコメントアウトのファイルを呼び出します
--# = render "header"
+= render "shared/header"
 .my-contents
   = render "my-side"
   .my-logout
     .my-logout__btn
-      = link_to "ログアウト", destroy_user_session_path, method: 'delete', class: "logout-btn"
--# = render "banner"
--# = render "footer"
+      = link_to "ログアウト", method: 'delete', class: "logout-btn"
+%aside.banner
+  = render "shared/banner"
+.footer
+  = render "shared/footer"
+.sell-btn
+  = render "shared/sell-btn"

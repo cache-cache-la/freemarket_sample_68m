@@ -1,7 +1,11 @@
 -# あとでコメントアウトファイルを呼び出します
--# = render "header"
+= render "shared/header"
 .my-contents
   = render "my-side"
   = render "my-main"
--# = render "banner"
--# = render "footer"
+%aside.banner
+  = render "shared/banner"
+.footer
+  = render "shared/footer"
+.sell-btn
+  = render "shared/sell-btn"

@@ -1,5 +1,4 @@
--# あとでコメントアウトのファイルを呼び出します
--# = render "header"
+= render "shared/header"
 .my-contents
   = render "mypages/my-side"
   .my-card
@@ -39,5 +38,9 @@
             カード裏面の番号とは?
       .my-form__add
         = form.submit "追加する", class: "add-btn"
--# = render "banner"
--# = render "footer"
+%aside.banner
+  = render "shared/banner"
+.footer
+  = render "shared/footer"
+.sell-btn
+  = render "shared/sell-btn"
