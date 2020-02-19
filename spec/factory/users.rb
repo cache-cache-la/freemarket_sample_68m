@@ -1,9 +1,10 @@
 FactoryBot.define do
 
+  #各項目の値が入力された状態のインスタンス
   factory :user do
     nickname              {"aいuえo1"}
     email                 {"kkk@gmail.com"}
-    encrypted_password    {"aaa111"}
+    password              {"aaa111"}
     lastname              {"安倍"}
     firstname             {"一郎"}
     lastname_kana         {"アベ"}
