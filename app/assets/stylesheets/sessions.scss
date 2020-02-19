@@ -1,0 +1,242 @@
+.header-logo{
+  text-align: center;
+
+  img{
+    height: 100px;
+  }
+}
+
+
+.all-body{
+  height: 550px;
+  width: 800px;
+  background-color:lightcyan;
+  margin: 0 auto;
+
+.form-field{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#user_email{
+  width: 500px;
+  font-size: 20px;
+  background-color: aqua;
+}
+
+#user_password{
+  width: 500px;
+  font-size: 20px;
+  background-color: aqua;
+}
+
+.actions{
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 30px;
+
+  &__submit{
+    display: block;
+    width: 500px;
+    height: 60px;
+    background-color: #DEB887;
+    cursor: pointer;
+    margin: 0 auto;
+    color: white;
+    margin-bottom: 30px;
+  }
+}
+
+.devise-function{
+  margin-left: 150px;
+
+}
+}
+
+.footer-logo{
+  text-align: center;
+
+  img{
+    width: 150px;
+  }
+}
+
+// ヘッダー下部分
+
+.breadCrumbs{
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  margin-left: 200px;
+  height: 50px;
+  width: 1000px;
+  line-height: 50px;
+}
+
+//メイン部分
+
+.main{
+  height: 100%;
+  width: 100%;
+  background-color: lightcyan;
+  margin: 0 auto;
+  padding-top: 50px;
+  
+  &__top-content{
+    width: 800px;
+    height: 1600px;
+    margin: 0 auto;
+    background-color: white;
+
+    &__itemBox{
+      height:1200px ;
+      width: 800px;
+
+      &__name{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      //イメージ部分↓
+
+      &__body{
+        height:400px ;
+        width: 800px;
+        
+        &__image{
+          display: block;
+          width: 400px;
+          height: 400px;
+          margin: 0 auto;
+        }
+      }
+
+      &__type{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        height: 200px;
+        width: 800px;
+      }
+
+      //イメージ部分↑
+
+      &__price{
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+      }
+
+      &__description{
+        text-align: center;
+      }
+
+      &__detail{
+       margin-bottom: 30px;
+       font-size: 20px;
+      }
+
+      //テーブル部分↓
+
+      &__table{
+        display: block;
+        font-size: 20px;
+        width: 800px;
+        margin: 0 auto;
+
+        th{
+          width: 200px;
+          text-align: center;
+          background-color: #EEDDEE;
+        }
+
+        td{
+          width: 600px;
+          padding-left: 10px;
+        }
+      }
+      //テーブル部分↑
+
+      &__optionalArea{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+
+        &__favorite{
+          border:1px solid;
+          border-radius: 5rem;
+          padding: 10px;
+          color: #3CCACE;
+          
+
+        }
+
+        &__report{
+          border:1px solid;
+          border-radius: 0.5rem;
+          padding: 10px;
+
+
+        }
+      }
+
+    }
+    &__commentBox{
+      margin-top: 20px;
+      width: 800px;
+      height: 200px;
+
+
+      &__caution{
+        width: 800px;
+        height: 60px;
+        padding-left: 10px;
+        margin-top: 10px;
+        
+      }
+     
+    }
+    &__links{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+   
+      li{
+        list-style: none;
+      }
+     }
+
+     &__relatedItems{
+       font-size: 30px;
+       color: #3CCACE;
+       margin-top: 30px;
+       text-decoration: none;
+     }
+
+  }
+}
+
+//入力フォームと送信ボタンのclassが効かなかったので、id設定しました。
+
+#_comment{
+  width: 800px;
+  height: 100px;
+}
+
+#send{
+  display: block;
+  width: 300px;
+  height: 50px;
+  background-color: #EEDDEE;
+  font-size: 20px;
+  border-radius: 10em;
+  margin: 0 auto;
+  margin-top: 10px;
+  cursor: pointer;
+  border-bottom: solid 4px gray;
+}
+
+
+

@@ -1,0 +1,30 @@
+.my-side{
+  width: 280px;
+  margin-right: 40px;
+  &__mid{
+    margin-top: 40px;
+    &__nav{
+    font-size: 160px;
+    }
+  }
+  
+  &__btm{
+    &__nav{
+      font-size: 60px;
+      font-weight: bolder;
+      margin-top: 40px;
+    }
+  }
+}
+.lists-items{
+  li{
+    border-top: 1px solid #eeeeee;
+    background-color: white;
+    padding: 16px;
+    a{
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+  }
+}

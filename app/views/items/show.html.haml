@@ -1,0 +1,93 @@
+.breadCrumbs
+  .breadCrumbs__big-category
+    = link_to "FURIMA", "#"
+    >
+  .breadCrumbs__middle-category
+    = link_to "メンズ", "#"
+    >
+  .breadCrumbs__small-category
+    = link_to "ノーカラージャケット"
+    >
+  .breadCrumbs__item-detail
+    product2
+
+
+.main
+  .main__top-content
+    .main__top-content__itemBox
+      .main__top-content__itemBox__name
+        product2
+      .main__top-content__itemBox__body
+        = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class:"main__top-content__itemBox__body__image"
+      .main__top-content__itemBox__type
+        %li 
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
+        %li 
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
+        %li 
+          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
+      .main__top-content__itemBox__price
+        ¥20000
+      .main__top-content__itemBox__description
+        （税込）送料込み
+      .main__top-content__itemBox__detail
+        product2
+      .main__top-content__itemBox__table
+        %table{border: "1"}
+          %tr
+            %th 出品者
+            %td hoge
+          %tr
+            %th カテゴリー
+            %td 
+              = link_to "メンズ","#"
+              %br
+              = link_to "ジャケット/アウター","#"
+              %br
+              = link_to "ノーカラージャケット","#"
+          %tr
+            %th ブランド
+            %td
+          %tr
+            %th 商品サイズ
+            %td
+          %tr
+            %th 商品の状態
+            %td 新品/未使用
+          %tr
+            %th 配送料の負担
+            %td 着払い（購入者負担）
+          %tr
+            %th 発送元の地域
+            %td 青森県
+          %tr
+            %th 発送日の目安
+            %td 1~2日で発送
+      .main__top-content__itemBox__optionalArea
+        .main__top-content__itemBox__optionalArea__favorite
+          ★ お気に入り 0
+        .main__top-content__itemBox__optionalArea__report
+          🏴不適切な商品の通報
+    .main__top-content__commentBox
+      = form_for "#" do |f|
+        = f.text_field :comment
+        .main__top-content__commentBox__caution
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = f.submit "コメントする",id:"send"
+      
+    .main__top-content__links
+      %li 
+        = link_to "<前の商品","#"
+      %li 
+        = link_to "次の商品>","#"
+    .main__top-content__relatedItems
+      = link_to "メンズをもっと見る","#",style:"color:#3CCACE"
+
+
+
+
+  
+    
+

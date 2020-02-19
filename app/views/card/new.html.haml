@@ -1,0 +1,46 @@
+= render "shared/header"
+.my-contents
+  = render "mypages/my-side"
+  .my-card
+    .my-card__head
+      クレジットカード情報入力
+    = form_with(url: "#", local: true, method: :post, class: "card-form") do |form|
+      .card-form__num
+        %label.card-nav
+          カード番号
+        %span.must
+          必須
+      = form.text_field :number, class: "card-form__input-num",  placeholder: "半角英数のみ"
+      .card-form__image
+      =image_tag "card.png"
+      .card-form__dead
+        %label.card-nav
+          有効期限
+        %span.must
+          必須
+        .card-form__dead__selects
+          .select-month
+            = form.select :dead_month, [["01"], ["02"], ["03"], ["04"], ["05"], ["06"], ["07"], ["08"], ["09"], ["10"], ["11"], ["12"]], class: "card-form__dead"
+            %span.day
+            月
+          .select-year
+            = form.select :dead_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], class: "card-form__dead"
+            %span.day
+            年
+      .card-form__code
+        %label.card-nav
+          セキュリティーコード
+        %span.must
+          必須
+        = form.text_field :number, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号"
+        .my-card-q
+          = link_to "#", class: "back-num" do
+            カード裏面の番号とは?
+      .my-form__add
+        = form.submit "追加する", class: "add-btn"
+%aside.banner
+  = render "shared/banner"
+.footer
+  = render "shared/footer"
+.sell-btn
+  = render "shared/sell-btn"

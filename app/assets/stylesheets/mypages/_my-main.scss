@@ -1,0 +1,81 @@
+.my-main{
+  width: 700px;
+  &__user{
+    text-align: center;
+    height: 200px;
+    background-color:  #57CACE;
+    position: relative;
+    .user-link{
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translate(0, -50%);
+      color: #333;
+      .my-main__user__name{
+        font-weight: bold;
+      }
+      .my-main__user__items{
+        display: flex;
+        margin-left: 300px;
+
+        &__rep{
+          margin-right: 5px;
+        }
+      }
+    }
+  
+  &__switch{
+  display: flex;
+  text-align: center;
+  line-height: 72px;
+    .switch-nav{
+    height: 72px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 50%;
+    background-color: white;
+    }
+  }
+  &__menu{
+    a{
+      height: 100px;
+    }
+  }
+  }
+  
+  &__items{
+    font-size: 16px;
+    margin-top: 40px;
+    line-height: 72px;
+    background-color: white;
+    padding: 0 16px;
+    &__nav{
+    height: 72px;
+    }
+  &__switch{
+    display: flex;
+    line-height: 72px;
+    text-align: center;
+    margin-top: 2px red;
+  }
+  }
+}
+
+.lists-items{
+  li{
+    border-top: 1px solid #eeeeee;
+    background-color: white;
+    padding: 16px;
+    a{
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+  }
+}
