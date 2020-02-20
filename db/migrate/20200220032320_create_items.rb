@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :brand,    foreign_key: true
       t.references :status,   foreign_key: true
 
-      t.integer :saler_id
+      t.integer :seller_id
       t.integer :buyer_id
 
       t.timestamps

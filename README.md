@@ -28,7 +28,7 @@
 |category_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
 |status_id|references|foreign_key: true|
-|saler_id|integer||
+|seller_id|integer||
 |buyer_id|integer||
 
 ### Association

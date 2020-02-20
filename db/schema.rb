@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_032320) do
     t.bigint "category_id"
     t.bigint "brand_id"
     t.bigint "status_id"
-    t.integer "saler_id"
+    t.integer "seller_id"
     t.integer "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

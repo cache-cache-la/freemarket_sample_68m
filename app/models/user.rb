@@ -32,8 +32,8 @@ class User < ApplicationRecord
   has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
 
   #Userが現在売っている商品
-  has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
+  has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
 
   #Userが既に売った商品
-  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
 end
