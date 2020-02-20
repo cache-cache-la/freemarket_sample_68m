@@ -1,0 +1,132 @@
+hr{
+  border: rgb(226, 243, 243) 1px solid;
+}
+
+input,textarea{
+  max-width: 680px;
+  width: 100%;
+  padding: 10px 5px 10px;
+  border-radius: 1%;
+  margin: 10px 0;
+}
+
+select{
+  max-width: 680px;
+  width: 100%;
+  padding: 10px 5px 10px;
+  border-radius: 1%;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+p{
+  font-size: 14px;
+  color: gray;
+  opacity: 0.8;
+  margin: 0 5px 5px;
+}
+
+.sell-main{
+  width: 100%;
+  font-family: 'Arial';
+  .sell-main-board{
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    .sell-main-board_#sub{
+      .form{
+        padding: 0 5px;
+        background-color: whitesmoke;
+        .form-box{
+          padding-bottom: 10px;
+          .form-label{
+            label{
+              font-weight: bold;
+              font-size: 14px;
+              margin-left: 5px;
+            }
+            .must-section{
+              margin-left: 8px;
+              color: white;
+              background-color: red;
+              font-size: 12px;
+              font-family: 'Impact';
+              padding: 1.5px;
+            }
+          }
+          .form-textfield{
+            &__count{
+              span{
+                color: #888;
+                font-size: 13px;
+                line-height: 1.4em;
+                margin-left: 90%;
+              }
+            }
+          }
+        }
+        .price-box{
+          display: flex;
+          justify-content: space-between;
+          .price-label{
+            label{
+              font-weight: bold;
+              font-size: 14px;
+              margin-left: 5px;
+            }
+            .must-section{
+              margin-left: 8px;
+              color: white;
+              background-color: red;
+              font-size: 12px;
+              font-family: 'Impact';
+              padding: 1.5px;
+            }
+          }
+          .price-textfield{
+            display: flex;
+            .pre{
+              margin-right: 10px;
+              margin-top: 20px;
+            }
+          }
+        }
+        .buttons{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          .sell-button{
+            text-decoration: none;
+            background-color: #EA352D;
+            color: white;
+            font-size: 17px;
+            padding: 0 24px;
+            margin: 0 0 24px;
+            min-height: 48px;
+            line-height: 48px;
+          }
+          .clear-button{
+            text-decoration: none;
+            color: #222222;
+            background-color: #cccccc;
+            font-size: 17px;
+            padding: 0 24px;
+            min-height: 48px;
+            line-height: 48px;
+          }
+        }
+        h1{
+          font-size: 12px;
+          padding-bottom: 30px;
+          a{
+            text-decoration: none;
+            color: rgb(10, 131, 131);
+          }
+        }
+      }
+    }
+  }
+}
+
+

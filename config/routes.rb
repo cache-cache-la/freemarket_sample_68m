@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resource :items, only: [:show]
   root "top#index"
   get 'logout/index'
+  get 'sell/sell'
   resources :user, only:[:index, :edit, :destroy]
 end
