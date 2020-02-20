@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   }
   resource :items, only: [:show]
   root "top#index"
+  get 'logout/index'
+  get 'sell/sell'
   get "logout/index"
   get "items/purchase"
   # items/purchaseは画面を表示するための仮置きです
