@@ -110,7 +110,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|costomer_id|integer|null: false|
+|customer_id|integer|null: false|
 |card_id|integer|null: false|
 
 ### Association
