@@ -2,7 +2,7 @@ class Item < ApplicationRecord
 
   validates :name, :text, :price, presence: true
   
-
+  
   has_many :images
   accepts_nested_attributes_for :images
 

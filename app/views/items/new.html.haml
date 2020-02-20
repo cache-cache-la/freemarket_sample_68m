@@ -56,10 +56,11 @@
               %label ブランド
               %span.free-secton 任意
             .form-textfield
-              .form-textfield__input
-                %input{autocomplete: "off", name: "brandName", placeholder: "例）シャネル", type: "text", value: ""}
-            %ul.brand-resarch
-            -# JS使用予定
+              = fields_for :brand do |brand|
+                .form-textfield__input
+                = brand.text_field :name, placeholder: "例）シャネル", value: "", class: "input-default", type: "text"
+                %ul.brand-resarch
+                -# JS使用予定
           .form-box
             .form-label
               %label 商品の状態
