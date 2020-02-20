@@ -68,8 +68,6 @@ GEM
     capistrano-rbenv (2.1.6)
       capistrano (~> 3.1)
       sshkit (~> 1.3)
-    capistrano3-unicorn (0.2.1)
-      capistrano (~> 3.1, >= 3.1.0)
     capybara (3.31.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -108,6 +106,11 @@ GEM
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     ffi (1.12.2)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
@@ -316,11 +319,11 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rbenv
-  capistrano3-unicorn
   capybara (>= 2.15)
   carrierwave
   coffee-rails (~> 4.2)
   devise
+  factory_bot_rails
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
