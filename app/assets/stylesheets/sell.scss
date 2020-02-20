@@ -10,6 +10,14 @@ input,textarea{
   margin: 10px 0;
 }
 
+.question-img{
+  fill: rgb(0, 149, 238);
+  height: 16px;
+  margin-left: 4px;
+  vertical-align: -3px;
+  width: 16px;
+}
+
 select{
   max-width: 680px;
   width: 100%;
@@ -29,6 +37,7 @@ p{
 .sell-main{
   width: 100%;
   font-family: 'Arial';
+  margin-bottom: 20px;
   .sell-main-board{
     max-width: 700px;
     width: 100%;
@@ -118,7 +127,7 @@ p{
         }
         h1{
           font-size: 12px;
-          padding-bottom: 30px;
+          padding: 30px 10px;
           a{
             text-decoration: none;
             color: rgb(10, 131, 131);
