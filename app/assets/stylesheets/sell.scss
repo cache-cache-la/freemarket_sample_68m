@@ -57,10 +57,20 @@ p{
             .must-section{
               margin-left: 8px;
               color: white;
-              background-color: red;
+              background-color: rgb(82, 190, 190);
               font-size: 12px;
               font-family: 'Impact';
-              padding: 1.5px;
+              padding: 1.6px;
+              border-radius: 10%;
+            }
+            .free-secton{
+              margin-left: 8px;
+              color: white;
+              background-color: rgb(60, 63, 63);
+              font-size: 12px;
+              font-family: 'Impact';
+              padding: 1.8px;
+              border-radius: 10%;
             }
           }
           .form-textfield{
@@ -86,10 +96,11 @@ p{
             .must-section{
               margin-left: 8px;
               color: white;
-              background-color: red;
+              background-color: rgb(82, 190, 190);
               font-size: 12px;
               font-family: 'Impact';
-              padding: 1.5px;
+              padding: 1.6px;
+              border-radius: 10%;
             }
           }
           .price-textfield{
@@ -107,7 +118,7 @@ p{
           text-align: center;
           .sell-button{
             text-decoration: none;
-            background-color: #EA352D;
+            background-color: rgb(82, 190, 190);
             color: white;
             font-size: 17px;
             padding: 0 24px;
@@ -130,7 +141,7 @@ p{
           padding: 30px 10px;
           a{
             text-decoration: none;
-            color: rgb(10, 131, 131);
+            color: rgb(82, 190, 190);
           }
         }
       }
