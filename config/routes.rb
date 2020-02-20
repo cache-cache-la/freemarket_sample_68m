@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   }
   resource :items
   root "items#index"
-  # root "top#index"
   get 'logout/index'
   get 'sell/sell'
   get "logout/index"
