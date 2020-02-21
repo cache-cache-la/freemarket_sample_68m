@@ -1,0 +1,21 @@
+.card-inform{ 
+  width: 450px;
+  height: 64px;
+  position: relative;
+  padding-left: 180px;
+  .card-number{
+  margin: 8px 0 0;
+  }
+  .card-dead{
+  margin: 8px 0 0;
+  }
+  .delete-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 6px;
+  border-radius: 3px;
+  border: 1px solid #ea352d;
+  color: #ea352d;
+  }
+}

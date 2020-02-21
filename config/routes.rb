@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get "mypages/index"
+  get "mypages/logout"
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+  resource :items
+  root "items#index"
+  get 'logout/index'
+  get 'sell/sell'
+  get "logout/index"
+  get "items/purchase"
+  # items/purchaseは画面を表示するための仮置きです
+  resources :user, only:[:index, :edit, :destroy]
+  resources :card, only:[:index, :new, :show]
 end

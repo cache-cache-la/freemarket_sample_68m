@@ -1,0 +1,161 @@
+.purchase {
+  height: 900px;
+  width: 700px;
+  background-color: #ebf6f7;
+  margin: 50px auto;
+
+  a {
+    text-decoration: none;
+    color: steelblue;
+  }
+
+  &__title {
+    height: 100px;
+    line-height: 100px;
+
+    h2 {
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    border-top: solid 1px lightgray;
+    border-bottom: solid 1px lightgray;
+    height: 140px;
+
+    &__box {
+      display: flex;
+      height: 80px;
+      width: 350px;
+      margin: 30px auto;
+
+      &__image {
+        width: 80px;
+        margin-right: 20px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      &__description {
+        letter-spacing: 1px;
+        width: 250px;
+
+        .item__title {
+          padding-bottom: 10px;
+        }
+        .item__price {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &__data {
+    height:630px;
+    width: 350px;
+    margin: 30px auto;
+
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px lightgray;
+      height: 100px;
+      line-height: 70px;
+
+      &__title {
+        font-size: 18px;
+      }
+      &__amount {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    }
+    &__payment {
+      border-bottom: solid 1px lightgray;
+      height: 200px;
+      padding: 30px 0;
+
+      &__title {
+        display: flex;
+        justify-content: space-between;
+
+        .title__text {
+          font-size: 15px;
+        }
+      }
+      &__list {
+        margin-top: 10px;
+
+        .card__title {
+          margin-top: 5px;
+        }
+        .card__number {
+          margin-top: 5px;
+        }
+        .card__limit {
+          margin-top: 5px;
+        }
+        .card__type {
+          margin-top: 5px;
+        }
+      }
+    }
+    .purchase__data__shipping {
+      border-bottom: solid 1px lightgray;
+      height: 200px;
+      padding: 30px 0;
+
+      .purchase__data__shipping__title {
+        display: flex;
+        justify-content: space-between;
+
+        .title__text {
+          font-size: 15px;
+        }
+      }
+      .purchase__data__shipping__box {
+        margin-top: 10px;
+
+        .postcode {
+          margin-top: 5px;
+        }
+        .address {
+          margin-top: 5px;
+        }
+        .buyer {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .purchase__submit {
+      margin-top: 30px;
+      height: 100px;
+      text-align: center;
+
+      &__btn {
+        width: 350px;
+        height: 50px;
+        line-height: 50px;
+        background-color: turquoise;
+        cursor: pointer;
+        margin: 0 auto;
+        color: white;
+      }
+      &__none {
+        width: 350px;
+        height: 50px;
+        line-height: 50px;
+        background-color: gray;
+        cursor: not-allowed;
+        margin: 0 auto;
+        color: white;
+      }
+    }
+  }
+}
