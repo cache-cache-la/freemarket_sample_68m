@@ -242,10 +242,14 @@
 
 
 #image-box{
-  width: 600px;
+  width: 680px;
   height: 200px;
   background-color: #FFEEFF;
   display: flex;
+  margin: 0 auto;
+  border: dashed 4px #8ec6ff;
+  margin-bottom: 30px;
+
 
   input{
     width: 60px;
@@ -285,7 +289,7 @@
 }
 
 .js-file_group{
-  margin-top: 130px;
+  margin-top: 120px;
   margin-left: 20px;
   margin-right: 20px;
   height: 30px;

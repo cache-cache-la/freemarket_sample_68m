@@ -3,7 +3,6 @@
     .form-label
       %label 出品画像
       %span.must-section 必須
-  最大10枚までアップロードできます
   #image-box
     #previews
       - if @item.persisted?
@@ -20,4 +19,3 @@
       .js-file_group{"data-index" => "#{@item.images.count}"}
         = file_field_tag :picture, name: "item[images_attributes][#{@item.images.count}][picture]", class: 'js-file'
         .js-remove delete
-  = f.submit
