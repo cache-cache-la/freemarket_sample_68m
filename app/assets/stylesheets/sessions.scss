@@ -246,19 +246,20 @@
   height: 200px;
   background-color: #FFEEFF;
   display: flex;
-  
+
   input{
-    width: 30px;
-    height: 0.001px;
+    width: 60px;
+    height: 30px;
     display: inline-block;
     cursor: pointer;
-    border: 15px solid;
+    border: 2px solid;
     border-radius: 10mm;
     background-color:#ccc;
-    opacity: 0.1;
+    opacity: 0.01;
+    margin-top:2px;
   }
 
-  #multi-previews{
+  #previews{
     display: flex;
     position: absolute;
   }

@@ -1,6 +1,11 @@
 = form_for @item do |f|
+  .form-box
+    .form-label
+      %label 出品画像
+      %span.must-section 必須
+  最大10枚までアップロードできます
   #image-box
-    #multi-previews
+    #previews
       - if @item.persisted?
         - @item.images.each_with_index do |image, i|
           = image_tag image.picture.url, data: { index: i }, width: "100", height: '100'
