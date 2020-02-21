@@ -1,15 +1,17 @@
-.breadCrumbs
-  .breadCrumbs__big-category
-    = link_to "FURIMA", "#"
-    >
-  .breadCrumbs__middle-category
-    = link_to "メンズ", "#"
-    >
-  .breadCrumbs__small-category
-    = link_to "ノーカラージャケット"
-    >
-  .breadCrumbs__item-detail
-    product2
+.header
+  = render 'shared/header'
+  -# .breadCrumbs
+  -#   .breadCrumbs__big-category
+  -#     = link_to "FURIMA", "#"
+  -#     >
+  -#   .breadCrumbs__middle-category
+  -#     = link_to "メンズ", "#"
+  -#     >
+  -#   .breadCrumbs__small-category
+  -#     = link_to "ノーカラージャケット"
+  -#     >
+  -#   .breadCrumbs__item-detail
+  -#     product2
 
 
 .main
@@ -84,6 +86,10 @@
         = link_to "次の商品>","#"
     .main__top-content__relatedItems
       = link_to "メンズをもっと見る","#",style:"color:#3CCACE"
+.footer
+  = render "shared/footer"
+.sell-btn
+  = render "shared/sell-btn"
 
 
 
