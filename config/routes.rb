@@ -5,8 +5,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+
   resource :items, only: [:new, :create, :show]
   root "top#index"
+  resource :items
+  root "items#index"
   get 'logout/index'
   get "logout/index"
   get "items/purchase"
