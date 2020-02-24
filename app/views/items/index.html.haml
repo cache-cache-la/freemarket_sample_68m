@@ -1,4 +1,220 @@
-= link_to '出品', new_items_path
--# %br/
--# .contents
--#   = render @items
+.body
+  .header
+    = render 'shared/header'
+  .board
+    .main-visual
+      .main-visual__content
+        %h1.content__title
+          人生を変えるフリマアプリ
+        %p.content__text
+          FURIMAは誰でもカンタンに出品・購入できる
+          %br.text
+          フリマアプリです
+        = link_to "#", class:"btn" do
+          .content__btn
+            .app
+              = image_tag "/App_Store.png", alt: 'intro-img1'
+            .google
+              = image_tag "/google-play-badge.png", alt: 'intro-img1'
+      .main-visual__picture
+    .introdaction
+      %h2.introduction__title
+        FURIMAが選ばれる３つの理由
+      %ul.introduction__lists
+        %li.list1
+          .list__image
+            %span.number
+              1
+            = image_tag "/pict-reason-01.jpg", alt: 'intro-img1'
+          .list__text
+            %span 3分
+            ですぐに出品
+          .list__sentence
+            スマホで入力するだけで
+            %br
+            簡単にできる！
+        %li.list2
+          .list__image
+            %span.number
+              2
+            = image_tag "/pict-reason-02.jpg", alt: 'intro-img2'
+          .list__text
+            %span シンプル
+            で使いやすい
+          .list__sentence
+            めんどくさい入力は必要なく、
+            %br
+            検索も購入もスムーズ！
+        %li.list3
+          .list__image
+            %span.number
+              3
+            = image_tag "/pict-reason-03.jpg", alt: 'intro-img3'
+          .list__text
+            手数料
+            %span 業界最安
+          .list__sentence
+            最大3%でお得に購入！
+    .download
+      .download__inner
+        .download__inner__title
+          会員数日本一位
+        %p.download__inner__text
+          FURIMAは、フリマアプリで最も人気。
+          %br
+          出品・購入回数も業界最多です！
+          %br
+          ほしかったあの商品に出会えるかもしれません。
+        .download__inner__btn
+          = link_to "#" do
+            = image_tag "/App_Store.png", class: "app"
+          = link_to "#" do
+            = image_tag "/google-play-badge.png", class: "google"
+    .features
+      .features__head
+        FURIMAの特徴
+      .features__images
+        %section.image
+          %figure.image__img
+            = image_tag "/icon-01.png"
+          %h3.image__text
+            簡単に売り買いできる
+          %p.image__detail
+            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        %section.image
+          %figure.image__img
+            = image_tag "/icon-03.png"
+          %h3.image__text
+            売上金は即日振込みに対応
+          %p.image__detail
+            午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+        %section.image
+          %figure.image__img
+            = image_tag "/icon-04.png"
+          %h3.image__text
+            様々な支払いに対応
+          %p.image__detail
+            お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+    %span.picup-category
+      .head
+        ピックアップカテゴリー
+      .box
+        .box__head
+          新規投稿商品
+        .box__lists
+          - @items.each do |item|
+            = link_to "/items/#{item.id}", class: "list" do
+              %figure.list__img
+                -# = image_tag item.image
+              .list__body
+                .name
+                  = item.name
+                .details
+                  %ul
+                    %li
+                      = item.price
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            = link_to "#" do
+              %figure.list__img
+                = image_tag "/animal2.png"
+              .list__body
+                .name
+                  product2
+                .details
+                  %ul
+                    %li
+                      20000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            = link_to "#" do
+              %figure.list__img
+                = image_tag "/animal3.png"
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+    %span.picup-category
+      .head
+        ピックアップカテゴリー
+      .box
+        .box__head
+          = link_to "#" do
+            新規投稿商品
+        .box__lists
+          .list
+            = link_to "#" do
+              %figure.list__img
+                = image_tag "/animal1.png"
+              .list__body
+                .name
+                  product1
+                .details
+                  %ul
+                    %li
+                      10000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            = link_to "#" do
+              %figure.list__img
+                = image_tag "/animal2.png"
+              .list__body
+                .name
+                  product2
+                .details
+                  %ul
+                    %li
+                      20000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+          .list
+            = link_to "#" do
+              %figure.list__img
+                = image_tag "/animal3.png"
+              .list__body
+                .name
+                  product3
+                .details
+                  %ul
+                    %li
+                      30000円
+                    %li
+                      %i.favorite-icon
+                        = icon('fas', 'star')
+                        0
+                  %p
+                    (税込)
+  %aside.banner
+    = render 'shared/banner'
+  .footer
+    = render 'shared/footer'
+  .sell-btn
+    = render 'shared/sell-btn'
