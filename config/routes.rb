@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   get "items/purchase"
   # items/purchaseは画面を表示するための仮置きです
   resources :user, only:[:index, :edit, :destroy]
-  resources :card, only:[:index, :new, :show]
+  resources :card, only: [:new, :show] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+      post 'delete', to: 'card#delete'
+    end
+  end
 end

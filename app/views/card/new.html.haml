@@ -4,13 +4,13 @@
   .my-card
     .my-card__head
       クレジットカード情報入力
-    = form_with(url: "#", local: true, method: :post, class: "card-form") do |form|
+    = form_with model: @card, url: '/card/pay/', method: :POST, class: "card-form", html: { name: 'inputForm' } do |form|
       .card-form__num
         %label.card-nav
           カード番号
         %span.must
           必須
-      = form.text_field :number, class: "card-form__input-num",  placeholder: "半角英数のみ"
+      = form.text_field :number, class: "card-form__input-num",  placeholder: "半角英数のみ", id:"card_number",maxlength: "16"
       .card-form__image
       =image_tag "card.png"
       .card-form__dead
@@ -20,11 +20,11 @@
           必須
         .card-form__dead__selects
           .select-month
-            = form.select :dead_month, [["01"], ["02"], ["03"], ["04"], ["05"], ["06"], ["07"], ["08"], ["09"], ["10"], ["11"], ["12"]], class: "card-form__dead"
+            = form.select :exp_month, [["01"], ["02"], ["03"], ["04"], ["05"], ["06"], ["07"], ["08"], ["09"], ["10"], ["11"], ["12"]], class: "card-form__dead", id:"exp_month"
             %span.day
             月
           .select-year
-            = form.select :dead_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], class: "card-form__dead"
+            = form.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], class: "card-form__dead", id:"exp_year"
             %span.day
             年
       .card-form__code
@@ -32,12 +32,12 @@
           セキュリティーコード
         %span.must
           必須
-        = form.text_field :number, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号"
+        = form.text_field :number, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号", id: "cvc"
         .my-card-q
           = link_to "#", class: "back-num" do
             カード裏面の番号とは?
       .my-form__add
-        = form.submit "追加する", class: "add-btn"
+        = form.submit "追加する", class: "add-btn",id: "token_submit"
 %aside.banner
   = render "shared/banner"
 .footer

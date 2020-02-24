@@ -6,7 +6,9 @@
       支払い方法
     .add-card__contents
       .add-card__contents__form
-        = form_with(url: "#", local: true, method: :post, class: "add-card-form") do |form|
+        -# カード詳細ページを表示させたいので追加ボタンは一時的にコメントアウト
+        -# - if @card.present?
+        .add-card-form
           .card-inform
             .card-logo
               = image_tag "viza.png"
@@ -14,7 +16,13 @@
               ************2020
             .card-dead
               01/20
-            = form.submit "削除する", class: "delete-btn"
+            = link_to delete_card__path, method: :delete, class: "delete-btn" do
+              削除する
+        -# - else
+        -#   .add-card-form
+        -#     .add-form__btn
+        -#       = link_to new_card_path, class: "add-btn", id:"regist-btn" do
+        -#         クレジットカードを登録する
       .add-card__contents__way
         = link_to "#", class: "pay-way" do
           支払い方法について
