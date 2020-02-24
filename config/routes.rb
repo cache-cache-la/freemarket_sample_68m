@@ -17,11 +17,6 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
-  resources :items, only: [:show]
-  root "items#index"
-  resources :items
-    resources :comments
-
   # items/purchaseは画面を表示するための仮置きです
   resources :user, only:[:index, :edit, :destroy]
  
