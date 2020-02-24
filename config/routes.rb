@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
 
-  root "items#index"
+  root 'items#index'
   resources :items
     resources :comments
 
-  resource :purchase
+  resources :purchase
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
 
-  resource :user, only: :index
+  get "mypages/index"
+  get "mypages/logout"
 
   resource :card, only:[:index, :new, :show, :destroy]
 end
