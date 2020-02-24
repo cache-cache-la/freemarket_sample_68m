@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  resource :items
+  resources :items do
+    resources :comments, only: :create
+  end
   root "items#index"
   get 'logout/index'
   get 'sell/sell'

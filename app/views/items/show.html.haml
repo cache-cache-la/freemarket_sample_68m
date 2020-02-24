@@ -18,7 +18,7 @@
   .main__top-content
     .main__top-content__itemBox
       .main__top-content__itemBox__name
-        product2
+        = @item.name
       .main__top-content__itemBox__body
         = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class:"main__top-content__itemBox__body__image"
       .main__top-content__itemBox__type
@@ -28,17 +28,21 @@
           = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
         %li 
           = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
+          - @item.images.each do|image|
+            = image.picture
       .main__top-content__itemBox__price
-        ¥20000
+        ¥ 
+        = @item.price
       .main__top-content__itemBox__description
         （税込）送料込み
       .main__top-content__itemBox__detail
-        product2
+        = @item.name
       .main__top-content__itemBox__table
         %table{border: "1"}
           %tr
-            %th 出品者
-            %td hoge
+            %th 出品者 
+            %td 
+              = @user.nickname
           %tr
             %th カテゴリー
             %td 
@@ -55,13 +59,15 @@
             %td
           %tr
             %th 商品の状態
-            %td 新品/未使用
+            %td 
+              = @item.status.condition
           %tr
             %th 配送料の負担
             %td 着払い（購入者負担）
           %tr
             %th 発送元の地域
             %td 青森県
+            -# @user.address.preficture
           %tr
             %th 発送日の目安
             %td 1~2日で発送
@@ -70,22 +76,23 @@
           ★ お気に入り 0
         .main__top-content__itemBox__optionalArea__report
           🏴不適切な商品の通報
+    
     .main__top-content__commentBox
-      = form_for "#" do |f|
+      = form_for "@item" do |f|
         = f.text_field :comment
         .main__top-content__commentBox__caution
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
-      
+        = @item.comments
     .main__top-content__links
       %li 
         = link_to "<前の商品","#"
       %li 
         = link_to "次の商品>","#"
     .main__top-content__relatedItems
-      = link_to "メンズをもっと見る","#",style:"color:#3CCACE"
+      = link_to "メンズをもっと見る","path_new_item",style:"color:#3CCACE"
 .footer
   = render "shared/footer"
 .sell-btn
