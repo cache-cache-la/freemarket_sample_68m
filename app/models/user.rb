@@ -39,4 +39,16 @@ class User < ApplicationRecord
   VALID_FIRSTNAMEKANA_REGEX = VALID_LASTNAMEKANA_REGEX
   validates :firstname_kana, format: { with: VALID_FIRSTNAMEKANA_REGEX}
 
+
+  validates :birthday, presence: true
+
+  #Userが買った商品
+  has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+
+  #Userが現在売っている商品
+  has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "seller_id", class_name: "Item"
+
+  #Userが既に売った商品
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "seller_id", class_name: "Item"
+
 end

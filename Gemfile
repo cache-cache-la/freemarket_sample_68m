@@ -52,6 +52,7 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -89,3 +90,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
 gem "jquery-rails"
+gem 'fog-aws'
