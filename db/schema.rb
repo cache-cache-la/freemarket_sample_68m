@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_20_074338) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
-  
+
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
   end
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2020_02_20_074338) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "ancestry"
+  end
+
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "costomer_id", null: false
+    t.integer "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,9 +98,9 @@ ActiveRecord::Schema.define(version: 2020_02_20_074338) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cards", "users"
   add_foreign_key "addresses", "users"
-  
+  add_foreign_key "cards", "users"
+  add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
