@@ -4,7 +4,7 @@
   .single-main
     .single-main__box
       %h2.single-main__title 住所情報入力
-      = form_for @address do |f|
+      = form_for @address,  html: { class: "registration-form" } do |f|
         = render "users/shared/error_messages", resource: @address
         .form-group
           .field
@@ -24,12 +24,12 @@
             = f.text_field :municipality, autocomplete: "municipality", class: "input-default"
           .field
             = f.label :"番地"
-            %span.form-not-require 必須
+            %span.form-require 必須
             %br/
             = f.text_field :number, autocomplete: "number", class: "input-default"
           .field
             = f.label :"マンション・ビル名"
-            %span.form-not-require 任意
+            %span.form-require 任意
             %br/
             = f.text_field :building, autocomplete: "building", class: "input-default"
           .field
