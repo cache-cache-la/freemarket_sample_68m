@@ -100,20 +100,19 @@
         ピックアップカテゴリー
       .box
         .box__head
-          = link_to "#" do
-            新規投稿商品
+          新規投稿商品
         .box__lists
-          .list
-            = link_to "#" do
+          - @items.each do |item|
+            = link_to "/items/#{item.id}", class: "list" do
               %figure.list__img
-                = image_tag "/animal1.png"
+                -# = image_tag item.image
               .list__body
                 .name
-                  product1
+                  = item.name
                 .details
                   %ul
                     %li
-                      10000円
+                      = item.price
                     %li
                       %i.favorite-icon
                         = icon('fas', 'star')

@@ -24,12 +24,12 @@
 |------|----|-------|
 |name|string|null: false|
 |text|text|null: false|
-|stock|int|null: false|
-|price|int|null: false|
-|user_id|references|foreign_key: true|
+|price|integer|null: false|
 |category_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
 |status_id|references|foreign_key: true|
+|seller_id|integer||
+|buyer_id|integer||
 
 ### Association
 - has_many :images
