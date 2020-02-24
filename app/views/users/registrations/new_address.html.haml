@@ -29,12 +29,12 @@
             = f.text_field :number, autocomplete: "number", class: "input-default"
           .field
             = f.label :"マンション・ビル名"
-            %span.form-not-require 任意
+            %span.form-require 任意
             %br/
             = f.text_field :building, autocomplete: "building", class: "input-default"
           .field
             = f.label :"電話番号"
-            %span.form-not-require 任意
+            %span.form-require 任意
             %br/
             = f.text_field :telephone_number, autocomplete: "telephone_number", class: "input-default", placeholder: "ハイフンも入力する"
           .actions
