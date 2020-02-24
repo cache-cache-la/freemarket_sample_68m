@@ -180,16 +180,16 @@ categories=[
 ]
 
 categories.each.with_index(1) do |category,i|
-  level1_var="@category#{i}"                                                        #1階層の変数("@category1"等)
-  level1_val= Categories.create(name:"#{category[:level1]}")                        #1階層の値作成("カテゴリ1"等)
-  eval("#{level1_var} = level1_val")                                                #1階層の変数=1階層の値
+  level1_var="@category#{i}"                                                                            #1階層の変数("@category1"等)
+  level1_val= Categories.create(name:"#{category[:level1]}")                                            #1階層の値作成("カテゴリ1"等)
+  eval("#{level1_var} = level1_val")                                                                    #1階層の変数=1階層の値
     category[:level1_children].each.with_index(1) do |level1_child,j|
-      level2_var="#{level1_var}_#{j}"                                               #2階層の変数("@category1-1"等)
-      level2_val= eval("#{level1_var}.children.create(name:level1_child[:level2])") #2階層の値作成("カテゴリ1-1"等)
-      eval("#{level2_var} = level2_val")                                            #2階層の変数=2階層の値
+      level2_var="#{level1_var}_#{j}"                                                                   #2階層の変数("@category1-1"等)
+      level2_val= eval("#{level1_var}.children.create(name:level1_child[:level2])")                     #2階層の値作成("カテゴリ1-1"等)
+      eval("#{level2_var} = level2_val")                                                                #2階層の変数=2階層の値
         level1_child[:level2_children].each.with_index(1) do |level2_children_val,k|
-          level2_children_var="#{level2_var}_#{k}"                                           #3階層の変数
-          level2_children_var= eval("#{level2_var}.children.create(name:level2_children_val)")           #3階層の値作成
+          level2_children_var="#{level2_var}_#{k}"                                                      #3階層の変数
+          level2_children_var= eval("#{level2_var}.children.create(name:level2_children_val)")          #3階層の値作成
         end
     end
 end
