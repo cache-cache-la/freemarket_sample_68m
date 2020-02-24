@@ -106,7 +106,7 @@
 - belongs_to :user
 
 
-## Cardsテーブル
+## creditCardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|

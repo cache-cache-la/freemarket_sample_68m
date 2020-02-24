@@ -55,13 +55,13 @@ background-color: #fff;
       display: flex;
         .select-month{
           @include select;
-          #exp_month{
+          #dead_month{
             @include dead;
           }
         }
         .select-year{
           @include select;
-          #exp_year{
+          #dead_year{
             @include dead;
           }
         }
