@@ -20,7 +20,6 @@ class Address < ApplicationRecord
 
 
   VALID_POSTAL_CODE_REGEX = /\A\d{3}[-]\d{4}\z/
-  puts "111-1111".match?(VALID_POSTAL_CODE_REGEX)
   validates :postal_code, format: { with: VALID_POSTAL_CODE_REGEX }
 
   VALID_PREFECTURE_REGEX = /\A.{2,3}?[都道府県]\z/
