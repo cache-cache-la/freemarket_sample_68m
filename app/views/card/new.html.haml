@@ -4,7 +4,7 @@
   .my-card
     .my-card__head
       クレジットカード情報入力
-    = form_with model: @card, url: '/card/pay/', method: :POST, class: "card-form", html: { name: 'inputForm' } do |form|
+    = form_with url: pay_card_index_path, method: :POST, class: "card-form", html: {type:"hidden",name: 'inputForm' } do |form|
       .card-form__num
         %label.card-nav
           カード番号
