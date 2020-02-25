@@ -20,16 +20,11 @@
       .main__top-content__itemBox__name
         = @item.name
       .main__top-content__itemBox__body
-        = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class:"main__top-content__itemBox__body__image"
+        = image_tag @item.images[@item.id].picture.url, class:"main__top-content__itemBox__body__image"
       .main__top-content__itemBox__type
-        %li 
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"
-        %li 
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png"
-        %li 
-          = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png"
-          - @item.images.each do|image|
-            = image.picture
+        - @images.each do |image|
+          %li
+            = image_tag @item.images[@item.id].picture.url
       .main__top-content__itemBox__price
         ¥ 
         = @item.price
@@ -76,16 +71,34 @@
           ★ お気に入り 0
         .main__top-content__itemBox__optionalArea__report
           🏴不適切な商品の通報
-    
+    .main__top-content__description
+      [商品説明]
+      %br
+      = @item.text
+    .main__top-content__allcomment
+      [コメント一覧]
+      - @comments.each do |c|
+        %table
+          %tr
+            %th
+              = c.user.nickname 
+              %b :
+            %td
+              = c.text
     .main__top-content__commentBox
-      = form_for "@item" do |f|
-        = f.text_field :comment
+      = form_for [@item, @comment] do |f|
+        = f.text_field :text
         .main__top-content__commentBox__caution
           相手のことを考え丁寧なコメントを心がけましょう。
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
-        = @item.comments
+    - if current_user.nickname != @user.nickname
+      .main__top-content__buypage
+        = link_to "購入画面に進む", "#", style:"color:#FFFFFF"
+    - else
+      .main__top-content__editpage
+        = link_to "編集画面に進む", "#", style:"color:#FFFFFF"
     .main__top-content__links
       %li 
         = link_to "<前の商品","#"
@@ -93,8 +106,8 @@
         = link_to "次の商品>","#"
     .main__top-content__relatedItems
       = link_to "メンズをもっと見る","path_new_item",style:"color:#3CCACE"
-.footer
-  = render "shared/footer"
+-# .footer
+-#   = render "shared/footer"
 .sell-btn
   = render "shared/sell-btn"
 

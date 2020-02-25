@@ -22,6 +22,9 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @user = User.find(params[:id])
+    @comments = @item.comments
+    @comment = Comment.new
+    @images = @item.images
   end
 
   def edit

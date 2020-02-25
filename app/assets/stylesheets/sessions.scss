@@ -90,7 +90,7 @@
     background-color: white;
 
     &__itemBox{
-      height:1200px ;
+      height:1170px ;
       width: 800px;
 
       &__name{
@@ -183,10 +183,66 @@
       }
 
     }
+    &__description{
+      display: block;
+      font-size: 20px;
+      padding-left: 20px;
+      margin-right: 20px;
+      width: 700px;
+      margin-left: 50px;
+      background-color: #FFCC00;
+      border-radius: 2mm;
+      box-shadow: 2px 2px;
+      margin-bottom: 30px;
+    }
+
+
+
+
+    &__allcomment{
+      display: block;
+      font-size: 20px;
+      padding-left: 20px;
+      margin-right: 20px;
+      width: 700px;
+      margin-left: 50px;
+      background-color: aqua;
+      border-radius: 10mm;
+      box-shadow: 2px 2px;
+
+      &__table{
+        display: block;
+        font-size: 20px;
+        width: 800px;
+        margin: 0 auto;
+
+        th{
+          width: 200px;
+          text-align: center;
+          background-color: #EEDDEE;
+        }
+
+        td{
+          width: 600px;
+          padding-left: 10px;
+        }
+      }
+
+      
+
+
+      
+    }
+    
+
+
+
+
+
     &__commentBox{
       margin-top: 20px;
       width: 800px;
-      height: 200px;
+      height: 300px;
 
 
       &__caution{
@@ -194,14 +250,56 @@
         height: 60px;
         padding-left: 10px;
         margin-top: 10px;
+        margin-left: 50px;
         
       }
      
     }
+
+    &__buypage{
+      height:65px ;
+      width: 600px;
+      background-color: red;
+      padding-left: 180px;
+      margin: 0 auto;
+      line-height: 65px;
+      font-size: 35px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10mm;
+      box-shadow: 2px 2px;
+      
+
+      
+
+
+
+    }
+
+    &__editpage{
+      height:65px ;
+      width: 600px;
+      background-color: red;
+      padding-left: 180px;
+      margin: 0 auto;
+      line-height: 65px;
+      font-size: 35px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10mm;
+      box-shadow: 2px 2px;
+    }
+
+
     &__links{
       display: flex;
       justify-content: space-between;
       margin-top: 80px;
+      width: 800px;
+      height: 50px;
+      
    
       li{
         list-style: none;
@@ -213,6 +311,8 @@
        color: #3CCACE;
        margin-top: 30px;
        text-decoration: none;
+       width: 800px;
+       height: 50px;
      }
 
   }
@@ -220,9 +320,10 @@
 
 //入力フォームと送信ボタンのclassが効かなかったので、id設定しました。
 
-#_comment{
+#comment_text{
   width: 800px;
   height: 100px;
+  margin-left: 60px;
 }
 
 #send{
