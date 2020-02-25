@@ -41,7 +41,7 @@ $(function(){
         dataType: 'json',
       })
       .done(function(children){
-        $('#children_wrapper').remove(); //親が変更された時、子以下を削除するする
+        $('#children_wrapper').remove(); //親が変更された時、子以下を削除する
         $('#grandchildren_wrapper').remove();
         $('#brand_wrapper').remove();
         var insertHTML = '';
