@@ -1,52 +1,44 @@
 class ItemsController < ApplicationController
-  before_action :set_item, except: [:index, :new, :create, :show]
+  #下記、コードのコメントアウト箇所に関して
+  #画像以外の出品情報の確認のため。2020/02/22
 
-  def index
-    @items = Item.includes(:images).order('created_at DESC')
-  end
+  # before_action :set_item, except: [:index, :new, :create, :show]
+
+  # def index
+  #   @items = Item.includes(:images).order('created_at DESC')
+  # end
 
   def new
     @item = Item.new
-    @item.images.new
+    @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
+    @status_array = Status.all                        # データベースから抽出し、配列化
+    # @item.images.new
+    @item.build_brand
   end
+
+  # 以下、formatはjsonのみ
+  def get_category_children                           # 親カテゴリーが選択された後に動くアクション
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren                      # 子カテゴリーが選択された後に動くアクション
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save!
       redirect_to root_path
     else
-      render :new
-    end
-  end
-
-  def new
-    @item = Item.new
-    @brand = Brand.new
-    @image = Image.new(item_id: item_id)
-  end
-
-  def create
-    @item = Item.new(item_params)
-    if @item.save
-    brand_id = Brand.find(@item.id).id             #Brandテーブルのidを取り出す
-    status_id = Status.find(@item.id).id           #Statusテーブルのidを取り出す
-    category_id = Category.find(@item.id).id       #Categoryテーブルのidを取り出す
-    item = Item.find(@item.id)                     #作成したItemのidを取り出す
-    #Itemテーブルに"brand_id, status_id, category_id"のカラムを入れる
-    item.update(brand_id: brand_id, status_id: status_id, category_id: category_id)
-    redirect_to root_path
-    else
-    redirect_to new_item_path
+      redirect_to new_item_path
     end
   end
 
   def show
-  end
-
-  private
-  def item_params
-    params.require(:item).permit(:name, :text, :price, category: [:id], brand: [:id], status: [:id],
-      images_attributrs: [:picture, :id]).merge(seller_id: current_user.id)
   end
 
   def edit
@@ -71,9 +63,9 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    
-    params.require(:item).permit(:name, :text, :price, :category, :brand, :status, images_attributes: [:picture, :_destroy, :id])
+    params.require(:item).permit(:name, :text, :price, :status_id, :category_id, brand_attributes: [:id, :name])
   end
+# images_attributrs: [:picture, :_destroy, :id]
 
   def set_item
     @item = Item.find(params[:id])

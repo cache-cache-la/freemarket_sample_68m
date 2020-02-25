@@ -6,8 +6,17 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resource :items, only: [:new, :create, :show]
+  resources :items, only: [:new, :create, :show, :edit, :update, :destroy] do
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_status', defaults: { format: 'json' }
+    end
+  end
+
   root "top#index"
+#以下、後ほど要修正
   resource :items
   root "items#index"
   get 'logout/index'

@@ -15,4 +15,4 @@
       .js-file_group{"data-index" => "#{@item.images.count}"}
         = file_field_tag :picture, name: "item[images_attributes][#{@item.images.count}][picture]", class: 'js-file'
         .js-remove delete
-  = f.submit
+  -# = f.submit
