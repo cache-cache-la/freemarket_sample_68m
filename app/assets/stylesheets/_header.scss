@@ -59,13 +59,31 @@
           a:hover{
             color: orange;
           }
-          .first-tree{
+          .category-tree{
             z-index: 2;
             position: absolute;
             background-color: #fff;
             width: 240px;
             top: 40px;
-            .category__tree{
+            .parent__tree{
+              background-color: #fff;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              li{
+                position: relative;
+              }
+            }
+            .children__tree{
+              background-color: #fff;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              li{
+                position: relative;
+              }
+            }
+            .grandchildren__tree{
               background-color: #fff;
               display: flex;
               flex-direction: column;
@@ -88,13 +106,13 @@
           a:hover{
             color: orange;
           }
-          .second-tree{
+          .brand-tree{
             z-index: 1;
             position: absolute;
             background-color: #fff;
             width: 240px;
             top: 40px;
-            .brand__tree{
+            .first__tree{
               background-color: #fff;
               display: flex;
               flex-direction: column;

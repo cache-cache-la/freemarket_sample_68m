@@ -9,19 +9,31 @@
   .header__box__action
     %ul.action__list
       %li.list__category
-        = link_to "#", class:"tree-btn" do
-          カテゴリー
-        .first-tree
-          %ul.category__tree
+        カテゴリー
+        .category-tree
+          %ul.parent__tree
+            - @parents.each do |parent|
+              = link_to category_path(category.id)
             %li.tree__item
-              仮）レディースだお
-            %li.tree__item
-              仮）メンズだお
+              = @parent.name
+
+          -# %ul.children__tree
+          -#   - @category_children.each do |child|
+          -#     = link_to category_path(category.id)
+          -#   %li.tree__item
+          -#     = @child.name
+
+          -# %ul.grandchildren__tree
+          -#   - @category_grandchildren.each do |grandchild|
+          -#     = link_to category_path(category.id)
+          -#   %li.tree__item
+          -#     = grandchild.name
+
       %li.list__brand
         = link_to "#", class:"tree-btn" do
           ブランド
-        .second-tree
-          %ul.brand__tree
+        .brand-tree
+          %ul.first__tree
             %li.brand__item
               ナイキだお
             %li.brand__item

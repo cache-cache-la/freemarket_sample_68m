@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :items
     resources :comments
 
-  resources :purchase
+  # resources :purchase
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
