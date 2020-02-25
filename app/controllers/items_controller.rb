@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
   def destroy
     if @item.destroy
       redirect_to root_path
-    else 
+    else
       render :show
     end
   end
@@ -63,12 +63,11 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :price, :status_id, :category_id, brand_attributes: [:id, :name])
+    params.require(:item).permit(:name, :text, :price, :category, :brand, :status, images_attributes: [:picture, :_destroy, :id], brand_attributes: [:id, :name])
   end
-# images_attributrs: [:picture, :_destroy, :id]
 
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
 end
