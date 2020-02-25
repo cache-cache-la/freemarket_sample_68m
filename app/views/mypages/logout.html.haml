@@ -3,10 +3,11 @@
   = render "my-side"
   .my-logout
     .my-logout__btn
-      = link_to "ログアウト", method: 'delete', class: "logout-btn"
+      = link_to destroy_user_session_path, method: 'delete', class: "logout-btn" do
+        ログアウト
 %aside.banner
   = render "shared/banner"
 .footer
   = render "shared/footer"
-.sell-btn
-  = render "shared/sell-btn"
+
+= render "shared/sell-btn"

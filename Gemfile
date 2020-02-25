@@ -45,12 +45,14 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 
   # 追加
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -88,3 +90,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'font-awesome-sass'
 gem "jquery-rails"
+gem 'dotenv-rails'
+gem 'fog-aws'

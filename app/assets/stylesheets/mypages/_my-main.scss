@@ -17,8 +17,10 @@
       right: 0;
       transform: translate(0, -50%);
       color: #333;
+      text-decoration: none;
       .my-main__user__name{
         font-weight: bold;
+        font-size: large;
       }
       .my-main__user__items{
         display: flex;
