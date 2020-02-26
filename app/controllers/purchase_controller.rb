@@ -1,9 +1,8 @@
 class PurchaseController < ApplicationController
-
+  before_action :set_card, only: [:index, :pay]
   require 'payjp'
 
   def index
-    card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to controller: "card", action: "new"
     else
@@ -11,14 +10,13 @@ class PurchaseController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
-    @address = Address.where(user_id: current_user.id)
-    @item = Item.where(user_id: current_user.id)
-    @image = Image.where(user_id: current_user.id)
+    @addresses= Address.find_by(user_id: current_user.id)
+    @items = Item.find_by(user_id: current_user.id)
+    @images = Image.find_by(user_id: current_user.id)
   end
 
   def pay
-    card = Card.where(user_id: current_user.id).first
-    item = Item.where(user_id: current_user.id).first
+    item = Item.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
       amount: 20000,
@@ -26,6 +24,10 @@ class PurchaseController < ApplicationController
       currency: 'jpy',
     )
     redirect_to root_path
+  end
+
+  def set_card
+    card = Card.find_by(user_id: current_user.id)
   end
 
 end
