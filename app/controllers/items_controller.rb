@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   #下記、コードのコメントアウト箇所に関して
   #画像以外の出品情報の確認のため。2020/02/22
 
-  # before_action :set_item, except: [:index, :new, :create, :show]
+  before_action :set_item, except: [:index, :new, :create]
 
   # def index
   #   @items = Item.includes(:images).order('created_at DESC')
@@ -39,6 +39,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @comments = @item.comments
+    @comment = Comment.new
+    @images = @item.images
   end
 
   def edit
