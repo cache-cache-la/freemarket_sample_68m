@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
   get 'purchase/index'
-  get 'purchase/done'
   root 'items#index'
   resources :items
     resources :comments
 
   resources :purchase, only: [:index] do
     collection do
-      get 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'
     end
   end
