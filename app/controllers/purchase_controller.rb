@@ -12,7 +12,7 @@ class PurchaseController < ApplicationController
     end
     @addresses= Address.find_by(user_id: current_user.id)
     @items = Item.find_by(user_id: current_user.id)
-    @images = Image.find_by(user_id: current_user.id)
+    @images = Image.where(user_id: current_user.id)
   end
 
   def pay
