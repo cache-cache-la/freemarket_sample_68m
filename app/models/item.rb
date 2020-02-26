@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   # imageをitemにネストさせる表記
   accepts_nested_attributes_for :images, allow_destroy: true
   has_many :comments
+  has_one :purchase
   belongs_to :category
   belongs_to :brand
   belongs_to :status

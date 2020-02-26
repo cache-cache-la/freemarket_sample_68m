@@ -5,7 +5,7 @@ class CardController < ApplicationController
   require "payjp"
 
   def new
-    redirect_to action: "show" if card.exists?
+    # redirect_to action: "show" if card.exists?
   end
 
   def pay 
