@@ -51,7 +51,7 @@
         .list__category{
           text-decoration: none;
           padding: 0;
-          .tree-btn{
+          .js-tree-btn{
             text-decoration: none;
             padding: 0;
             color: black;
@@ -65,6 +65,7 @@
             background-color: #fff;
             width: 240px;
             top: 40px;
+
             .parent__tree{
               background-color: #fff;
               display: flex;
@@ -98,7 +99,7 @@
           display: flex;
           line-height: 30px;
           padding: 0 0 0 40px;
-          .tree-btn{
+          .js-tree-btn{
             text-decoration: none;
             padding: 0;
             color: black;

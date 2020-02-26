@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, except: [:index, :new, :create, :show]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
+  before_action :set_parents
 
   def index
     @items = Item.includes(:images).order('created_at DESC')
@@ -8,7 +9,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
     @status_array = Status.all                        # データベースから抽出し、配列化
     @item.build_brand
   end
@@ -63,6 +63,11 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    @images = @item.images
+  end
+
+  def set_parents
+    @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
   end
 
 end

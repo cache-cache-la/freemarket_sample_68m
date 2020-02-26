@@ -9,35 +9,35 @@
   .header__box__action
     %ul.action__list
       %li.list__category
-        カテゴリー
-        .category-tree
-          %ul.parent__tree
-            - @parents.each do |parent|
-              = link_to category_path(category.id)
-            %li.tree__item
-              = @parent.name
+        = link_to "#", class:"js-tree-btn" do
+          カテゴリー
+          .category-tree
+            %ul.parent__tree
+              - @category_parent.each do |parent|
+                -# = link_to category_path(parent.id)
+                %li#parent__tree__item
+                  = parent.name
 
-          -# %ul.children__tree
-          -#   - @category_children.each do |child|
-          -#     = link_to category_path(category.id)
-          -#   %li.tree__item
-          -#     = @child.name
+                  %ul.children__tree
+                    - parent.children.each do |child|
+                      -# = link_to category_path(child.id)
+                      %li.children__tree__item
+                        = child.name
 
-          -# %ul.grandchildren__tree
-          -#   - @category_grandchildren.each do |grandchild|
-          -#     = link_to category_path(category.id)
-          -#   %li.tree__item
-          -#     = grandchild.name
+                      %ul.grandchildren__tree
+                        - child.children.each do |grandchild|
+                          -# = link_to category_path(grandchild.id)
+                          %li.grandchildren__tree__item
+                            = grandchild.name
 
       %li.list__brand
-        = link_to "#", class:"tree-btn" do
+        = link_to "#", class:"js-tree-btn" do
           ブランド
         .brand-tree
-          %ul.first__tree
-            %li.brand__item
-              ナイキだお
-            %li.brand__item
-              美豚だお
+          -# %ul.first__tree
+          -#   %li.brand__item
+          -#     ナイキだお
+
     %ul.action__user
       %li.user__login
         = link_to new_user_session_path, class: "login_btn" do
