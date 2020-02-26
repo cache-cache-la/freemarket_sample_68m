@@ -138,21 +138,12 @@
       height: 100px;
       text-align: center;
 
-      &__btn {
+      button {
         width: 350px;
         height: 50px;
         line-height: 50px;
         background-color: turquoise;
         cursor: pointer;
-        margin: 0 auto;
-        color: white;
-      }
-      &__none {
-        width: 350px;
-        height: 50px;
-        line-height: 50px;
-        background-color: gray;
-        cursor: not-allowed;
         margin: 0 auto;
         color: white;
       }

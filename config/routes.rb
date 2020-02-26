@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   root 'items#index'
+  resources :items
+    resources :comments
+
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+    end
+  end
   resources :items do
     #Ajaxで動くアクションのルートを作成
     collection do
