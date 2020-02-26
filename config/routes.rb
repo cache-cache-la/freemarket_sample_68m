@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
 
   root 'items#index'
-  resources :items
-    resources :comments
 
-  # resources :purchase
+  resources :items do
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_status', defaults: { format: 'json' }
+    end
+  end
+
+  resources :purchase
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
