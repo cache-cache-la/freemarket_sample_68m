@@ -28,8 +28,8 @@
               美豚だお
     %ul.action__user
       %li.user__login
-        = link_to "#", class: "login_btn" do
+        = link_to new_user_session_path, class: "login_btn" do
           ログイン
       %li.user__new
-        = link_to "#", class: "new_btn" do
+        = link_to new_user_registration_path, class: "new_btn" do
           新規会員登録

@@ -1,36 +1,51 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :password
-    %i (leave blank if you don't want to change it)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
-      %br/
-      %em
-        = @minimum_password_length
-        characters minimum
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "Update"
+.single-container
+  .single-header
+    = render "users/shared/header-logo"
+  .single-main
+    .single-main__box
+      %h2.single-main__title 編集画面
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html:{class: "registration-form"}) do |f|
+        = render "users/shared/error_messages", resource: @user
+        .form-group
+          .field-nickname
+            = f.label :"ニックネーム"
+            %span.form-require-n 必須
+            %br/
+            = f.text_field :nickname, autocomplete: "nickname", class: "input-default-n", placeholder: "例）フリマ太郎(10文字まで)"
+          .field
+            = f.label :"メールアドレス"
+            %span.form-require 必須
+            %br/
+            = f.email_field :email, autocomplete: "email", class: "input-default", placeholder: "PC・携帯どちらでも可"
+          .field
+            = f.label :"お名前(全角)"
+            %span.form-require 必須
+            %br/
+            = f.text_field :lastname, autocomplete: "lastname", class: "input-default-half", placeholder: "例)山田"
+            = f.text_field :firstname, autocomplete: "firstname", class: "input-default-half2", placeholder: "例)彩"
+          .field
+            = f.label :"お名前カナ(全角)"
+            %span.form-require 必須
+            %br/
+            = f.text_field :lastname_kana, autocomplete: "lastname_kana", class: "input-default-half", placeholder: "例)ヤマダ"
+            = f.text_field :firstname_kana, autocomplete: "firstname_kana", class: "input-default-half2", placeholder: "例)アヤ"
+          .field
+            = f.label :"生年月日"
+            %span.form-require 必須
+            %br/
+            .birthday-box
+              .select-wrap
+                = f.date_select :birthday, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
+          .actions
+            = f.submit "更新する"
+  .single-footer
+    = render "users/shared/footer-logo"
+
+-# ログアウト機能が実装されるまで暫定的に設定
 %h3 Cancel my account
 %p
   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
 = link_to "Back", :back
+
+%p
+  Log out? #{button_to "Log out", session_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
