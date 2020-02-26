@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:edit, :update, :destroy]
 
+
   def index
     @items = Item.includes(:images).order('created_at DESC')
   end
@@ -35,6 +36,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @comments = @item.comments
+    @comment = Comment.new
+    @images = @item.images
   end
 
   def edit

@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   root 'items#index'
+  resources :items
+    resources :comments
+
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+    end
+  end
   resources :items do
     #Ajaxで動くアクションのルートを作成
     collection do
@@ -8,6 +16,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_status', defaults: { format: 'json' }
     end
+    resources :comments, only: :create
   end
   resources :purchase
 
@@ -15,9 +24,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+
   resources :card, only: [:new, :show, :destroy] do
     collection do
-      post 'show', to: 'card#showing'
+      post 'show', to: 'card#show'
       post 'pay', to: 'card#pay'
     end
   end
@@ -30,5 +40,4 @@ Rails.application.routes.draw do
 
   get "mypages/index"
   get "mypages/logout"
-
 end

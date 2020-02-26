@@ -7,37 +7,35 @@
   .purchase__item
     .purchase__item__box
       .purchase__item__box__image
-        = image_tag "/animal1.png"
+        =@image.map {|image| image.picture }
       .purchase__item__box__description
         .item_title
-          商品タイトルが長くなった場合を試します
+          = @item.map {|item| item.name }
         .item__price
-          金額（税込）送料込
+          = @item.map {|item| item.price }
 
   %section.purchase__data
     .purchase__data__price
       .purchase__data__price__title
         支払い金額
       .purchase__data__price__amount
-        ¥10,000
+        = 13500
 
     .purchase__data__payment
       .purchase__data__payment__title
         .title__text
           支払い方法
         .card__change
-          = link_to "変更する", "#"
-        -# カード登録があればカード一覧、無ければ下記の一文とリンク表示、の分岐予定
-        .card__regist
-          = link_to "＋登録してください", "#"
+          = link_to "削除・再登録する", "#"
       .purchase__data__payment__list
-        -# PAY.JPの埋め込みの可能性があるため、仮置きとなります
         .card__title
           クレジットカード
         .card__number
-          ****************
+          = "**** **** **** " + @default_card_information.last4
         .card__limit
-          有効期限 07/20
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = exp_month + " / " + exp_year
         .card__type
           VISA
 
@@ -49,16 +47,18 @@
           = link_to "変更する", "#"
       .purchase__data__shipping__box
         .postcode
-          〒123-4567
+          = @address.map {|address| address.postal_code }
         .address
-          東京都 渋谷区 道玄坂２丁目２３−１２ フォンティスビル７F
+          = @address.map {|address| address.prefecture }
+          = @address.map {|address| address.municipality }
+          = @address.map {|address| address.number }
+          = @address.map {|address| address.building }
         .buyer
-          購入者 氏名
+          = current_user.lastname
+          = current_user.firstname
     .purchase__submit
-      -# 支払い方法の登録状況によって、ボタンの色が変わる予定
-      -# .purchase__submit__btn
-      -#   購入する
-      .purchase__submit__none
-        購入する
+      .purchase__submit__btn
+        = form_tag(action: :pay, method: :post) do
+          %button 購入する
 
 = render "users/shared/footer-logo"
