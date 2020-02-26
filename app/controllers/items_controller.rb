@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   #下記、コードのコメントアウト箇所に関して
   #画像以外の出品情報の確認のため。2020/02/22
 
-  before_action :set_item, except: [:index, :new, :create]
+  before_action :set_item, only: [:show, :edit, :update, :destory]
 
   # def index
   #   @items = Item.includes(:images).order('created_at DESC')
@@ -10,9 +10,9 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.images.new
     @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
     @status_array = Status.all                        # データベースから抽出し、配列化
-    # @item.images.new
     @item.build_brand
   end
 
@@ -42,7 +42,6 @@ class ItemsController < ApplicationController
     @user = User.find(params[:id])
     @comments = @item.comments
     @comment = Comment.new
-    @images = @item.images
   end
 
   def edit
@@ -67,11 +66,12 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name])
+    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name], images_attributes: [:picture, :_destroy, :id])
   end
 
   def set_item
     @item = Item.find(params[:id])
+    @images = @item.images
   end
 
 end

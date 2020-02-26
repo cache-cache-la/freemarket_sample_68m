@@ -8,12 +8,11 @@
       .main__top-content__itemBox__name
         = @item.name
       .main__top-content__itemBox__body
-        = image_tag @item.images[@item.id].picture.url, class:"main__top-content__itemBox__body__image"
+        = image_tag @item.images[0].picture.url, class:"main__top-content__itemBox__body__image"
       .main__top-content__itemBox__type
-
-        - @images.each do |image|
+        - @item.images.each do |image|
           %li
-            = image_tag @item.images[@item.id].picture.url
+            = image_tag image.picture.url
       .main__top-content__itemBox__price
         ¥ 
         = @item.price
