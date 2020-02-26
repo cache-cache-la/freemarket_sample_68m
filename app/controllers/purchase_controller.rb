@@ -10,8 +10,8 @@ class PurchaseController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
-    @addresses= Address.find_by(user_id: current_user.id)
-    @items = Item.find_by(user_id: current_user.id)
+    @addresse = Address.find_by(user_id: current_user.id)
+    @item = Item.find_by(user_id: current_user.id)
     @images = Image.where(user_id: current_user.id)
   end
 
