@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
-  #下記、コードのコメントアウト箇所に関して
-  #画像以外の出品情報の確認のため。2020/02/22
 
-  before_action :set_item, except: [:index, :new, :create]
+  before_action :set_item, only: [:edit, :update, :destroy]
 
-  # def index
-  #   @items = Item.includes(:images).order('created_at DESC')
-  # end
+
+  def index
+    @items = Item.includes(:images).order('created_at DESC')
+  end
 
   def new
     @item = Item.new
@@ -27,14 +26,12 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
-
-
   def create
     @item = Item.new(item_params)
-    if @item.save!
-      redirect_to root_path
+    if @item.save
+      redirect_to root_path, notice: '出品しました'
     else
-      redirect_to new_item_path
+      redirect_to new_item_path, notice: '必須項目を入力してください'
     end
   end
 
@@ -67,7 +64,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name])
+    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name], images_attributes: [:picture, :_destroy, :id])
   end
 
   def set_item
