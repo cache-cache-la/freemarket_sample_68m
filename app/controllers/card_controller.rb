@@ -29,7 +29,7 @@ class CardController < ApplicationController
   end
 
   def destroy
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     customer = Payjp::Customer.retrieve(card.customer_id)
     customer.delete
     card.delete
@@ -37,7 +37,7 @@ class CardController < ApplicationController
   end
 
   def show
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     customer = Payjp::Customer.retrieve(card.customer_id)
     @default_card_information = customer.cards.retrieve(card.card_id)
     @card_name = card_image(current_user.id)
@@ -46,7 +46,7 @@ class CardController < ApplicationController
 
   def card_image(user)
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     customer = Payjp::Customer.retrieve(card.customer_id)
     card = customer.cards.retrieve(customer.default_card)
     card_name = {}
@@ -69,7 +69,7 @@ class CardController < ApplicationController
   end
   
   def set_card
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
   end
 
   def call_api
