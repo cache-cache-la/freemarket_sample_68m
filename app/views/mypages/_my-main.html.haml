@@ -4,8 +4,7 @@
       .my-main__user__icon
         = image_tag "user.png", class: "user-icon", size: "60x60"
       .my-main__user__name
-        槇原敬之
-        -# current_user
+        =current_user.nickname
       .my-main__user__items
         .my-main__user__items__rep
           評価0

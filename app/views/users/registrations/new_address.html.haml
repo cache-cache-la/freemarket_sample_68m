@@ -1,0 +1,43 @@
+.single-container
+  .single-header
+    = render "users/shared/header-logo"
+  .single-main
+    .single-main__box
+      %h2.single-main__title 住所情報入力
+      = form_for @address,  html: { class: "registration-form" } do |f|
+        = render "users/shared/error_messages", resource: @address
+        .form-group
+          .field
+            = f.label :"郵便番号"
+            %span.form-require 必須
+            %br/
+            = f.text_field :postal_code, autocomplete: "postal_code", class: "input-default", placeholder: "〒〇〇〇-〇〇〇〇"
+          .field
+            = f.label :"都道府県"
+            %span.form-require 必須
+            %br/
+            = f.select :prefecture, Address.prefectures.keys, {}, {class: 'select-box'}
+          .field
+            = f.label :"市区町村"
+            %span.form-require 必須
+            %br/
+            = f.text_field :municipality, autocomplete: "municipality", class: "input-default"
+          .field
+            = f.label :"番地"
+            %span.form-require 必須
+            %br/
+            = f.text_field :number, autocomplete: "number", class: "input-default"
+          .field
+            = f.label :"マンション・ビル名"
+            %span.form-require 任意
+            %br/
+            = f.text_field :building, autocomplete: "building", class: "input-default"
+          .field
+            = f.label :"電話番号"
+            %span.form-require 任意
+            %br/
+            = f.text_field :telephone_number, autocomplete: "telephone_number", class: "input-default", placeholder: "ハイフンも入力する"
+          .actions
+            = f.submit "新規登録", class: "submit-btn"
+  .single-footer
+    = render "users/shared/footer-logo"
