@@ -62,15 +62,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_083923) do
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
-  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "costomer_id", null: false
-    t.integer "card_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_credit_cards_on_user_id"
-  end
-
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "picture", null: false
     t.bigint "item_id"
@@ -98,6 +89,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_083923) do
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "address_id"
     t.bigint "card_id"
+    t.integer "user_id"
+    t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_purchases_on_address_id"
@@ -130,9 +123,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_083923) do
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
-  add_foreign_key "credit_cards", "users"
-  add_foreign_key "addresses", "users"
-  add_foreign_key "cards", "users"
   add_foreign_key "credit_cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
