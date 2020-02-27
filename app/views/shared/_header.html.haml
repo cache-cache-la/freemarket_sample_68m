@@ -7,15 +7,16 @@
         = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
         = form.submit src: "/icon-search 1.png", type: "image", class: "search-btn"
   .header__box__action
+
     %ul.action__list
       %li.list__category
-        = link_to "#", class:"js-tree-btn" do
+        = link_to "#", class:"tree-btn" do
           カテゴリー
           .category-tree
             %ul.parent__tree
               - @category_parent.each do |parent|
                 -# = link_to category_path(parent.id)
-                %li#parent__tree__item
+                %li.parent__tree__item
                   = parent.name
 
                   %ul.children__tree
