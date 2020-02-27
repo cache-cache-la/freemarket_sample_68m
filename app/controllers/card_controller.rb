@@ -5,8 +5,8 @@ class CardController < ApplicationController
   before_action :call_api, only: [:pay, :delete, :show]
 
   def new
-    card = Card.where(user_id: current_user)
-    # redirect_to action: "show" if card.exists?
+    card = Card.where(user_id: current_user.id)
+    redirect_to action: "show" if card.exists?
   end
 
   def pay 
@@ -17,9 +17,9 @@ class CardController < ApplicationController
       description: "登録テスト",
       email: current_user.email,
       card: params["payjp-token"],
-      metadata: {user_id: current_user}
+      metadata: {user_id: current_user.id}
       )
-      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card,)
       if @card.save
         redirect_to action: "show"
       else
@@ -28,22 +28,48 @@ class CardController < ApplicationController
     end
   end
 
-  def delete
-    if card.blank?
-      redirect_to action: "new"
-    end
+  def destroy
+    card = Card.find_by(user_id: current_user.id)
     customer = Payjp::Customer.retrieve(card.customer_id)
     customer.delete
     card.delete
+    redirect_to action: "new"
   end
 
-  def show 
+  def show
+    card = Card.find_by(user_id: current_user.id)
     customer = Payjp::Customer.retrieve(card.customer_id)
     @default_card_information = customer.cards.retrieve(card.card_id)
+    @card_name = card_image(current_user.id)
+    
   end
 
+  def card_image(user)
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    card = Card.find_by(user_id: current_user.id)
+    customer = Payjp::Customer.retrieve(card.customer_id)
+    card = customer.cards.retrieve(customer.default_card)
+    card_name = {}
+    if card.brand == "Visa"
+      card_name[:brand] = "visa.png"
+    elsif card.brand == "MasterCard"
+      card_name[:brand] = "mastercard.png"
+    elsif card.brand == "JCB"
+      card_name[:brand] = "jcb.png"
+    elsif card.brand == "American Express"
+      card_name[:brand] = "americanexpress.png"
+    elsif card.brand == "Discover"
+      card_name[:brand] = "discover.png"
+    elsif card.brand == "Diners Club"
+      card_name[:brand] = "dinersclub.png"
+    else
+      card_name[:brand] = ""
+    end
+    return card_name
+  end
+  
   def set_card
-    # card = Card.where(users_id: current_user).first
+    card = Card.find_by(user_id: current_user.id)
   end
 
   def call_api
