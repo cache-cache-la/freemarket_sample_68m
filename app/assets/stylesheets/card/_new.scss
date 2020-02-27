@@ -1,3 +1,8 @@
+@mixin error-code {
+  color: red;
+  display: none;
+}
+
 @mixin num-code {
   width: 100%;
   margin: 8px 0 0;
@@ -45,6 +50,12 @@ background-color: #fff;
     &__input-num{
     @include num-code;
     }
+    #warn1{
+      @include error-code;
+    }
+    #warn2{
+      @include error-code;
+    }
     &__image{
     margin: 8px 0 0;
     }
@@ -72,6 +83,12 @@ background-color: #fff;
     margin-top: 32px;
       .card-form__input-code{
       @include num-code;
+      }
+      #warn3{
+        @include error-code;
+      }
+      #warn4{
+        @include error-code;
       }
       .my-card-q{
         text-align: right;

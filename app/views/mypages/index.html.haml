@@ -1,4 +1,8 @@
 = render "shared/header"
+.bread
+  %span.kuzu
+    - breadcrumb :mypages
+    = breadcrumbs pretext: "",separator: " &rsaquo; "
 .my-contents
   = render "my-side"
   = render "my-main"

@@ -92,3 +92,4 @@ gem 'font-awesome-sass'
 gem "jquery-rails"
 gem 'dotenv-rails'
 gem 'fog-aws'
+gem "gretel"
