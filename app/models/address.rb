@@ -4,6 +4,7 @@ class Address < ApplicationRecord
   validates :prefecture, presence: true
   validates :municipality, presence: true
 
+  has_one :purchase
 
   enum prefecture:{
     "---":0,
