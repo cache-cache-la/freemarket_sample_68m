@@ -1,5 +1,5 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe SellController, type: :controller do
+# RSpec.describe SellController, type: :controller do
 
-end
+# end
