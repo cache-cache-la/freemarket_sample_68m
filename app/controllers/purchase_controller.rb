@@ -1,9 +1,12 @@
 class PurchaseController < ApplicationController
   before_action :set_card, only: [:index, :pay]
+  before_action :set_item, only: [:index, :pay]
+
   require 'payjp'
 
   def index
     if card.blank?
+      #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -11,23 +14,27 @@ class PurchaseController < ApplicationController
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
     @address = Address.find_by(user_id: current_user.id)
-    @item = Item.find_by(user_id: current_user.id)
-    @images = Image.where(user_id: current_user.id)
   end
 
   def pay
-    item = Item.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-      amount: 20000,
+      amount: @item.price,
       customer: card.customer_id,
       currency: 'jpy',
     )
+    Purchase.create(user_id: current_user.id, item_id: @item.id)
     redirect_to root_path
   end
 
+
+  private
   def set_card
     card = Card.find_by(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end

@@ -102,7 +102,7 @@
         .box__head
           新規投稿商品
         .box__lists
-          - @items.each do |item|
+          -# - @items.each do |item|
             = link_to "/items/#{item.id}", class: "list" do
               %figure.list__img
                 -# = image_tag item.image

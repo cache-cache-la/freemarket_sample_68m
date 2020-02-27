@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
   root 'items#index'
-  resources :items
+  resources :items do
     resources :comments
-
-  resources :purchase, only: [:index] do
-    collection do
-      post 'pay', to: 'purchase#pay'
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+      end
     end
   end
+
+
   resources :items do
     #Ajaxで動くアクションのルートを作成
     collection do
@@ -18,7 +20,6 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
-  resources :purchase
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

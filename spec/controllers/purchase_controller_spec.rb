@@ -1,10 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MypagesController, type: :controller do
-
-  describe "GET#index" do
-
-  end
+RSpec.describe PurchaseController, type: :controller do
 
   describe ""
 end
