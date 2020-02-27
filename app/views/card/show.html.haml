@@ -6,26 +6,21 @@
       支払い方法
     .add-card__contents
       .add-card__contents__form
-        -# カード詳細ページを表示させたいので追加ボタンは一時的にコメントアウト
-        -# - if @card.present?
         .add-card-form
           .card-inform
             .card-logo
-              = image_tag "viza.png"
+              = image_tag @card_name[:brand]
             .card-number
-              ************2020
+              = "**** **** **** " + @default_card_information.last4
             .card-dead
-              01/20
-            = link_to delete_card_path, method: :delete, class: "delete-btn" do
+              - exp_month = @default_card_information.exp_month.to_s
+              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+              = exp_month + " / " + exp_year
+            = link_to new_card_path, method: :delete, class: "delete-btn", id:"delete" do
               削除する
-        -# - else
-        -#   .add-card-form
-        -#     .add-form__btn
-        -#       = link_to new_card_path, class: "add-btn", id:"regist-btn" do
-        -#         クレジットカードを登録する
       .add-card__contents__way
         = link_to "#", class: "pay-way" do
-          支払い方法について
+          支払い方法について＞
 %aside.banner
   = render "shared/banner"
 .footer
