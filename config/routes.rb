@@ -4,6 +4,20 @@ Rails.application.routes.draw do
   resources :items
     resources :comments
 
+  resources :purchase, only: [:index] do
+    collection do
+      post 'pay', to: 'purchase#pay'
+    end
+  end
+  resources :items do
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_status', defaults: { format: 'json' }
+    end
+    resources :comments, only: :create
+  end
   resources :purchase
 
   devise_for :users, controllers: {
@@ -26,5 +40,4 @@ Rails.application.routes.draw do
 
   get "mypages/index"
   get "mypages/logout"
-
 end
