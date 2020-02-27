@@ -53,9 +53,6 @@ background-color: #fff;
     #warn1{
       @include error-code;
     }
-    #warn2{
-      @include error-code;
-    }
     &__image{
     margin: 8px 0 0;
     }
@@ -84,10 +81,7 @@ background-color: #fff;
       .card-form__input-code{
       @include num-code;
       }
-      #warn3{
-        @include error-code;
-      }
-      #warn4{
+      #warn2{
         @include error-code;
       }
       .my-card-q{

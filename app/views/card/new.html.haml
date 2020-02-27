@@ -14,8 +14,6 @@
           必須
       = form.text_field :number, class: "card-form__input-num", placeholder: "半角英数のみ", id:"card_number",maxlength: "16"
       %p#warn1
-        必須項目です
-      %p#warn2
         カード番号が正しくありません
       .card-form__image
       =image_tag "card.png"
@@ -39,9 +37,7 @@
         %span.must
           必須
         = form.text_field :cvcnumber, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号", id: "cvc"
-        %p#warn3
-          必須項目です
-        %p#warn4
+        %p#warn2
           番号が正しくありません
         .my-card-q
           = link_to "#", class: "back-num" do
