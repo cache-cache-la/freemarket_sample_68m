@@ -6,7 +6,6 @@
       %h2.single-main__title 住所情報入力
       = form_for @address,  html: { class: "registration-form" } do |f|
         = render "users/shared/error_messages", resource: @address
-        .form-group
           .field
             = f.label :"郵便番号"
             %span.form-require 必須

@@ -10,7 +10,11 @@
           カード番号
         %span.must
           必須
-      = form.text_field :number, class: "card-form__input-num",  placeholder: "半角英数のみ", id:"card_number",maxlength: "16"
+      = form.text_field :number, class: "card-form__input-num", placeholder: "半角英数のみ", id:"card_number",maxlength: "16"
+      %p#warn1
+        必須項目です
+      %p#warn2
+        カード番号が正しくありません
       .card-form__image
       =image_tag "card.png"
       .card-form__dead
@@ -32,7 +36,11 @@
           セキュリティーコード
         %span.must
           必須
-        = form.text_field :number, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号", id: "cvc"
+        = form.text_field :cvcnumber, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号", id: "cvc"
+        %p#warn3
+          必須項目です
+        %p#warn4
+          番号が正しくありません
         .my-card-q
           = link_to "#", class: "back-num" do
             カード裏面の番号とは?
