@@ -42,6 +42,19 @@ p{
   margin: 5px;
 }
 
+#image-box{
+  background-color: whitesmoke;
+  #previews{
+    .js-file_group{
+      background-color: rgb(82, 190, 190);
+      .js-file{
+        background-color: rgb(82, 190, 190);
+      }
+    }
+  }
+}
+
+
 .sell-main{
   width: 100%;
   margin-bottom: 20px;

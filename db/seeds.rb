@@ -1,4 +1,4 @@
-categories=[
+category=[
   {level1:"レディース",level1_children:[
                                       {level2:"トップス",level2_children:["Tシャツ/カットソー(半袖/袖なし)","Tシャツ/カットソー(七分/長袖)","シャツ/ブラウス(半袖/袖なし)","シャツ/ブラウス(七分/長袖)","ポロシャツ","キャミソール","タンクトップ","ホルターネック","ニット/セーター","チュニック","カーディガン/ボレロ","アンサンブル","ベスト/ジレ","パーカー"]},
                                       {level2:"ジャケット/アウター",level2_children:["テーラードジャケット","ノーカラージャケット","Gジャン/デニムジャケット","レザージャケット","ダウンジャケット","ライダースジャケット","ミリタリージャケット","ダウンベスト","ジャンパー/ブルゾン","ポンチョ","ロングコート","トレンチコート","ダッフルコート","ピーコート"]},
@@ -179,9 +179,9 @@ categories=[
   },
 ]
 
-categories.each.with_index(1) do |category,i|
+category.each.with_index(1) do |category,i|
   level1_var="@category#{i}"                                                                            #1階層の変数("@category1"等)
-  level1_val= Categories.create(name:"#{category[:level1]}")                                            #1階層の値作成("カテゴリ1"等)
+  level1_val= Category.create(name:"#{category[:level1]}")                                            #1階層の値作成("カテゴリ1"等)
   eval("#{level1_var} = level1_val")                                                                    #1階層の変数=1階層の値
     category[:level1_children].each.with_index(1) do |level1_child,j|
       level2_var="#{level1_var}_#{j}"                                                                   #2階層の変数("@category1-1"等)
