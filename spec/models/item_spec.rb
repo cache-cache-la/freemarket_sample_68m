@@ -1,6 +1,5 @@
 require 'rails_helper'
 require 'factory/items.rb'
-require 'factory/images.rb'
 
 RSpec.describe Item, type: :model do
 
@@ -8,12 +7,6 @@ RSpec.describe Item, type: :model do
 
     context 'バリデーション' do
       context '各項目が空欄なら出品無効' do
-        it "商品画像" do
-          image = build(:image, picture: nil)
-          image.valid?
-          expect(image.errors[:picture]).to include("を入力してください")
-        end
-
         it "商品名" do
           item = build(:item, name: nil)
           item.valid?
