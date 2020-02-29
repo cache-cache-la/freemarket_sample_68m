@@ -24,12 +24,6 @@ RSpec.describe Item, type: :model do
           item.valid?
           expect(item.errors[:price]).to include("を入力してください")
         end
-
-        it "画像" do
-          image = build(:image, picture: nil)
-          image.valid?
-          expect(image.errors[:picture]).to include("を入力してください")
-        end
       end
     end
   end
