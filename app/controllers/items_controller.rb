@@ -1,6 +1,4 @@
 class ItemsController < ApplicationController
-  #下記、コードのコメントアウト箇所に関して
-  #画像以外の出品情報の確認のため。2020/02/22
 
   before_action :set_item, only: [:show, :edit, :update, :destory]
 
@@ -13,7 +11,6 @@ class ItemsController < ApplicationController
     @item.images.new
     @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
     @status_array = Status.all                        # データベースから抽出し、配列化
-    @item.images.new
     @item.build_brand
   end
 
@@ -32,10 +29,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
-      redirect_to root_path
+    if @item.save
+      redirect_to root_path, alert: "出品しました"
     else
-      redirect_to new_item_path
+      redirect_to new_item_path, alert: "必須項目を入力してください"
     end
   end
 
