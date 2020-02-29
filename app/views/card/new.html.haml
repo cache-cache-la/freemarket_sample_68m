@@ -1,4 +1,6 @@
 = render "shared/header"
+- breadcrumb :cards
+= render "layouts/breadcrumbs"
 .my-contents
   = render "mypages/my-side"
   .my-card
@@ -10,7 +12,9 @@
           カード番号
         %span.must
           必須
-      = form.text_field :number, class: "card-form__input-num",  placeholder: "半角英数のみ", id:"card_number",maxlength: "16"
+      = form.text_field :number, class: "card-form__input-num", placeholder: "半角英数のみ", id:"card_number",maxlength: "16"
+      %p#warn1
+        カード番号が正しくありません
       .card-form__image
       =image_tag "card.png"
       .card-form__dead
@@ -24,7 +28,7 @@
             %span.day
             月
           .select-year
-            = form.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], class: "card-form__dead", id:"exp_year"
+            = form.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]], class: "card-form__dead", id:"exp_year"
             %span.day
             年
       .card-form__code
@@ -32,7 +36,9 @@
           セキュリティーコード
         %span.must
           必須
-        = form.text_field :number, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号", id: "cvc"
+        = form.text_field :cvcnumber, class: "card-form__input-code",  placeholder: "カードの背面4桁もしくは3桁の番号", id: "cvc"
+        %p#warn2
+          番号が正しくありません
         .my-card-q
           = link_to "#", class: "back-num" do
             カード裏面の番号とは?

@@ -16,7 +16,6 @@
 - has_many :items
 - has_many :addresses
 - has_many :comments
-- has_one :billing_information
 
 
 ## itemsテーブル
@@ -104,14 +103,26 @@
 
 ### Association
 - belongs_to :user
+- has_one :purchase
 
 
 ## Cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
-|customer_id|integer|null: false|
-|card_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 - belongs_to :user
+- has_one :purchase
+
+## Purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|card_id|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :address
+- belongs_to :card
