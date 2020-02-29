@@ -3,7 +3,7 @@ class Image < ApplicationRecord
   belongs_to :item
 
 
-  validates :picture, presence: true
+  validates_associated :item
 
 
   has_one :purchase
