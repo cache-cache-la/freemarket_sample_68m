@@ -1,14 +1,16 @@
 .header{
   padding: 15px 60px;
+
   &__box{
     max-width: 1040px;
     width: 100%;
     min-height: 82px;
     margin: 0 auto;
+
     &__main{
-      position: relative;
       display: flex;
       align-items: center;
+
       .main__icon{
         padding-bottom: 10px;
         margin-right: 30px;
@@ -17,10 +19,12 @@
       .main__search{
         margin-left: auto;
         width: 100%;
+
         .search-form{
           width: 100%;
           display: flex;
           margin-bottom: 5px;
+
           .search-input{
             width: calc(100% - 26px);
             height: 36px;
@@ -34,6 +38,7 @@
           cursor: pointer;
           background-color: #3CCACE;
           padding: 8px;
+
           img{
             width: 100%;
             vertical-align: bottom;
@@ -44,62 +49,75 @@
     &__action{
       font-size: 15px;
       display: flex;
+
       .action__list{
-        position: relative;
         display: flex;
         line-height: 30px;
+
+        .list__category > li {
+          &:not(:last-child) .parent__tree > li {
+            .children__tree, &:not(:last-child) .children__tree > li .grandchildren__tree {
+              left: 100%;
+            }
+          }
+          &:last-child .parent__tree > li {
+            .children__tree, &:last-child .children__tree > li .grandchildren__tree {
+              right: 100%;
+            }
+          }
+        }
+
         .list__category{
-          text-decoration: none;
           padding: 0;
-          .tree-btn{
+
+          a {
             text-decoration: none;
-            padding: 0;
             color: black;
           }
-          a:hover{
-            color: orange;
-          }
-          .category-tree{
-            z-index: 2;
-            position: absolute;
-            background-color: #fff;
-            width: 240px;
-            top: 40px;
 
-            .parent__tree{
-              background-color: #fff;
-              display: flex;
-              flex-direction: column;
+          .parent__tree{
+            background-color: #fff;
+            display: none;
+            position: absolute;
+            width: 100px;
+            z-index: 1;
+
+            li{
               position: relative;
-              li{
-                position: relative;
-              }
+              font-family: arial;
+              padding: 2px;
             }
-            .children__tree{
-              background-color: #fff;
-              display: none;
-              flex-direction: column;
+          }
+          .children__tree{
+            background-color: #fff;
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+
+            li{
               position: relative;
-              li{
-                position: relative;
-              }
             }
-            .grandchildren__tree{
-              background-color: #fff;
-              display: none;
-              flex-direction: column;
+          }
+          .grandchildren__tree{
+            background-color: #fff;
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+
+            li{
               position: relative;
-              li{
-                position: relative;
-              }
             }
           }
         }
         .list__brand{
-          display: flex;
           line-height: 30px;
           padding: 0 0 0 40px;
-          .js-tree-btn{
+
+          .tree-btn{
             text-decoration: none;
             padding: 0;
             color: black;
@@ -150,3 +168,4 @@
     }
   }
 }
+

@@ -10,29 +10,39 @@
 
     %ul.action__list
       %li.list__category
-        = link_to "#", class:"tree-btn" do
+        = link_to "#" do
           カテゴリー
-          .category-tree
-            %ul.parent__tree
-              - @category_parent.each do |parent|
-                -# = link_to category_path(parent.id)
-                %li.parent__tree__item
-                  = parent.name
+          %ul.parent__tree
+            %li.parent__tree__item
+              レディース
 
-                  %ul.children__tree
-                    - parent.children.each do |child|
-                      -# = link_to category_path(child.id)
-                      %li.children__tree__item
-                        = child.name
+              %ul.children__tree
+                %li.children__tree__item
+                  トップス
 
-                      %ul.grandchildren__tree
-                        - child.children.each do |grandchild|
-                          -# = link_to category_path(grandchild.id)
-                          %li.grandchildren__tree__item
-                            = grandchild.name
+                  %ul.grandchildren__tree
+                    %li.grandchildren__tree__item
+                      ブラウス
+
+              -# - @category_parent.each do |parent|
+              -#   = link_to category_path(parent.id)
+
+                  -# = parent.name
+
+
+                  -#   - parent.children.each do |child|
+                  -#     = link_to category_path(child.id)
+
+                  -#       = child.name
+
+                  -#       - child.children.each do |grandchild|
+                  -#         = link_to category_path(grandchild.id)
+
+                  -#           = grandchild.name
+
 
       %li.list__brand
-        = link_to "#", class:"js-tree-btn" do
+        = link_to "#", class:"tree-btn" do
           ブランド
         .brand-tree
           -# %ul.first__tree
