@@ -2,6 +2,7 @@ require 'rails_helper'
 require 'factory/items.rb'
 
 RSpec.describe Item, type: :model do
+
   describe '商品登録' do
 
     context 'バリデーション' do

@@ -116,8 +116,14 @@
         display: flex;
         list-style: none;
         justify-content: space-around;
-        height: 200px;
+        height: 190px;
         width: 800px;
+        margin-top: 5px;
+        
+        img{
+          height: 150px;
+          width: 150px;
+        }
       }
 
       //イメージ部分↑
