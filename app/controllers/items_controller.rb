@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  #下記、コードのコメントアウト箇所に関して
+  #画像以外の出品情報の確認のため。2020/02/22
 
   before_action :set_item, only: [:show, :edit, :update, :destory]
 

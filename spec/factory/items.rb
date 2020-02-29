@@ -4,7 +4,7 @@ FactoryBot.define do
   factory :item do
     name              {"おにぎり"}
     text              {"コシヒカリ使用"}
-    price             {"3000000"} 
+    price             {"3000000"}
   end
 
-end 
+end

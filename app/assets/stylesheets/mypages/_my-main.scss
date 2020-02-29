@@ -1,9 +1,9 @@
 .my-main{
   width: 700px;
   &__user{
+    background-image: src= "/images/my_back.png";
     text-align: center;
     height: 200px;
-    background-color:  #57CACE;
     position: relative;
     .user-link{
       display: block;
