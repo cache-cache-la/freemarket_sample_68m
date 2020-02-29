@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @item.images.new
     @status_array = Status.all                        # データベースから抽出し、配列化
     @item.build_brand
   end
@@ -24,12 +25,14 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+
+
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path, notice: '出品しました'
+      redirect_to root_path, alert: "出品しました"
     else
-      redirect_to new_item_path, notice: '必須項目を入力してください'
+      redirect_to new_item_path, alert: "必須項目を入力してください"
     end
   end
 
@@ -37,7 +40,6 @@ class ItemsController < ApplicationController
     @user = User.find(params[:id])
     @comments = @item.comments
     @comment = Comment.new
-    @images = @item.images
   end
 
   def edit

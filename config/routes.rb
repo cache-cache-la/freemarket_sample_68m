@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
   root 'items#index'
-  resources :items
-    resources :comments
 
   resources :purchase, only: [:index] do
     collection do

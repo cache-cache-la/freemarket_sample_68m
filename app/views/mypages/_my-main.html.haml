@@ -2,14 +2,18 @@
   .my-main__user
     = link_to "#", class:"user-link" do
       .my-main__user__icon
-        = image_tag "user.png", class: "user-icon", size: "60x60"
+        = image_tag "user.png", class: "user-icon", size: "50x50"
       .my-main__user__name
         =current_user.nickname
       .my-main__user__items
         .my-main__user__items__rep
-          評価0
+          評価
+          %span
+          0
         .my-main__user__items__num
-          出品数0
+          出品数
+          %span
+          -# = current_user.items.count
   .my-main__user__switch
     %p.switch-nav
       お知らせ

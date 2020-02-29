@@ -1,0 +1,21 @@
+.breadcrumbs{
+  position: relative;
+  border-top: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  .breadcrumbs-list{
+    overflow: visible;
+    width: 1040px;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    a{
+      text-decoration: none;
+      color: black;
+      margin: 0 5px;
+    }
+    .current{
+      font-weight: bold;
+      margin: 0 5px;
+    }
+  }
+}
