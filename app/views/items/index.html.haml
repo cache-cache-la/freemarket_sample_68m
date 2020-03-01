@@ -95,23 +95,23 @@
             様々な支払いに対応
           %p.image__detail
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-    %span.picup-category
+    %span.pickup-category
       .head
         ピックアップカテゴリー／レディース
       .box
         .box__head
           = link_to "#" do
             新規投稿商品
-          = render partial: 'picup', collection: @pickupladies
+          = render partial: 'pickup', collection: @pickupladies
 
-    %span.picup-category
+    %span.pickup-category
       .head
         ピックアップカテゴリー／メンズ
       .box
         .box__head
           = link_to "#" do
             新規投稿商品
-          = render partial: 'picup', collection: @pickupmens
+          = render partial: 'pickup', collection: @pickupmens
 
   %aside.banner
     = render 'shared/banner'
