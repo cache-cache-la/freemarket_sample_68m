@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
-  resources :purchase
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -38,4 +37,5 @@ Rails.application.routes.draw do
 
   get "mypages/index"
   get "mypages/logout"
+  # get "category"
 end

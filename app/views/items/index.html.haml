@@ -102,23 +102,23 @@
         .box__head
           新規投稿商品
         .box__lists
-          - @items.each do |item|
-            = link_to "/items/#{item.id}", class: "list" do
-              %figure.list__img
-                -# = image_tag item.image
-              .list__body
-                .name
-                  = item.name
-                .details
-                  %ul
-                    %li
-                      = item.price
-                    %li
-                      %i.favorite-icon
-                        = icon('fas', 'star')
-                        0
-                  %p
-                    (税込)
+          -# - @items.each do |item|
+          -#   = link_to "/items/#{item.id}", class: "list" do
+          -#     %figure.list__img
+          -#       -# = image_tag item.image
+          -#     .list__body
+          -#       .name
+          -#         = item.name
+          -#       .details
+          -#         %ul
+          -#           %li
+          -#             = item.price
+          -#           %li
+          -#             %i.favorite-icon
+          -#               = icon('fas', 'star')
+          -#               0
+          -#         %p
+          -#           (税込)
           .list
             = link_to "#" do
               %figure.list__img

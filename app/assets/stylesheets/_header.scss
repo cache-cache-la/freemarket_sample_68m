@@ -117,6 +117,9 @@
             text-decoration: none;
             color: black;
           }
+          a:hover{
+            color: orange;
+          }
         }
         .user__new{
           color: #333;
@@ -125,6 +128,21 @@
           a{
             text-decoration: none;
             color: black;
+          }
+          a:hover{
+            color: orange;
+          }
+        }
+        .mypage{
+          color: #333;
+          line-height: 30px;
+          padding: 0 0 0 16px;
+          a{
+            text-decoration: none;
+            color: black;
+          }
+          a:hover{
+            color: orange;
           }
         }
       }
