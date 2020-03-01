@@ -97,122 +97,22 @@
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
     %span.picup-category
       .head
-        ピックアップカテゴリー
-      .box
-        .box__head
-          新規投稿商品
-        .box__lists
-          -# 以下の商品表示については部分テンプレート使用予定
-          - @items.each do |item|
-            = link_to "/items/#{item.id}", class: "list" do
-              %figure
-                = image_tag item.images[0].picture.url, class: 'list__img'
-              .list__body
-                .name
-                  = item.name
-                .details
-                  %ul
-                    %li
-                      = number_to_currency(item.price, locales: 'jp')
-                    %li
-                      %i.favorite-icon
-                        = icon('fas', 'star')
-                        0
-                  %p
-                    (税込)
-          .list
-            = link_to "#" do
-              %figure.list__img
-                = image_tag "/animal2.png"
-              .list__body
-                .name
-                  product2
-                .details
-                  %ul
-                    %li
-                      20000円
-                    %li
-                      %i.favorite-icon
-                        = icon('fas', 'star')
-                        0
-                  %p
-                    (税込)
-          .list
-            = link_to "#" do
-              %figure.list__img
-                = image_tag "/animal3.png"
-              .list__body
-                .name
-                  product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.favorite-icon
-                        = icon('fas', 'star')
-                        0
-                  %p
-                    (税込)
-    %span.picup-category
-      .head
-        ピックアップカテゴリー
+        ピックアップカテゴリー／レディース
       .box
         .box__head
           = link_to "#" do
             新規投稿商品
-        .box__lists
-          .list
-            = link_to "#" do
-              %figure.list__img
-                = image_tag "/animal1.png"
-              .list__body
-                .name
-                  product1
-                .details
-                  %ul
-                    %li
-                      10000円
-                    %li
-                      %i.favorite-icon
-                        = icon('fas', 'star')
-                        0
-                  %p
-                    (税込)
-          .list
-            = link_to "#" do
-              %figure.list__img
-                = image_tag "/animal2.png"
-              .list__body
-                .name
-                  product2
-                .details
-                  %ul
-                    %li
-                      20000円
-                    %li
-                      %i.favorite-icon
-                        = icon('fas', 'star')
-                        0
-                  %p
-                    (税込)
-          .list
-            = link_to "#" do
-              %figure.list__img
-                = image_tag "/animal3.png"
-              .list__body
-                .name
-                  product3
-                .details
-                  %ul
-                    %li
-                      30000円
-                    %li
-                      %i.favorite-icon
-                        = icon('fas', 'star')
-                        0
-                  %p
-                    (税込)
+          = render partial: 'picup', collection: @pickupladies
+
+    %span.picup-category
+      .head
+        ピックアップカテゴリー／メンズ
+      .box
+        .box__head
+          = link_to "#" do
+            新規投稿商品
+          = render partial: 'picup', collection: @pickupmens
+
   %aside.banner
     = render 'shared/banner'
   .footer

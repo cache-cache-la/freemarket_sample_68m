@@ -4,7 +4,9 @@ class ItemsController < ApplicationController
   before_action :set_parents
 
   def index
-    @items = Item.includes(:images).order('created_at DESC').limit(3)
+    # 仮置きですが、ピックアップはレディース／メンズになっています
+    @pickupladies = Item.includes(:images).where(category: 1..180).order('created_at DESC').limit(3)
+    @pickupmens = Item.includes(:images).where(category: 181..310).order('created_at DESC').limit(3)
   end
 
   def new
