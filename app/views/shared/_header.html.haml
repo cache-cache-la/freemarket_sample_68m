@@ -12,37 +12,10 @@
       %li.list__category
         = link_to "#" do
           カテゴリー
-          %ul.parent__tree
-            %li.parent__tree__item
-              レディース
-
-              %ul.children__tree
-                %li.children__tree__item
-                  トップス
-
-                  %ul.grandchildren__tree
-                    %li.grandchildren__tree__item
-                      ブラウス
-
-              -# - @category_parent.each do |parent|
-              -#   = link_to category_path(parent.id)
-
-                  -# = parent.name
-
-
-                  -#   - parent.children.each do |child|
-                  -#     = link_to category_path(child.id)
-
-                  -#       = child.name
-
-                  -#       - child.children.each do |grandchild|
-                  -#         = link_to category_path(grandchild.id)
-
-                  -#           = grandchild.name
-
+          = render partial: 'shared/categorymenu'
 
       %li.list__brand
-        = link_to "#", class:"tree-btn" do
+        = link_to "#" do
           ブランド
         .brand-tree
           -# %ul.first__tree
@@ -50,13 +23,14 @@
           -#     ナイキだお
 
     %ul.action__user
-      %li.user__login
-        = link_to new_user_session_path, class: "login_btn" do
-          ログイン
-      %li.user__new
-        = link_to new_user_registration_path, class: "new_btn" do
-          新規会員登録
-      -# これは仮置きです
-      %li.mypage
-        = link_to mypages_index_path do
-          mypage
+      - if user_signed_in?
+        %li.mypage
+          = link_to mypages_index_path, class: "mypage_btn" do
+            マイページ
+      - else
+        %li.user__login
+          = link_to new_user_session_path, class: "login_btn" do
+            ログイン
+        %li.user__new
+          = link_to new_user_registration_path, class: "new_btn" do
+            新規会員登録

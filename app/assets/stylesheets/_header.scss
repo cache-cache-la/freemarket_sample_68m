@@ -54,76 +54,29 @@
         display: flex;
         line-height: 30px;
 
-        .list__category > li {
-          &:not(:last-child) .parent__tree > li {
-            .children__tree, &:not(:last-child) .children__tree > li .grandchildren__tree {
-              left: 100%;
-            }
-          }
-          &:last-child .parent__tree > li {
-            .children__tree, &:last-child .children__tree > li .grandchildren__tree {
-              right: 100%;
-            }
-          }
-        }
-
-        .list__category{
+        .list__category {
           padding: 0;
+          cursor: pointer;
 
+          a:hover {
+            color: #3CCACE;
+          }
           a {
             text-decoration: none;
             color: black;
-          }
-
-          .parent__tree{
-            background-color: #fff;
-            display: none;
-            position: absolute;
-            width: 100px;
-            z-index: 1;
-
-            li{
-              position: relative;
-              font-family: arial;
-              padding: 2px;
-            }
-          }
-          .children__tree{
-            background-color: #fff;
-            display: none;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-
-            li{
-              position: relative;
-            }
-          }
-          .grandchildren__tree{
-            background-color: #fff;
-            display: none;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-
-            li{
-              position: relative;
-            }
           }
         }
         .list__brand{
           line-height: 30px;
           padding: 0 0 0 40px;
 
-          .tree-btn{
+          a:hover{
+            color: #3CCACE;
+          }
+          a {
             text-decoration: none;
             padding: 0;
             color: black;
-          }
-          a:hover{
-            color: orange;
           }
           .brand-tree{
             z-index: 1;
