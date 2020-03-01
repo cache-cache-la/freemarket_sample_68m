@@ -1,5 +1,5 @@
 .box__lists
-  = link_to "/items/#{item.id}", class: "list" do
+  = link_to item_path(item.id), class: "list" do
     %figure
       = image_tag item.images[0].picture.url, class: 'list__img'
     .list__body
