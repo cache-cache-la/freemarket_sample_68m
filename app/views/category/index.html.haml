@@ -1,0 +1,54 @@
+.header
+  = render "shared/header"
+
+.main-box
+  %section.items-box-container
+    .items-box-head
+      レディースの商品一覧
+    .items-box-content
+      %section.items-box
+        %a{:href => ""}
+          %figure.items-box-photo
+            %img.lazyloaded{:alt => "【手数料送料分】ミニオンパーカー", "data-src" => "", :src => ""}
+          .items-box-body
+            %h3.items-box-name.font-2 【手数料送料分】ミニオンパーカー
+            .items-box-num
+              .items-box-price.font-5 ¥500
+      %section.items-box
+        %a{:href => ""}
+          %figure.items-box-photo
+            %img.is-higher-height.lazyloaded{:alt => "", "data-src" => "", :src => ""}
+          .items-box-body
+            %h3.items-box-name.font-2 〔未使用品〕Dialtaclothes チュニック Lサイズ ブラック ヒョウ柄
+            .items-box-num
+              .items-box-price.font-5 ¥1,380
+              .font-2
+                %i.icon-like-border
+                %span 4
+  %ul.pager
+    %li.pager-num
+      %ul
+        %li.pager-cell.active
+          1
+        %li.pager-cell
+          %a{:href => ""} 2
+        %li.pager-cell
+          %a{:href => ""} 3
+        %li.pager-cell
+          %a{:href => ""} 4
+        %li.pager-cell
+          %a{:href => ""} 5
+    %li.pager-next.visible-pc
+      %ul
+        %li.pager-cell
+          %a{:href => ""}
+            %i.icon-arrow-right
+        %li.pager-cell
+          %a{:href => ""}
+            %i.icon-arrow-double-right
+%aside.banner
+  = render "shared/banner"
+.footer
+  = render "shared/footer"
+.sell-btn
+  = render "shared/sell-btn"
