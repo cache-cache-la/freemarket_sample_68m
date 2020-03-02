@@ -1,17 +1,19 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:edit, :update, :destroy]
-
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
+  before_action :set_parents
 
   def index
-    @items = Item.includes(:images).order('created_at DESC')
+    @items = Item.includes(:images).order('created_at DESC').limit(3)
+    # 仮置きですが、ピックアップはレディース／メンズになっています
+    # @pickupladies = Item.includes(:images).where(category: 1..180).order('created_at DESC').limit(3)
+    # @pickupmens = Item.includes(:images).where(category: 181..310).order('created_at DESC').limit(3)
   end
 
   def new
     @item = Item.new
-    @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
+    @item.images.new
     @status_array = Status.all                        # データベースから抽出し、配列化
-    # @item.images.new
     @item.build_brand
   end
 
@@ -28,10 +30,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path, notice: '出品しました'
+    if @item.save!
+      redirect_to root_path, alert: "出品しました"
     else
-      redirect_to new_item_path, notice: '必須項目を入力してください'
+      redirect_to new_item_path, alert: "必須項目を入力してください"
     end
   end
 
@@ -39,7 +41,6 @@ class ItemsController < ApplicationController
     @user = User.find(params[:id])
     @comments = @item.comments
     @comment = Comment.new
-    @images = @item.images
   end
 
   def edit
@@ -64,11 +65,16 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name], images_attributes: [:picture, :_destroy, :id])
+    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name], images_attributes: [:picture, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:id])
+    @images = @item.images
+  end
+
+  def set_parents
+    @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
   end
 
 end
