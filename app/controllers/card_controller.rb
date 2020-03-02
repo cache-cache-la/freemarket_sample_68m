@@ -1,4 +1,5 @@
 class CardController < ApplicationController
+  before_action :set_parents
 
   require "payjp"
   before_action :set_card, only: [:delete, :show]
@@ -74,5 +75,9 @@ class CardController < ApplicationController
 
   def call_api
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+  end
+
+  def set_parents
+    @category_parent = Category.where(ancestry: nil)
   end
 end
