@@ -1,11 +1,12 @@
 @import "reset";
 @import "config/font";
-@import "top";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
+@import "top";
 @import "header";
 @import "banner";
 @import "footer";
+@import "shared/categorymenu";
 @import "registrations";
 @import "sessions";
 @import "mypages/my-contents";
@@ -19,4 +20,5 @@
 @import "footer";
 @import "purchase";
 @import "sell-btn";
+@import "bread";
 @import "items/new";
