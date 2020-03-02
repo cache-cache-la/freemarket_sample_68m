@@ -45,6 +45,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+    @images = @item.images
+    @category = @item.category
+    @child_categories = Category.where('ancestry = ?', "#{@category.parent.ancestry}")
+    @grand_child = Category.where('ancestry = ?', "#{@category.ancestry}")
+    @status_array = Status.all
+    @item.build_brand
   end
 
   def update
