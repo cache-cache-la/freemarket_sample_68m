@@ -32,6 +32,7 @@
           }
         }
         .search-btn{
+          height: 36px;
           width: 36px;
           margin-bottom: 5px;
           border: 0;
@@ -65,6 +66,9 @@
             text-decoration: none;
             color: black;
           }
+          ::before {
+            color: #3CCACE;
+          }
         }
         .list__brand{
           line-height: 30px;
@@ -77,6 +81,10 @@
             text-decoration: none;
             padding: 0;
             color: black;
+
+            ::before {
+              color: #3CCACE;
+            }
           }
           .brand-tree{
             z-index: 1;
@@ -99,22 +107,45 @@
       .action__user{
         margin-left: auto;
         display: flex;
-        .user__login{
-          color: #333;
+
+        .mypage {
           line-height: 30px;
-          padding: 0 0 0 16px;
-          a{
+
+          .mypage_btn {
             text-decoration: none;
             color: black;
+            cursor: pointer;
+          }
+        }
+
+        .user__login{
+          line-height: 30px;
+          padding-left: 30px;
+
+          .login_btn {
+            text-decoration: none;
+            color: black;
+            background-color: paleturquoise;
+            padding: 10px 36px;
+            border-radius: 10px;
+          }
+          a:hover {
+            color: #3CCACE;
           }
         }
         .user__new{
-          color: #333;
           line-height: 30px;
-          padding: 0 0 0 16px;
-          a{
+          padding-left: 30px;
+
+          .new_btn {
             text-decoration: none;
-            color: black;
+            color: white;
+            background-color: cornflowerblue;
+            padding: 10px 20px;
+            border-radius: 10px;
+          }
+          a:hover {
+            color: #3CCACE;
           }
         }
       }

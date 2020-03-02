@@ -11,12 +11,14 @@
     %ul.action__list
       %li.list__category
         = link_to "#" do
-          カテゴリー
+          %i.fas.fa-list
+            カテゴリー
           = render partial: 'shared/categorymenu'
 
       %li.list__brand
         = link_to "#" do
-          ブランド
+          %i.fas.fa-tag
+            ブランド
         -# .brand-tree
         -#   %ul.first__tree
         -#     %li.brand__item
@@ -26,6 +28,7 @@
       - if user_signed_in?
         %li.mypage
           = link_to mypages_index_path, class: "mypage_btn" do
+            = image_tag "user.png", class: "user-icon", size: "20x20"
             マイページ
       - else
         %li.user__login
