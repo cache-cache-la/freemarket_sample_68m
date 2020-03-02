@@ -1,11 +1,12 @@
 @import "reset";
 @import "config/font";
-@import "items/index";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
+@import "top";
 @import "header";
 @import "banner";
 @import "footer";
+@import "shared/categorymenu";
 @import "registrations";
 @import "sessions";
 @import "mypages/my-contents";
