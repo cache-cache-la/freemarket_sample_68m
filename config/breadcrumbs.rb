@@ -18,17 +18,7 @@ crumb :user_edit do
 end
 
 crumb :cards do
-  link "カード", new_card_path
-  parent :mypages
-end
-
-crumb :cards do
-  link "カード", new_card_path
-  parent :mypages
-end
-
-crumb :cards do
-  link "カード", new_card_path
+  link "お支払い方法", new_card_path
   parent :mypages
 end
 
