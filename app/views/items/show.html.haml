@@ -83,13 +83,12 @@
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
-    - if @item.seller_id.present? && @item.buyer_id.nil?
-      - if current_user.nickname != @user.nickname
-        .main__top-content__buypage
-          = link_to "購入画面に進む", item_purchase_index_path(@item), style:"color:#FFFFFF"
-      - else
-        .main__top-content__editpage
-          = link_to "編集画面に進む", "#", style:"color:#FFFFFF"
+    - if current_user.id != @item.seller_id && @item.seller_id.present? && @item.buyer_id.nil?
+      .main__top-content__buypage
+        = link_to "購入画面に進む", item_purchase_index_path(@item), style:"color:#FFFFFF"
+    - else
+      .main__top-content__editpage
+        = link_to "編集画面に進む", "#", style:"color:#FFFFFF"
     .main__top-content__links
       %li 
         = link_to "<前の商品","#"

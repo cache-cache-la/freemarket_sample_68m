@@ -1,12 +1,4 @@
 class ItemsController < ApplicationController
-  #下記、コードのコメントアウト箇所に関して
-  #画像以外の出品情報の確認のため。2020/02/22
-
-  before_action :set_item, except: [:index, :new, :create]
-
-  # def index
-  #   @items = Item.includes(:images).order('created_at DESC')
-  # end
   before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :set_parents
 
@@ -40,9 +32,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save!
-      redirect_to root_path
-    else
-      redirect_to new_item_path
       redirect_to root_path, alert: "出品しました"
     else
       redirect_to new_item_path, alert: "必須項目を入力してください"

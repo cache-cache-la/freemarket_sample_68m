@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       collection do
         post 'pay', to: 'purchase#pay'
       end
+    end
+  end
 
   resources :purchase, only: [:index] do
     collection do
