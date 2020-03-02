@@ -1,7 +1,7 @@
 class PurchaseController < ApplicationController
-  before_action :set_card
-  before_action :set_item
-  before_action :set_address
+  before_action :set_card, only: [:index, :pay]
+  before_action :set_item, only: [:pay]
+  before_action :set_address, only: [:index]
   require 'payjp'
 
   def index
@@ -40,7 +40,7 @@ class PurchaseController < ApplicationController
   end
 
   def set_item
-    @item = Item.find_by(params[:item_id])
+    @item = Item.find(params[:item_id])
   end
 
   def set_address
