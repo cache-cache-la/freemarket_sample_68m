@@ -1,8 +1,7 @@
 class PurchaseController < ApplicationController
-  before_action :set_card, only: [:index, :pay]
-  before_action :set_item, only: [:index, :pay]
-  before_action :set_address, only: [:index, :pay]
-
+  before_action :set_card
+  before_action :set_item
+  before_action :set_address
   require 'payjp'
 
   def index
@@ -23,17 +22,13 @@ class PurchaseController < ApplicationController
       customer: @card.customer_id,
       currency: 'jpy',
     )
-    @purchase = Purchase.create(
-      address_id: @address.id,
-      card_id: @card.id,
-      user_id: current_user.id,
-      item_id: @item.id,
-    )
-    if @purchase.save!
+
+    @item.update(buyer_id: current_user.id)
+    if @item.save!
       flash[:notice] = "購入が完了しました"
       redirect_to root_path
     else
-      flash[:notice] = "コメントが入力できませんでした"
+      flash[:notice] = "購入ができませんでした"
       redirect_to action: "index"
     end
   end
@@ -45,7 +40,7 @@ class PurchaseController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:item_id])
+    @item = Item.find_by(params[:item_id])
   end
 
   def set_address

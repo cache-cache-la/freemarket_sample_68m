@@ -7,6 +7,8 @@
     .main__top-content__itemBox
       .main__top-content__itemBox__name
         = @item.name
+        - if @item.seller_id.present? && @item.buyer_id.present?
+          = "Sold Out"
       .main__top-content__itemBox__body
         = image_tag @item.images[0].picture.url, class:"main__top-content__itemBox__body__image"
       .main__top-content__itemBox__type
@@ -82,12 +84,13 @@
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
-    - if current_user.nickname != @user.nickname
-      .main__top-content__buypage
-        = link_to "購入画面に進む", "#", style:"color:#FFFFFF"
-    - else
-      .main__top-content__editpage
-        = link_to "編集画面に進む", "#", style:"color:#FFFFFF"
+    - if @item.seller_id.present? && @item.buyer_id.nil?
+      - if current_user.nickname != @user.nickname
+        .main__top-content__buypage
+          = link_to "購入画面に進む", item_purchase_index_path(@item), style:"color:#FFFFFF"
+      - else
+        .main__top-content__editpage
+          = link_to "編集画面に進む", "#", style:"color:#FFFFFF"
     .main__top-content__links
       %li 
         = link_to "<前の商品","#"
