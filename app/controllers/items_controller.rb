@@ -4,9 +4,10 @@ class ItemsController < ApplicationController
   before_action :set_parents
 
   def index
+    @items = Item.includes(:images).order('created_at DESC').limit(3)
     # 仮置きですが、ピックアップはレディース／メンズになっています
-    @pickupladies = Item.includes(:images).where(category: 1..180).order('created_at DESC').limit(3)
-    @pickupmens = Item.includes(:images).where(category: 181..310).order('created_at DESC').limit(3)
+    # @pickupladies = Item.includes(:images).where(category: 1..180).order('created_at DESC').limit(3)
+    # @pickupmens = Item.includes(:images).where(category: 181..310).order('created_at DESC').limit(3)
   end
 
   def new
@@ -27,11 +28,9 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
-
-
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save!
       redirect_to root_path, alert: "出品しました"
     else
       redirect_to new_item_path, alert: "必須項目を入力してください"
@@ -73,7 +72,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name], images_attributes: [:picture, :_destroy, :id])
+    params.require(:item).permit(:name, :text, :price, :category_id, :status_id, brand_attributes: [:id, :name], images_attributes: [:picture, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
   def set_item
