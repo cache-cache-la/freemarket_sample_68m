@@ -40,15 +40,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    # @item = binding.pry
-    # @user = User.find(params[:id])
-    # @address = @user.addresses
     @comment = Comment.new
     @comments = @item.comments
-    @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
     @user = User.find_by(id:@item.seller_id)
-    @address = Addresses.find_by(id:@user)
-    binding.pry
+    @address = Address.find_by(id:@user.id)
   end
 
   def edit

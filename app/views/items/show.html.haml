@@ -27,22 +27,19 @@
           %tr
             %th 出品者 
             %td 
-              -# = @user.addresses.
+              = @user.nickname
           %tr
             %th カテゴリー
             %td 
-              = link_to "メンズ","#"
+              = @item.category.root.name
               %br
-              = link_to "ジャケット/アウター","#"
+              = @item.category.parent.name
               %br
-              = link_to "ノーカラージャケット","#"
-              -# = @category_parent.name
+              = @item.category.name
           %tr
             %th ブランド
             %td
-          %tr
-            %th 商品サイズ
-            %td
+              = @item.brand.name
           %tr
             %th 商品の状態
             %td 
@@ -53,7 +50,7 @@
           %tr
             %th 発送元の地域
             %td 
-              -# = @address.prefectures
+              = @address.prefecture
           %tr
             %th 発送日の目安
             %td 1~2日で発送
@@ -90,7 +87,7 @@
         = link_to "購入画面に進む", item_purchase_index_path(@item), style:"color:#FFFFFF"
     - else
       .main__top-content__editpage
-        = link_to "編集画面に進む", "#", style:"color:#FFFFFF"
+        = link_to "編集画面に進む", edit_item_path(@item), style:"color:#FFFFFF"
     .main__top-content__links
       %li 
         = link_to "<前の商品","#"
@@ -98,8 +95,8 @@
         = link_to "次の商品>","#"
     .main__top-content__relatedItems
       = link_to "メンズをもっと見る","path_new_item",style:"color:#3CCACE"
--# .footer
--#   = render "shared/footer"
+.footer
+  = render "shared/footer"
 .sell-btn
   = render "shared/sell-btn"
 
