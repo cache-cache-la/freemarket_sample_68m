@@ -51,13 +51,6 @@ $(function(){
         type: 'GET',
         data: { parent_id: parentCategory },
         dataType: 'json',
-        //ajax通信エラー
-        error : function(XMLHttpRequest, textStatus, errorThrown) {
-          console.log("ajax通信に失敗しました");
-          console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-          console.log("textStatus     : " + textStatus);
-          console.log("errorThrown    : " + errorThrown.message);
-        },
       })
       .done(function(children){
         $('#children_wrapper').remove(); //親が変更された時、子以下を削除する
