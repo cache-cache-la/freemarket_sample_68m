@@ -2,11 +2,12 @@
 @import "config/font";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "top";
+@import "items/index";
 @import "header";
 @import "banner";
 @import "footer";
 @import "shared/categorymenu";
+@import "categories/index";
 @import "registrations";
 @import "sessions";
 @import "mypages/my-contents";
@@ -15,9 +16,6 @@
 @import "mypages/my-logout";
 @import "card/show";
 @import "card/new";
-@import "header";
-@import "banner";
-@import "footer";
 @import "purchase";
 @import "sell-btn";
 @import "bread";

@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :set_parents
 
@@ -31,7 +32,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       redirect_to root_path, alert: "出品しました"
     else
       redirect_to new_item_path, alert: "必須項目を入力してください"
@@ -39,17 +40,23 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @comments = @item.comments
     @comment = Comment.new
+    @comments = @item.comments
+    @user = User.find_by(id:@item.seller_id)
+    @address = Address.find_by(id:@user.id)
   end
 
   def edit
+    @category = @item.category
+    @child_categories = Category.where('ancestry = ?', "#{@category.parent.ancestry}")
+    @grand_child = Category.where('ancestry = ?', "#{@category.ancestry}")
+    @status_array = Status.all
+    @item.build_brand
   end
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to root_path, alert: "編集しました"
     else
       render :edit
     end

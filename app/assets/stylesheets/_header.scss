@@ -1,5 +1,7 @@
 .header{
   padding: 15px 60px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  margin-bottom: 3px;
 
   &__box{
     max-width: 1040px;
@@ -66,9 +68,6 @@
             text-decoration: none;
             color: black;
           }
-          ::before {
-            color: #3CCACE;
-          }
         }
         .list__brand{
           line-height: 30px;
@@ -81,10 +80,6 @@
             text-decoration: none;
             padding: 0;
             color: black;
-
-            ::before {
-              color: #3CCACE;
-            }
           }
           .brand-tree{
             z-index: 1;
@@ -110,12 +105,6 @@
 
         .mypage {
           line-height: 30px;
-
-          .mypage_btn {
-            text-decoration: none;
-            color: black;
-            cursor: pointer;
-          }
         }
 
         .user__login{
@@ -129,8 +118,8 @@
             padding: 10px 36px;
             border-radius: 10px;
           }
-          a:hover {
-            color: #3CCACE;
+          a:hover{
+            color: orange;
           }
         }
         .user__new{
@@ -144,8 +133,20 @@
             padding: 10px 20px;
             border-radius: 10px;
           }
-          a:hover {
-            color: #3CCACE;
+          a:hover{
+            color: orange;
+          }
+        }
+        .mypage{
+          color: #333;
+          line-height: 30px;
+          padding: 0 0 0 16px;
+          a{
+            text-decoration: none;
+            color: black;
+          }
+          a:hover{
+            color: orange;
           }
         }
       }
