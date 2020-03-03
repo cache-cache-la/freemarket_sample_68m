@@ -1,14 +1,13 @@
 $(function(){
   // rootカテゴリ
-  var root_id = $("#parent").data("root");
-  var root = $(`#parent > option[value=${root_id}]`);
+  var root_id = $("#parent_category").data("root");
+  var root = $(`#parent_category > option[value=${root_id}]`);
   root.attr("selected","selected");
   
   // childカテゴリ
-  var child_id = $("#child").data("child");
-  var child = $(`#child > option[value=${child_id}]`);
+  var child_id = $("#child_category").data("child");
+  var child = $(`#child_category > option[value=${child_id}]`);
   child.attr("selected","selected");
-
 });
 
 $(function(){
@@ -44,10 +43,10 @@ $(function(){
     $('.form-select-category__option').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
-  $('#parent').on('change', function(){
-    var parentCategory = document.getElementById('parent').value; //選択された親カテゴリーの名前を取得
+  $('#parent_category').on('change', function(){
+    var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
     console.log(parentCategory)
-    if (parentCategory != 0){ //親カテゴリーが初期値でないことを確認
+    if (parentCategory != ""){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: "get_category_children",
         type: 'GET',

@@ -54,17 +54,18 @@
               %span.must-section 必須
             .form-select-category
               .form-select-category__option
-              .sell__about__right__wrap-box.parent
-              %select{id: "parent",data: {root: @category.root.id}}
-                %option{value: 0} 選択してください
-                - Category.where('ancestry IS NULL').each do |cat|
-                  %option{value: "#{cat.id}",class: "root"} #{cat.name}
-              #children_wrapper
-                %select{id: "child",data: {child: @category.parent.id}}
+              %select{class: 'form-select__option-box', id: "parent_category", name: "item[category_id][]", data: {root: @category.root.id}}
+                %option{value: ""} 選択してください
+                - Category.where('ancestry IS NULL').each do |category|
+                  %option{value: "#{category.id}"} #{category.name}
+            .form-select-category{id: "children_wrapper"}
+              .form-select-category__option
+                %select{class: 'form-select__option-box', id: "child_category", name: "item[category_id][]", data: {child: @category.parent.id}}
                   %option{value: ""} 選択してください
-                  - @child_categories.each do |cat|
-                    %option{value: "#{cat.id}"} #{cat.name}
-              #grandchildren_wrapper
+                  - @child_categories.each do |category|
+                    %option{value: "#{category.id}"} #{category.name}
+            #grandchildren_wrapper
+              .form-select-category__option
                 = f.collection_select :category_id, @grand_child, :id, :name, {prompt: "選択してください"}, class: 'form-select__option-box', id: 'parent_category-edit'
           .form-box
             .form-label
