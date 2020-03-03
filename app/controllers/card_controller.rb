@@ -10,7 +10,7 @@ class CardController < ApplicationController
     redirect_to action: "show" if card.exists?
   end
 
-  def pay 
+  def pay
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
