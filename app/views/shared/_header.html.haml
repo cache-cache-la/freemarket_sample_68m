@@ -1,7 +1,8 @@
 .header__box
   .header__box__main
     .main__icon
-      = image_tag '/logo.png', alt: 'title', height: '41', width: '140'
+      = link_to root_path do
+        = image_tag '/logo.png', alt: 'title', height: '41', width: '140'
     .main__search
       = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
         = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
