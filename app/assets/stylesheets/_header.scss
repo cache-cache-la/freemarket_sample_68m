@@ -105,12 +105,6 @@
 
         .mypage {
           line-height: 30px;
-
-          .mypage_btn {
-            text-decoration: none;
-            color: black;
-            cursor: pointer;
-          }
         }
 
         .user__login{
@@ -124,8 +118,8 @@
             padding: 10px 36px;
             border-radius: 10px;
           }
-          a:hover {
-            color: #3CCACE;
+          a:hover{
+            color: orange;
           }
         }
         .user__new{
@@ -139,8 +133,20 @@
             padding: 10px 20px;
             border-radius: 10px;
           }
-          a:hover {
-            color: #3CCACE;
+          a:hover{
+            color: orange;
+          }
+        }
+        .mypage{
+          color: #333;
+          line-height: 30px;
+          padding: 0 0 0 16px;
+          a{
+            text-decoration: none;
+            color: black;
+          }
+          a:hover{
+            color: orange;
           }
         }
       }

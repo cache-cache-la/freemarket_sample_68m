@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       redirect_to root_path, alert: "出品しました"
     else
       redirect_to new_item_path, alert: "必須項目を入力してください"
@@ -47,11 +47,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category = @item.category
+    @child_categories = Category.where('ancestry = ?', "#{@category.parent.ancestry}")
+    @grand_child = Category.where('ancestry = ?', "#{@category.ancestry}")
+    @status_array = Status.all
+    @item.build_brand
   end
 
   def update
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to root_path, alert: "編集しました"
     else
       render :edit
     end
