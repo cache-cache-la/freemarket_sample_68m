@@ -1,0 +1,29 @@
+.header
+  = render 'shared/header'
+
+.container
+  .categories
+    %h2 カテゴリー一覧
+    .parent-category-anchor
+      - @category_parent.each do |parent|
+        = link_to parent.name, { anchor: "parent-#{parent.id}" }, class:"anchor"
+    .category-boxes
+      - @category_parent.each do |parent|
+        .category-box
+          %h3.category-box__title{ id: "parent-#{parent.id}" }
+            = parent.name
+          .child-category-list
+            = link_to "すべて", category_path(parent.id)
+            - parent.children.each do |child|
+              .child-category-list__name
+                = child.name
+              .grandchild-category
+                - child.children.each do |grandchild|
+                  = link_to grandchild.name, category_path(grandchild.id)
+
+%aside.banner
+  = render 'shared/banner'
+.footer
+  = render 'shared/footer'
+.sell-btn
+  = render 'shared/sell-btn'

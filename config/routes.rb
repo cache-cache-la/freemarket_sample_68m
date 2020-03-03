@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'items#index'
-  resources :items, only: [:create, :show, :edit, :update, :destroy] do
+  resources :items do
     collection do
       get 'get_category_children_items', to: 'items#get_category_children'
       get 'get_category_grandchildren_items', to: 'items#get_category_grandchildren'
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :categories, only: [:index, :show]
 
   resources :purchase, only: [:index] do
     collection do
@@ -27,7 +29,6 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_status', defaults: { format: 'json' }
     end
-    resources :comments, only: :create
   end
 
   devise_for :users, controllers: {

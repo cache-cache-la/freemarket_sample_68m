@@ -1,0 +1,38 @@
+.container {
+  background-color: #ebf6f7;
+
+  .categories {
+    width: 720px;
+    margin: 0 auto;
+    padding: 50px 0;
+
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .parent-category-anchor {
+      display: flex;
+      flex-wrap: wrap;
+
+      .anchor {
+
+      }
+    }
+    .category-boxes {
+      .category-box {
+        %h3 {
+
+        }
+        .child-category-list {
+          .child-category-list__name {
+
+          }
+          .grandchild-category {
+
+          }
+        }
+      }
+    }
+  }
+}

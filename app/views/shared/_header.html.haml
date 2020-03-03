@@ -10,15 +10,15 @@
 
     %ul.action__list
       %li.list__category
-        = link_to "#" do
-          %i.fas.fa-list
-            カテゴリー
+        = link_to categories_path do
+          = image_tag 'icon_category.png', height: '12.5', width: '15'
+          カテゴリー
           = render partial: 'shared/categorymenu'
 
       %li.list__brand
         = link_to "#" do
-          %i.fas.fa-tag
-            ブランド
+          = image_tag 'icon_brand.png', height: '12.5', width: '15'
+          ブランド
         -# .brand-tree
         -#   %ul.first__tree
         -#     %li.brand__item
