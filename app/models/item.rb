@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   validates :name, :text, :price, presence: true
   validates :images, presence: true
 
+  has_one :address
 
   belongs_to :category
 

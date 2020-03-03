@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
   root 'items#index'
+  resources :items, only: [:create, :show, :edit, :update, :destroy] do
+    collection do
+      get 'get_category_children_items', to: 'items#get_category_children'
+      get 'get_category_grandchildren_items', to: 'items#get_category_grandchildren'
+    end
+    resources :comments, only: [:create]
+    resources :purchase, only: [:index] do
+      collection do
+        post 'pay', to: 'purchase#pay'
+      end
+    end
+  end
 
   resources :purchase, only: [:index] do
     collection do
@@ -17,8 +29,6 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
-
-  resources :categories, only: :index
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :set_parents
 
@@ -27,6 +26,8 @@ class ItemsController < ApplicationController
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
+
+
 
   def create
     @item = Item.new(item_params)
