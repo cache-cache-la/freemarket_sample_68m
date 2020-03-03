@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
       get 'get_status', defaults: { format: 'json' }
     end
+    collection do
+      get ':id/get_category_children', to: 'items#get_category_children', defaults: { format: 'json' }
+      get ':id/get_category_grandchildren', to: 'items#get_category_grandchildren', defaults: { format: 'json' }
+    end
     resources :comments, only: [:create]
     resources :purchase, only: [:index] do
       collection do
