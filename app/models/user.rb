@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :firstname_kana, length: { maximum: 10 }
 
   has_many :addresses
+  has_many :items
 
   #ニックネームにひらがな・カタカナ・漢字・半角英数を使えるように正規表現を設定
   VALID_NICKNAME_REGEX = /\A[ぁ-んァ-ン一-龥a-zA-Z0-9.!]/

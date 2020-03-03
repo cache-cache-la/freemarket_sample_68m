@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   before_action :set_item, only: [:edit, :update, :show, :destroy]
   before_action :set_parents
 
@@ -39,9 +40,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @comments = @item.comments
     @comment = Comment.new
+    @comments = @item.comments
+    @user = User.find_by(id:@item.seller_id)
+    @address = Address.find_by(id:@user.id)
   end
 
   def edit

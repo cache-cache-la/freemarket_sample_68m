@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_031850) do
     t.string "name"
     t.string "ancestry"
 
+
     t.integer "costomer_id", null: false
     t.integer "card_id", null: false
     t.datetime "created_at", null: false
