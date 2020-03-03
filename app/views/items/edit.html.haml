@@ -106,7 +106,7 @@
           %hr.border
           .buttons
             = f.submit "編集する",  class: "sell-button"
-            = link_to "キャンセル", "root_path", class:"clear-button"
+            = link_to "キャンセル", "#", onclick: "history.back(); return false;", class:"clear-button"
           %h1.note-text
             禁止されている
             = link_to "行為", "#"
