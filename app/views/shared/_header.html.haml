@@ -7,34 +7,33 @@
         = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
         = form.submit src: "/icon-search 1.png", type: "image", class: "search-btn"
   .header__box__action
+
     %ul.action__list
       %li.list__category
-        = link_to "#", class:"tree-btn" do
-          カテゴリー
-        -# パンくず表示のために一時的にコメントアウト
-        -# .first-tree
-        -#   %ul.category__tree
-        -#     %li.tree__item
-        -#       仮）レディースだお
-        -#     %li.tree__item
-        -#       仮）メンズだお
+        = link_to "#" do
+          %i.fas.fa-list
+            カテゴリー
+          = render partial: 'shared/categorymenu'
+
       %li.list__brand
-        = link_to "#", class:"tree-btn" do
-          ブランド
-        -# .second-tree
-        -#   %ul.brand__tree
+        = link_to "#" do
+          %i.fas.fa-tag
+            ブランド
+        -# .brand-tree
+        -#   %ul.first__tree
         -#     %li.brand__item
-        -#       ナイキだお
-        -#     %li.brand__item
-        -#       美豚だお
+          後ほどこちらもドロップダウン予定
+
     %ul.action__user
-      %li.user__login
-        = link_to new_user_session_path, class: "login_btn" do
-          ログイン
-      %li.user__new
-        = link_to new_user_registration_path, class: "new_btn" do
-          新規会員登録
-      -# これは仮置きです
-      %li.mypage
-        = link_to mypages_index_path do
-          mypage
+      - if user_signed_in?
+        %li.mypage
+          = link_to mypages_index_path, class: "mypage_btn" do
+            = image_tag "user.png", class: "user-icon", size: "20x20"
+            マイページ
+      - else
+        %li.user__login
+          = link_to new_user_session_path, class: "login_btn" do
+            ログイン
+        %li.user__new
+          = link_to new_user_registration_path, class: "new_btn" do
+            新規会員登録
