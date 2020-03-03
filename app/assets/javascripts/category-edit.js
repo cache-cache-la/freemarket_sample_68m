@@ -94,7 +94,7 @@ $(function(){
         }
       })
       .fail(function(){
-        alert('カテゴリー取得に失敗しました');
+        alert('親カテゴリーから選択してください');
       })
     }else{
       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
