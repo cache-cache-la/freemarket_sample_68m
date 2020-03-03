@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'items#index'
-
-  resources :purchase, only: [:index] do
+  resources :items do
     collection do
-      post 'pay', to: 'purchase#pay'
+      get 'get_category_children_items', to: 'items#get_category_children'
+      get 'get_category_grandchildren_items', to: 'items#get_category_grandchildren'
     end
     #Ajaxで動くアクションのルートを作成
     collection do
@@ -17,9 +17,10 @@ Rails.application.routes.draw do
         post 'pay', to: 'purchase#pay'
       end
     end
-    resources :comments, only: :create
   end
+
   resources :categories, only: [:index, :show]
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'

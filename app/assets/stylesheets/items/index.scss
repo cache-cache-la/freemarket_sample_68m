@@ -277,54 +277,51 @@
           .list{
             width: 220px;
             display: inline-block;
-            a{
-              background-color: #fff;
-              display: inline-block;
-              text-decoration: none;
-              figure{
-                width: 220px;
-                height: 150px;
-                position: relative;
-                overflow: hidden;
-                margin: 0;
+            background-color: #fff;
+            text-decoration: none;
+            figure{
+              width: 220px;
+              height: 150px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+              z-index: auto;
+              img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
                 z-index: auto;
-                img{
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  right: 0;
-                  bottom: 0;
-                  width: 100%;
-                  z-index: auto;
-                  height: 150px;
-                  object-fit: cover;
-                }
+                height: 150px;
+                object-fit: cover;
               }
-              .list__body{
-                background-color: #fff;
-                color: #333;
-                padding: 16px;
-                .name{
-                  overflow: hidden;
-                  line-height: 1.5;
-                  font-size: 16px;
-                  text-align: left;
+            }
+            .list__body{
+              background-color: #fff;
+              color: #333;
+              padding: 16px;
+              .name{
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+                text-align: left;
+              }
+              .details{
+                font-size: 16px;
+                ul{
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  li{
+                    margin: 0;
+                    padding: 0;
+                  }
                 }
-                .details{
-                  font-size: 16px;
-                  ul{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    li{
-                      margin: 0;
-                      padding: 0;
-                    }
-                  }
-                  p{
-                    font-size: 10px;
-                    text-align: left;
-                  }
+                p{
+                  font-size: 10px;
+                  text-align: left;
                 }
               }
             }

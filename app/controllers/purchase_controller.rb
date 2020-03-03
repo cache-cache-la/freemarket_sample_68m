@@ -1,33 +1,50 @@
 class PurchaseController < ApplicationController
   before_action :set_card, only: [:index, :pay]
+  before_action :set_item, only: [:pay]
+  before_action :set_address, only: [:index]
   require 'payjp'
 
   def index
-    if card.blank?
+    if @card.blank?
+      #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
     end
-    @address = Address.find_by(user_id: current_user.id)
-    @item = Item.find_by(user_id: current_user.id)
-    @images = Image.where(user_id: current_user.id)
   end
 
   def pay
-    item = Item.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
-      amount: 20000,
-      customer: card.customer_id,
+      amount: @item.price,
+      customer: @card.customer_id,
       currency: 'jpy',
     )
-    redirect_to root_path
+
+    @item.update(buyer_id: current_user.id)
+    if @item.save!
+      flash[:notice] = "購入が完了しました"
+      redirect_to root_path
+    else
+      flash[:notice] = "購入ができませんでした"
+      redirect_to action: "index"
+    end
   end
 
+
+  private
   def set_card
-    card = Card.find_by(user_id: current_user.id)
+    @card = Card.find_by(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+
+  def set_address
+    @address = Address.find_by(user_id: current_user.id)
   end
 
 end

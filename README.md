@@ -120,8 +120,9 @@
 ## Purchasesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|card_id|references|null: false, foreign_key: true|
+|address_id|references|foreign_key: true|
+|card_id|references|foreign_key: true|
+
 
 ### Association
 - belongs_to :address

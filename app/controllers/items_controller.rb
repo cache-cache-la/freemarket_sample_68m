@@ -28,6 +28,8 @@ class ItemsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
+
+
   def create
     @item = Item.new(item_params)
     if @item.save
@@ -38,9 +40,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @comments = @item.comments
     @comment = Comment.new
+    @comments = @item.comments
+    @user = User.find_by(id:@item.seller_id)
+    @address = Address.find_by(id:@user.id)
   end
 
   def edit

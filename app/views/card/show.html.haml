@@ -1,26 +1,29 @@
 = render "shared/header"
-.my-contents
-  = render "mypages/my-side"
-  .add-card
-    .add-card__head
-      支払い方法
-    .add-card__contents
-      .add-card__contents__form
-        .add-card-form
-          .card-inform
-            .card-logo
-              = image_tag @card_name[:brand]
-            .card-number
-              = "**** **** **** " + @default_card_information.last4
-            .card-dead
-              - exp_month = @default_card_information.exp_month.to_s
-              - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-              = exp_month + " / " + exp_year
-            = link_to new_card_path, method: :delete, class: "delete-btn", id:"delete" do
-              削除する
-      .add-card__contents__way
-        = link_to "#", class: "pay-way" do
-          支払い方法について＞
+- breadcrumb :cards
+= render "layouts/breadcrumbs"
+.my-all
+  .my-contents
+    = render "mypages/my-side"
+    .add-card
+      .add-card__head
+        支払い方法
+      .add-card__contents
+        .add-card__contents__form
+          .add-card-form
+            .card-inform
+              .card-logo
+                = image_tag @card_name[:brand]
+              .card-number
+                = "**** **** **** " + @default_card_information.last4
+              .card-dead
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+              = link_to new_card_path, method: :delete, class: "delete-btn", id:"delete" do
+                削除する
+        .add-card__contents__way
+          = link_to "#", class: "pay-way" do
+            支払い方法について＞
 %aside.banner
   = render "shared/banner"
 .footer
