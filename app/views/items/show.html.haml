@@ -25,7 +25,7 @@
           %tr
             %th 出品者 
             %td 
-              = @user.nickname
+              -# = @user.addresses.
           %tr
             %th カテゴリー
             %td 
@@ -34,6 +34,7 @@
               = link_to "ジャケット/アウター","#"
               %br
               = link_to "ノーカラージャケット","#"
+              -# = @category_parent.name
           %tr
             %th ブランド
             %td
@@ -49,8 +50,8 @@
             %td 着払い（購入者負担）
           %tr
             %th 発送元の地域
-            %td 青森県
-            -# @user.address.preficture
+            %td 
+              -# = @address.prefectures
           %tr
             %th 発送日の目安
             %td 1~2日で発送
@@ -81,7 +82,7 @@
           %br
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
-    - if current_user.nickname != @user.nickname
+    -# - if current_user.nickname != @item.user.nickname
       .main__top-content__buypage
         = link_to "購入画面に進む", "#", style:"color:#FFFFFF"
     - else

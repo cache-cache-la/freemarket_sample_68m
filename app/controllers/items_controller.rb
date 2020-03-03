@@ -4,9 +4,9 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destory]
 
-  # def index
-  #   @items = Item.includes(:images).order('created_at DESC')
-  # end
+  def index
+    @items = Item.includes(:images).order('created_at DESC')
+  end
 
   def new
     @item = Item.new
@@ -39,9 +39,15 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @comments = @item.comments
+    # @item = binding.pry
+    # @user = User.find(params[:id])
+    # @address = @user.addresses
     @comment = Comment.new
+    @comments = @item.comments
+    @category_parent = Category.where(ancestry: nil)  # データベースから、親カテゴリーのみ抽出し、配列化
+    @user = User.find_by(id:@item.seller_id)
+    @address = Addresses.find_by(id:@user)
+    binding.pry
   end
 
   def edit
