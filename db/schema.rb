@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(version: 2020_03_01_031850) do
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "ancestry"
+
+    t.integer "costomer_id", null: false
+    t.integer "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -114,6 +120,7 @@ ActiveRecord::Schema.define(version: 2020_03_01_031850) do
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
+
   add_foreign_key "images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"

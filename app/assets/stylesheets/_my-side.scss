@@ -4,18 +4,17 @@
   &__mid{
     margin-top: 40px;
     &__nav{
-    font-size: 160px;
+    font-size: 16px;
+    font-weight: bolder;
     }
   }
-  
   &__btm{
     &__nav{
-      font-size: 60px;
+      font-size: 16px;
       font-weight: bolder;
       margin-top: 40px;
     }
   }
-}
 .lists-items{
   li{
     border-top: 1px solid #eeeeee;
@@ -26,5 +25,10 @@
       color: black;
       font-size: 14px;
     }
+    i{
+      float: right;
+      color: #cccccc;
+    }
   }
+}
 }
