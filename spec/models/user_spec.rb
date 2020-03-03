@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'factory/users.rb'
+require 'factories/users.rb'
 
 RSpec.describe User do
   describe 'ユーザー登録時のバリデーションテスト' do

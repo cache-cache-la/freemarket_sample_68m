@@ -6,20 +6,19 @@
 
   .purchase__item
     .purchase__item__box
-      .purchase__item__box__image
-        =@image.map {|image| image.picture }
+      = image_tag @item.images[0].picture.url
       .purchase__item__box__description
         .item_title
-          = @item.map {|item| item.name }
+          = @item.name
         .item__price
-          = @item.map {|item| item.price }
+          = @item.price
 
   %section.purchase__data
     .purchase__data__price
       .purchase__data__price__title
         支払い金額
       .purchase__data__price__amount
-        = 13500
+        = @item.price
 
     .purchase__data__payment
       .purchase__data__payment__title
@@ -37,7 +36,7 @@
           - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
           = exp_month + " / " + exp_year
         .card__type
-          VISA
+          = @default_card_information.brand
 
     .purchase__data__shipping
       .purchase__data__shipping__title
@@ -47,15 +46,15 @@
           = link_to "変更する", "#"
       .purchase__data__shipping__box
         .postcode
-          = @address.map {|address| address.postal_code }
+          = @address.postal_code
         .address
-          = @address.map {|address| address.prefecture }
-          = @address.map {|address| address.municipality }
-          = @address.map {|address| address.number }
-          = @address.map {|address| address.building }
+          = @address.prefecture
+          = @address.municipality
+          = @address.number
+          = @address.building
         .buyer
           = current_user.lastname
-          = current_user.firstname
+          = current_user.firstname + " 様"
     .purchase__submit
       .purchase__submit__btn
         = form_tag(action: :pay, method: :post) do
