@@ -1,12 +1,13 @@
 = render "shared/header"
 - breadcrumb :logout
 = render "layouts/breadcrumbs"
-.my-contents
-  = render "my-side"
-  .my-logout
-    .my-logout__btn
-      = link_to destroy_user_session_path, method: 'delete', class: "logout-btn" do
-        ログアウト
+.my-all
+  .my-contents
+    = render "my-side"
+    .my-logout
+      .my-logout__btn
+        = link_to destroy_user_session_path, method: 'delete', class: "logout-btn" do
+          ログアウト
 %aside.banner
   = render "shared/banner"
 .footer

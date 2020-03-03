@@ -1,6 +1,9 @@
-.my-contents{
-  width: 1020px;
-  background-color: #f8f8f8;
-  display: flex;
-  margin: 40px  auto 0;
+.my-all{
+  background-color: #f5f5f5;
+  .my-contents{
+    padding: 40px;
+    max-width: 1020px;
+    margin: auto;
+    display: flex;
+  }
 }

@@ -1,9 +1,10 @@
 = render "shared/header"
 - breadcrumb :mypages
 = render "layouts/breadcrumbs"
-.my-contents
-  = render "my-side"
-  = render "my-main"
+.my-all
+  .my-contents
+    = render "my-side"
+    = render "my-main"
 %aside.banner
   = render "shared/banner"
 .footer

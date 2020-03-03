@@ -2,6 +2,11 @@ crumb :root do
   link "トップページ", root_path
 end
 
+crumb :categories do
+  link "カテゴリー", categories_path
+  parent :root
+end
+
 crumb :mypages do
   link "マイページ", mypages_index_path
   parent :root
@@ -18,17 +23,7 @@ crumb :user_edit do
 end
 
 crumb :cards do
-  link "カード", new_card_path
-  parent :mypages
-end
-
-crumb :cards do
-  link "カード", new_card_path
-  parent :mypages
-end
-
-crumb :cards do
-  link "カード", new_card_path
+  link "お支払い方法", new_card_path
   parent :mypages
 end
 
