@@ -105,12 +105,6 @@
 
         .mypage {
           line-height: 30px;
-
-          .mypage_btn {
-            text-decoration: none;
-            color: black;
-            cursor: pointer;
-          }
         }
 
         .user__login{
@@ -123,9 +117,6 @@
             background-color: paleturquoise;
             padding: 10px 36px;
             border-radius: 10px;
-          }
-          a:hover {
-            color: #3CCACE;
           }
           a:hover{
             color: orange;
@@ -141,9 +132,6 @@
             background-color: cornflowerblue;
             padding: 10px 20px;
             border-radius: 10px;
-          }
-          a:hover {
-            color: #3CCACE;
           }
           a:hover{
             color: orange;

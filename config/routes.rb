@@ -42,6 +42,5 @@ Rails.application.routes.draw do
   end
   get "mypages/index"
   get "mypages/logout"
-  get "category/index"
 
 end
