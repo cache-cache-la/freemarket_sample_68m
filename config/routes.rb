@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
   root 'items#index'
-  resources :items do
-    resources :comments
+  resources :items, only: [:create, :show, :edit, :update, :destroy] do
+    collection do
+      get 'get_category_children_items', to: 'items#get_category_children'
+      get 'get_category_grandchildren_items', to: 'items#get_category_grandchildren'
+    end
+    resources :comments, only: [:create]
     resources :purchase, only: [:index] do
       collection do
         post 'pay', to: 'purchase#pay'
