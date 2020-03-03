@@ -6,6 +6,14 @@ Rails.application.routes.draw do
       get 'get_category_children_items', to: 'items#get_category_children'
       get 'get_category_grandchildren_items', to: 'items#get_category_grandchildren'
     end
+
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'get_status', defaults: { format: 'json' }
+    end
+
     resources :comments, only: [:create]
     resources :purchase, only: [:index] do
       collection do
@@ -15,21 +23,6 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show]
-
-  resources :purchase, only: [:index] do
-    collection do
-      post 'pay', to: 'purchase#pay'
-    end
-  end
-
-  resources :items do
-    #Ajaxで動くアクションのルートを作成
-    collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
-      get 'get_status', defaults: { format: 'json' }
-    end
-  end
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
