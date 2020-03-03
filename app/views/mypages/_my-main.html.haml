@@ -1,69 +1,94 @@
 .my-main
   .my-main__user
-    = link_to "#", class:"user-link" do
+    = link_to "#", class:"user-menu" do
       .my-main__user__icon
         = image_tag "user.png", class: "user-icon", size: "50x50"
       .my-main__user__name
         =current_user.nickname
       .my-main__user__items
-        .my-main__user__items__rep
+        %span.repu
           評価
           %span
           0
-        .my-main__user__items__num
-          出品数
-          %span
-          -# = current_user.items.count
+          %span.num-deal
+            出品数
+            %span
+            -# = current_user.items.count
   .my-main__user__switch
-    %p.switch-nav
+    .switch-nav{id:"switch"}
       お知らせ
-    %p.switch-nav
+    .switch-nav{id:"switch2"}
       やることリスト
   .my-main__user__menu
-  %ul.lists-items
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        一覧を見る
+    %ul.lists-items
+      %li.my-list
+        = link_to "#" do
+          %figure
+            = image_tag 'logo-only.png', size: "40x40"
+          .MYcontents
+            .MYmessage
+              "最大1,000円分のポイントがもらえる"出品キャンペーン開催中
+            .MYtime
+              = icon 'far', 'clock'
+              %span 30秒前
+          = icon 'fas', 'chevron-right', class: "fas-right"
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag 'logo-only.png', size: "40x40"
+          .MYcontents
+            .MYmessage
+              《CM放映中》たくさん出品して1億円分のポイントを山分けしちゃおう！
+            .MYtime
+              = icon 'far', 'clock'
+              %span 5分前
+          = icon 'fas', 'chevron-right', class: "fas-right"
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag 'logo-only.png', size: "40x40"
+          .MYcontents
+            .MYmessage
+              販売手数料全額ポイントバックのチャンス！スタート！
+            .MYtime
+              = icon 'far', 'clock'
+              %span 1時間前
+          = icon 'fas', 'chevron-right', class: "fas-right"
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag 'logo-only.png', size: "40x40"
+          .MYcontents
+            .MYmessage
+              売れたらお家で待つだけ！梱包・発送たのメル便が新登場♪
+            .MYtime
+              = icon 'far', 'clock'
+              %span 1週間前
+          = icon 'fas', 'chevron-right', class: "fas-right"
+      %li
+        = link_to "#" do
+          %figure
+            = image_tag 'logo-only.png', size: "40x40"
+          .MYcontents
+            .MYmessage
+              《今すぐ出品しよう！》販売手数料が実質"無料"になる！？
+            .MYtime
+              = icon 'far', 'clock'
+              %span 1ヶ月前
+          = icon 'fas', 'chevron-right', class: "fas-right"
+      %li
+        = link_to "#", class: "user-list" do
+          一覧を見る
   .my-main__items
-    .my-main__items__nav
-      購入した商品
-  .my-main__items__switch
-    %p.switch-nav
+    購入した商品
+  .my-main__user__switch
+    .switch-nav{id:"switch"}
       取引中
-    %p.switch-nav
+    .switch-nav{id:"switch2"}
       過去の取引
   .my-main__items__menu
   %ul.lists-items
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        事務局からの個別メッセージ
-    %li
-      = link_to "#" do
-        一覧を見る
+    %li.deal-inform
+      = image_tag 'logo-only.png', size: "100x100", class: 'deal-list'
+      .deal-message
+        取引した商品はありません。
