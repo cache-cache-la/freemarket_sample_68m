@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    redirect_to new_user_registration_path unless user_signed_in?
+    redirect_to new_user_session_path unless user_signed_in?
     @user = User.find(params[:id])
     @comments = @item.comments
     @comment = Comment.new
