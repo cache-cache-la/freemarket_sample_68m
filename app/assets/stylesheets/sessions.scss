@@ -104,7 +104,7 @@
         height:400px ;
         width: 800px;
         
-        &__image{
+        .mainimage{
           display: block;
           width: 400px;
           height: 400px;
@@ -119,6 +119,14 @@
         height: 190px;
         width: 800px;
         margin-top: 5px;
+        ul{
+          display: flex;
+          list-style: none;
+          justify-content: space-around;
+          height: 190px;
+          width: 800px;
+          margin-top: 5px;
+        }
         
         img{
           height: 150px;

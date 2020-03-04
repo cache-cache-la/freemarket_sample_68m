@@ -56,3 +56,20 @@ $(function() {
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 });
+
+$(function(){
+  $('.subimage li').hover(function(){
+      //オーバーしたliのインデックスを取得
+      var index = $('.subimage li').index(this);
+      console.log(index)
+      //オーバーした画像URLを取得
+      var imageurl = $('.subimage li').eq(index).find('img').attr('src');
+      //ulのクラス名を取得（空白で分割）
+      className = $(this).parent().attr('class').split(" ");
+      //元のメイン画像を保存しておく
+      defaultImage = $('img.mainimage.'+className[1]).attr('src');
+      $('img.mainimage.'+className[1]).attr('src',imageurl);
+  },function(){
+      $('img.mainimage.'+className[1]).attr('src',defaultImage);
+  });
+});
