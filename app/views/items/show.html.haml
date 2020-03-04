@@ -88,6 +88,10 @@
     - else
       .main__top-content__editpage
         = link_to "編集画面に進む", edit_item_path(@item), style:"color:#FFFFFF"
+      .main__top-content__destroybtn
+        = link_to "商品を削除する", "/items/#{@item.id}", style:"color:#FFFFFF", method: :delete
+      .destroybtn_sentence
+        一度、削除すると取り消しはできませんので、ご注意ください。
     .main__top-content__links
       %li 
         = link_to "<前の商品","#"
