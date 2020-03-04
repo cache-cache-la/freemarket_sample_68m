@@ -1,7 +1,8 @@
 .header__box
   .header__box__main
     .main__icon
-      = image_tag '/logo.png', alt: 'title', height: '41', width: '140'
+      = link_to root_path do
+        = image_tag '/logo.png', alt: 'title', height: '41', width: '140'
     .main__search
       = form_with(url: "#", local: true, method: :get, class: "search-form") do |form|
         = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
@@ -10,12 +11,14 @@
 
     %ul.action__list
       %li.list__category
-        = link_to "#" do
+        = link_to categories_path do
+          = image_tag 'icon_category.png', height: '12.5', width: '15'
           カテゴリー
           = render partial: 'shared/categorymenu'
 
       %li.list__brand
         = link_to "#" do
+          = image_tag 'icon_brand.png', height: '12.5', width: '15'
           ブランド
         -# .brand-tree
         -#   %ul.first__tree
@@ -26,6 +29,7 @@
       - if user_signed_in?
         %li.mypage
           = link_to mypages_index_path, class: "mypage_btn" do
+            = image_tag "user.png", class: "user-icon", size: "20x20"
             マイページ
       - else
         %li.user__login

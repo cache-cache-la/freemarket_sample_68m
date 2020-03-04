@@ -1,5 +1,7 @@
 .header{
   padding: 15px 60px;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  margin-bottom: 3px;
 
   &__box{
     max-width: 1040px;
@@ -32,6 +34,7 @@
           }
         }
         .search-btn{
+          height: 36px;
           width: 36px;
           margin-bottom: 5px;
           border: 0;
@@ -99,7 +102,42 @@
       .action__user{
         margin-left: auto;
         display: flex;
+
+        .mypage {
+          line-height: 30px;
+        }
+
         .user__login{
+          line-height: 30px;
+          padding-left: 30px;
+
+          .login_btn {
+            text-decoration: none;
+            color: black;
+            background-color: paleturquoise;
+            padding: 10px 36px;
+            border-radius: 10px;
+          }
+          a:hover{
+            color: orange;
+          }
+        }
+        .user__new{
+          line-height: 30px;
+          padding-left: 30px;
+
+          .new_btn {
+            text-decoration: none;
+            color: white;
+            background-color: cornflowerblue;
+            padding: 10px 20px;
+            border-radius: 10px;
+          }
+          a:hover{
+            color: orange;
+          }
+        }
+        .mypage{
           color: #333;
           line-height: 30px;
           padding: 0 0 0 16px;
@@ -107,14 +145,8 @@
             text-decoration: none;
             color: black;
           }
-        }
-        .user__new{
-          color: #333;
-          line-height: 30px;
-          padding: 0 0 0 16px;
-          a{
-            text-decoration: none;
-            color: black;
+          a:hover{
+            color: orange;
           }
         }
       }
