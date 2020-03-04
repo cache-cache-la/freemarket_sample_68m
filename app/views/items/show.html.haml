@@ -9,12 +9,12 @@
         - if @item.seller_id.present? && @item.buyer_id.present?
           = "Sold Out"
       .main__top-content__itemBox__body
-        = image_tag @item.images[0].picture.url, class:"main__top-content__itemBox__body__image"
+        = image_tag @item.images[0].picture.url, class:"mainimage img"
       .main__top-content__itemBox__type
-
-        - @item.images.each do |image|
-          %li
-            = image_tag image.picture.url
+        %ul{class: "subimage img"}
+          - @item.images.each do |image|
+            %li
+              = image_tag image.picture.url
       .main__top-content__itemBox__price
         ¥ 
         = @item.price
