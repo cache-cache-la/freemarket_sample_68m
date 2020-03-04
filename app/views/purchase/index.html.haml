@@ -3,7 +3,6 @@
 .purchase
   .purchase__title
     %h2 購入内容の確認
-
   .purchase__item
     .purchase__item__box
       = image_tag @item.images[0].picture.url
@@ -11,14 +10,14 @@
         .item_title
           = @item.name
         .item__price
-          = @item.price
+          = number_to_currency(@item.price, locales: 'jp')
 
   %section.purchase__data
     .purchase__data__price
       .purchase__data__price__title
         支払い金額
       .purchase__data__price__amount
-        = @item.price
+        = number_to_currency(@item.price, locales: 'jp')
 
     .purchase__data__payment
       .purchase__data__payment__title
