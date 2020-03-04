@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path, alert: "出品しました"
+      redirect_to root_path, notice: "出品しました"
     else
       redirect_to new_item_path, alert: "必須項目を入力してください"
     end
@@ -56,9 +56,9 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to root_path, alert: "編集しました"
+      redirect_to root_path, notice: "編集しました"
     else
-      render :edit
+      redirect_to edit_item_path, alert: "必須項目を入力してください"
     end
   end
 
