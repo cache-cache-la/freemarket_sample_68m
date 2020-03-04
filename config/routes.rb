@@ -35,10 +35,13 @@ Rails.application.routes.draw do
       post 'pay', to: 'card#pay'
     end
   end
-  #住所登録をウィザード形式で表示させる
+
   devise_scope :user do
-    get 'addresses', to: 'users/registrations#new_address'
-    post 'addresses', to: 'users/registrations#create_address'
+    get '/addresses', to: 'users/registrations#new_address'
+    post '/addresses', to: 'users/registrations#create_address'
+    get '/addresses/:id/edit', to: 'users/registrations#edit_address', as: 'edit_address'
+    patch '/addresses/:id', to: 'users/registrations#update_address'
+    put '/addresses/:id', to: 'users/registrations#update_address'
   end
   get "mypages/index"
   get "mypages/logout"

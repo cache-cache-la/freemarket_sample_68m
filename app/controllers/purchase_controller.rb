@@ -1,12 +1,11 @@
 class PurchaseController < ApplicationController
   before_action :set_card, only: [:index, :pay]
-  before_action :set_item, only: [:pay]
+  before_action :set_item, only: [:index, :pay]
   before_action :set_address, only: [:index]
   require 'payjp'
 
   def index
     if @card.blank?
-      #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "card", action: "new"
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -24,7 +23,7 @@ class PurchaseController < ApplicationController
     )
 
     @item.update(buyer_id: current_user.id)
-    if @item.save!
+    if @item.save
       flash[:notice] = "購入が完了しました"
       redirect_to root_path
     else

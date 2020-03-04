@@ -4,12 +4,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
   def new
     @user = User.new
   end
 
-  # POST /resource
   def create
     @user = User.new(sign_up_params)
     unless @user.valid?
@@ -36,15 +34,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to root_path
   end
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit_address
+    @address = Address.find(params[:id])
+  end
 
-  # PUT /resource
-  # def update
-  #   super
-  # end
+  def update_address
+    address = Address.find(params[:id])
+    address.update(address_params)
+    redirect_to purchase_index_path
+  end
 
   # DELETE /resource
   # def destroy
