@@ -64,11 +64,15 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      render items_destroy_path
+      render destroypage_items_path
     else
       render :show
     end
   end
+
+  def destroypage
+  end
+
 
   private
 

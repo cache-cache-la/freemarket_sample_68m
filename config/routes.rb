@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
     collection do
+      get "destroypage"
+    end
+    collection do
       get 'get_category_children_items', to: 'items#get_category_children'
       get 'get_category_grandchildren_items', to: 'items#get_category_grandchildren'
     end
@@ -42,6 +45,5 @@ Rails.application.routes.draw do
   end
   get "mypages/index"
   get "mypages/logout"
-  get "items/destroy"
 
 end
