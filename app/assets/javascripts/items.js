@@ -61,7 +61,6 @@ $(function(){
   $('.subimage li').hover(function(){
       //ホバーしたliのインデックスを取得
       var index = $('.subimage li').index(this);
-      console.log(index)
       //ホバーした画像URLを取得
       var imageurl = $('.subimage li').eq(index).find('img').attr('src');
       //ulのクラス名を取得（空白で分割）
