@@ -59,10 +59,10 @@ $(function() {
 
 $(function(){
   $('.subimage li').hover(function(){
-      //オーバーしたliのインデックスを取得
+      //ホバーしたliのインデックスを取得
       var index = $('.subimage li').index(this);
       console.log(index)
-      //オーバーした画像URLを取得
+      //ホバーした画像URLを取得
       var imageurl = $('.subimage li').eq(index).find('img').attr('src');
       //ulのクラス名を取得（空白で分割）
       className = $(this).parent().attr('class').split(" ");
