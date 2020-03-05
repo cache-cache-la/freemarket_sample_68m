@@ -69,7 +69,7 @@
         %table
           %tr
             %th
-              = c.user.nickname 
+              = c.user.nickname
               %b :
             %td
               = c.text
@@ -82,20 +82,28 @@
           不快な言葉遣いなどは利用制限や退会処分となることがあります。
         = f.submit "コメントする",id:"send"
 
-    - if current_user.id != @item.seller_id && @item.seller_id.present? && @item.buyer_id.nil?
-      .main__top-content__buypage
-        = link_to "購入画面に進む", item_purchase_index_path(@item), style:"color:#FFFFFF"
+    - if user_signed_in?
+      - if current_user.id != @item.seller_id && @item.seller_id.present? && @item.buyer_id.nil?
+        .main__top-content__buypage
+          = link_to "購入画面に進む", item_purchase_index_path(@item), style:"color:#FFFFFF"
+      - elsif @item.seller_id.present? && @item.buyer_id.present?
+        .main__top-content__buypage
+          購入できません
+      - else
+        .main__top-content__editpage
+          = link_to "編集画面に進む", edit_item_path(@item), style:"color:#FFFFFF"
+        .main__top-content__destroybtn
+          = link_to "商品を削除する", item_path(@item), style:"color:#FFFFFF", method: :delete
+        .destroybtn_sentence
+          一度、削除すると取り消しはできませんので、ご注意ください。
     - else
-      .main__top-content__editpage
-        = link_to "編集画面に進む", edit_item_path(@item), style:"color:#FFFFFF"
-      .main__top-content__destroybtn
-        = link_to "商品を削除する", item_path(@item), style:"color:#FFFFFF", method: :delete
-      .destroybtn_sentence
-        一度、削除すると取り消しはできませんので、ご注意ください。
+      .main__top-content__buypage
+        = link_to "購入画面に進む", new_user_session_path, style:"color:#FFFFFF"
+
     .main__top-content__links
-      %li 
+      %li
         = link_to "<前の商品","#"
-      %li 
+      %li
         = link_to "次の商品>","#"
     .main__top-content__relatedItems
       = link_to "メンズをもっと見る","path_new_item",style:"color:#3CCACE"
