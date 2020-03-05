@@ -40,12 +40,3 @@
             = f.submit "更新する"
   .single-footer
     = render "users/shared/footer-logo"
-
--# ログアウト機能が実装されるまで暫定的に設定
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
-
-%p
-  Log out? #{button_to "Log out", session_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
