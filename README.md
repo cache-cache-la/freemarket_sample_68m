@@ -27,10 +27,10 @@ FURIMASample68m
 
 # Demo
 ## マイページ
-https://gyazo.com/39cefff3ea6f0fc1eebd557ed430b239
+[![Image from Gyazo](https://i.gyazo.com/39cefff3ea6f0fc1eebd557ed430b239.gif)](https://gyazo.com/39cefff3ea6f0fc1eebd557ed430b239)
 
 ## 出品
-https://gyazo.com/7ac9a40bccf9b27c457305e4ae8d0cd1
+[![Image from Gyazo](https://i.gyazo.com/7ac9a40bccf9b27c457305e4ae8d0cd1.gif)](https://gyazo.com/7ac9a40bccf9b27c457305e4ae8d0cd1)
 
 # Usage
 * テストアカウントでログイン
