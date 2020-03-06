@@ -41,22 +41,22 @@ https://gyazo.com/7ac9a40bccf9b27c457305e4ae8d0cd1
 http://52.197.205.247/
 
 ## Basic authentication
-ID：admin__
-Pass：2222__
+ID：admin  
+Pass：2222  
 
 ## Test account
 * 購入者用
-メールアドレス：test@test.com__
-パスワード：test123__
+メールアドレス：test@test.com  
+パスワード：test123  
 
 * 購入用カード情報
-番号：4242424242424242__
-期限：月/年（現在より先であれば可）__
-セキュリティカード：123（三桁であれば可）__
+番号：4242424242424242  
+期限：月/年（現在より先であれば可）  
+セキュリティカード：123（三桁であれば可）  
 
 * 出品者用
-メールアドレス：seller@seller.com__
-パスワード：seller123__
+メールアドレス：seller@seller.com  
+パスワード：seller123  
 
 <br>
 # データベース設計
