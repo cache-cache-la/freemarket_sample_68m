@@ -1,6 +1,6 @@
 FURIMASample68m
 ====
-
+<br>
 # Overview
 商品の出品、編集、購入が行えるフリマアプリとなります。
 
@@ -25,7 +25,11 @@ FURIMASample68m
   * アクションバーにあるカテゴリーのドロップダウンメニュー
 
 # Demo
-[![Image from Gyazo](https://i.gyazo.com/fe2c9a638a7174e41c3c524b2e34589d.gif)](https://gyazo.com/fe2c9a638a7174e41c3c524b2e34589d)
+## マイページ
+https://gyazo.com/39cefff3ea6f0fc1eebd557ed430b239
+
+## 出品
+https://gyazo.com/7ac9a40bccf9b27c457305e4ae8d0cd1
 
 # Usage
 * テストアカウントでログイン
@@ -37,24 +41,24 @@ FURIMASample68m
 http://52.197.205.247/
 
 ## Basic authentication
-ID：admin
-Pass：2222
+ID：admin__
+Pass：2222__
 
 ## Test account
 * 購入者用
-メールアドレス：test@test.com
-パスワード：test123
+メールアドレス：test@test.com__
+パスワード：test123__
 
 * 購入用カード情報
-番号：4242424242424242
-期限：月/年（現在より先であれば可）
-セキュリティカード：123（三桁であれば可）
+番号：4242424242424242__
+期限：月/年（現在より先であれば可）__
+セキュリティカード：123（三桁であれば可）__
 
 * 出品者用
-メールアドレス：seller@seller.com
-パスワード：seller123
+メールアドレス：seller@seller.com__
+パスワード：seller123__
 
-
+<br>
 # データベース設計
 
 ## usersテーブル
